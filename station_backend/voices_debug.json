@@ -1,0 +1,23 @@
+{
+    "adding axis": [ "Adding axis {name}"],
+    "init_start": ["Station Initialization started."],
+    "init_axis": ["Initializing axis {name}"],
+    "init_end": ["Station initialization terminated."],
+    "patient_greeting": ["Welcome to the eyelib station {name}."],
+    "patient_adjustment_started": ["Please stay clear while the station is being adjusted for you."],
+    "patient_adjustment_done": ["Adjustment done"],
+    "patient_wait": ["Please place your head on the chin rest and your forehead against the headrest."],
+    "patient_present": ["6"],
+    "patient_departure": ["7"],
+    "patient_left": ["8"],
+    "new_instrument_preparation": ["Preparing new instrument from slot {slot}"],
+    "instrument_preparation": ["Preparing instrument {name}"],
+    "instrument_examination_done": ["Examination with {name} instrument terminated."],
+    "instrument_done": ["12"],
+    "instrument_calibration_done": ["Instrument calibration done."],
+    "all_instruments_done": ["Examination terminated", "You can now leave the station."],
+    "deposit_start": ["Deposit started for tray {tray}"],
+    "deposit_end": ["Deposit terminated for tray {tray}"],
+    "fetch_start": ["Fetching started for tray {tray}"],
+    "fetch_end": ["Fetching terminated for tray {tray}"]
+}

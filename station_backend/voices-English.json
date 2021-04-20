@@ -1,0 +1,43 @@
+{
+    "adding axis": [""],
+    "init_start": [],
+    "init_axis": [],
+    "init_end": ["init done"],
+    "patient_greeting": ["Welcome to the eyelib station {name}."],
+    "patient_adjustment_started": ["Please wait while the station is being prepared."],
+    "patient_adjustment_done": ["Adjustment done"],
+    "patient_wait": ["Please place your head on the chin rest and your forehead against the headrest."],
+    "patient_present": [],
+    "patient_departure": [],
+    "patient_left": [],
+    "new_instrument_preparation": [{
+            "format": "You can now blink freely",
+            "match": {"installed": true}
+        }],
+    "instrument_preparation": [],
+    "instrument_examination_done": [],
+    "instrument_done": [],
+    "instrument_calibration_done": ["Instrument calibration done."],
+    "all_instruments_done": ["Thank you. You can now leave the station", "Please return back to the registration stand. Your report is being edited and will be ready in a few minutes."],
+    "deposit_start": [],
+    "deposit_end": [],
+    "fetch_start": [],
+    "fetch_end": [],
+
+    "instrument_state_changed": [
+        {
+            "format": "Please look at the smiley face between the two red lights.",
+            "match": {"state": "InstrumentState.Preparing"}
+        },
+        {
+            "format": "Please stay still and keep your eyes open.",
+            "match": {"state": "InstrumentState.Pretargeting"}
+        },
+        {
+            "format": "Keep your eyes open",
+            "match": {"state": "InstrumentState.Targeting"}
+        }
+        
+    ]
+    
+}

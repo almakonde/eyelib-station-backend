@@ -1,0 +1,43 @@
+{
+    "adding axis": [""],
+    "init_start": [],
+    "init_axis": [],
+    "init_end": ["Initialisation terminée"],
+    "patient_greeting": ["Bienvenue à la station Eyelib {name}."],
+    "patient_adjustment_started": ["Veuilez patienter le temps que la machine se prépare"],
+    "patient_adjustment_done": ["Préparation terminée"],
+    "patient_wait": ["Veuillez placer votre tête sur la mentonnière et plaquer votre front sur l'appui-tête"],
+    "patient_present": [],
+    "patient_departure": [],
+    "patient_left": [],
+    "new_instrument_preparation": [{
+            "format": "Vous pouvez cligner des yeux naturellement",
+            "match": {"installed": true}
+        }],
+    "instrument_preparation": [],
+    "instrument_examination_done": [],
+    "instrument_done": [],
+    "instrument_calibration_done": ["Calibration de l'instrument terminé"],
+    "all_instruments_done": ["Merci! Vous pouvez maintenant sortir de la station", "Vous pouvez retourner sur la station d'enregistrement. Le rapport de votre examen sera prêt dans quelques minutes."],
+    "deposit_start": [],
+    "deposit_end": [],
+    "fetch_start": [],
+    "fetch_end": [],
+
+    "instrument_state_changed": [
+        {
+            "format": "Veuillez fixer le smiley entre les deux lumières rouge",
+            "match": {"state": "InstrumentState.Preparing"}
+        },
+        {
+            "format": "Veuillez rester immobile et garder les yeux ouverts",
+            "match": {"state": "InstrumentState.Pretargeting"}
+        },
+        {
+            "format": "Gardez vos yeux ouvert s'il vous plaît",
+            "match": {"state": "InstrumentState.Targeting"}
+        }
+        
+    ]
+    
+}

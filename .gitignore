@@ -1,0 +1,9 @@
+__pycache__
+deprecated
+.venv
+poetry.lock
+static
+settings.json
+settings.local.json
+station-backend.log
+*.egg-info

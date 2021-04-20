@@ -1,0 +1,731 @@
+<root>
+    <PS1 type="element">
+        <PS1_Table_FrontPanel_Reference type="element">
+            <taught_points type="dict">
+                <item type="tuple">
+                    <item type="str">Table/Front Panel Reference</item>
+                    <item type="dict">
+                        <item type="tuple">
+                            <item type="str">front panel</item>
+                            <item type="float">0.027045703125</item>
+                        </item>
+                        <item type="tuple">
+                            <item type="str">table x</item>
+                            <item type="float">110.160546875</item>
+                        </item>
+                        <item type="tuple">
+                            <item type="str">table y</item>
+                            <item type="float">42.49296875</item>
+                        </item>
+                        <item type="tuple">
+                            <item type="str">table z</item>
+                            <item type="float">956.5037182617189</item>
+                        </item>
+                    </item>
+                </item>
+            </taught_points>
+        </PS1_Table_FrontPanel_Reference>
+        <PS1_Table type="element">
+            <taught_points type="dict">
+                <item type="tuple">
+                    <item type="str">High Fetch/Deposit</item>
+                    <item type="dict">
+                        <item type="tuple">
+                            <item type="str">x</item>
+                            <item type="float">1.698828125</item>
+                        </item>
+                        <item type="tuple">
+                            <item type="str">y</item>
+                            <item type="float">46.49296875</item>
+                        </item>
+                        <item type="tuple">
+                            <item type="str">z</item>
+                            <item type="float">1404.1928979492188</item>
+                        </item>
+                    </item>
+                </item>
+                <item type="tuple">
+                    <item type="str">Low Fetch/Deposit</item>
+                    <item type="dict">
+                        <item type="tuple">
+                            <item type="str">x</item>
+                            <item type="float">2.900390625</item>
+                        </item>
+                        <item type="tuple">
+                            <item type="str">y</item>
+                            <item type="float">44.580859375</item>
+                        </item>
+                        <item type="tuple">
+                            <item type="str">z</item>
+                            <item type="float">706.5517456054688</item>
+                        </item>
+                    </item>
+                </item>
+                <item type="tuple">
+                    <item type="str">Tray 01 Fetch/Deposit</item>
+                    <item type="dict">
+                        <item type="tuple">
+                            <item type="str">x</item>
+                            <item type="float">2.798828125</item>
+                        </item>
+                        <item type="tuple">
+                            <item type="str">y</item>
+                            <item type="float">48.39296875</item>
+                        </item>
+                        <item type="tuple">
+                            <item type="str">z</item>
+                            <item type="float">1400.1912377929689</item>
+                        </item>
+                    </item>
+                </item>
+                <item type="tuple">
+                    <item type="str">Tray 02 Fetch/Deposit</item>
+                    <item type="dict">
+                        <item type="tuple">
+                            <item type="str">x</item>
+                            <item type="float">2.900390625</item>
+                        </item>
+                        <item type="tuple">
+                            <item type="str">y</item>
+                            <item type="float">44.580859375</item>
+                        </item>
+                        <item type="tuple">
+                            <item type="str">z</item>
+                            <item type="float">706.5517456054688</item>
+                        </item>
+                    </item>
+                </item>
+                <item type="tuple">
+                    <item type="str">Tray 03 Fetch/Deposit</item>
+                    <item type="dict">
+                        <item type="tuple">
+                            <item type="str">y</item>
+                            <item type="float">41.563671875</item>
+                        </item>
+                        <item type="tuple">
+                            <item type="str">x</item>
+                            <item type="float">3.0</item>
+                        </item>
+                        <item type="tuple">
+                            <item type="str">z</item>
+                            <item type="float">56.847722167968755</item>
+                        </item>
+                    </item>
+                </item>
+            </taught_points>
+        </PS1_Table>
+        <PS1_Tray_01 type="element">
+            <taught_points type="dict">
+                <item type="tuple">
+                    <item type="str">out</item>
+                    <item type="dict">
+                        <item type="tuple">
+                            <item type="str">tray</item>
+                            <item type="float">531.9925000000001</item>
+                        </item>
+                    </item>
+                </item>
+                <item type="tuple">
+                    <item type="str">in</item>
+                    <item type="dict">
+                        <item type="tuple">
+                            <item type="str">tray</item>
+                            <item type="float">2.7312499999999993</item>
+                        </item>
+                    </item>
+                </item>
+            </taught_points>
+        </PS1_Tray_01>
+        <PS1_Tray_02 type="element">
+            <taught_points type="dict">
+                <item type="tuple">
+                    <item type="str">out</item>
+                    <item type="dict">
+                        <item type="tuple">
+                            <item type="str">tray</item>
+                            <item type="float">531.99125</item>
+                        </item>
+                    </item>
+                </item>
+                <item type="tuple">
+                    <item type="str">in</item>
+                    <item type="dict">
+                        <item type="tuple">
+                            <item type="str">tray</item>
+                            <item type="float">3.3549999999999995</item>
+                        </item>
+                    </item>
+                </item>
+            </taught_points>
+        </PS1_Tray_02>
+        <PS1_Tray_03 type="element">
+            <taught_points type="dict">
+                <item type="tuple">
+                    <item type="str">out</item>
+                    <item type="dict">
+                        <item type="tuple">
+                            <item type="str">tray</item>
+                            <item type="float">719.9937500000001</item>
+                        </item>
+                    </item>
+                </item>
+                <item type="tuple">
+                    <item type="str">in</item>
+                    <item type="dict">
+                        <item type="tuple">
+                            <item type="str">tray</item>
+                            <item type="float">3.3512499999999985</item>
+                        </item>
+                    </item>
+                </item>
+            </taught_points>
+        </PS1_Tray_03>
+
+
+        <HeadRest_Z type="element">
+            <length_mm type="float">209.94750000000002</length_mm>
+            <limit_C_up_mm type="float">0.0</limit_C_up_mm>
+            <limit_C_down_mm type="float">0.0</limit_C_down_mm>
+        </HeadRest_Z>
+        <FrontPanel type="element">
+            <length_mm type="float">351.96374999999995</length_mm>
+            <limit_C_up_mm type="float">0.0</limit_C_up_mm>
+            <limit_C_down_mm type="float">0.0</limit_C_down_mm>
+        </FrontPanel>
+        <InstrumentTable_X type="element">
+            <length_mm type="float">118.99000000000001</length_mm>
+            <limit_C_up_mm type="float">0.0</limit_C_up_mm>
+            <limit_C_down_mm type="float">0.0</limit_C_down_mm>
+        </InstrumentTable_X>
+        <InstrumentTable_Y type="element">
+            <length_mm type="float">79.97875</length_mm>
+            <limit_C_up_mm type="float">0.0</limit_C_up_mm>
+            <limit_C_down_mm type="float">0.0</limit_C_down_mm>
+        </InstrumentTable_Y>
+        <InstrumentTable_Z type="element">
+            <length_mm type="float">1517.9837499999999</length_mm>
+            <limit_C_up_mm type="float">749.9849999999999</limit_C_up_mm>
+            <limit_C_down_mm type="float">755.0074999999999</limit_C_down_mm>
+        </InstrumentTable_Z>
+        <Tray_01 type="element">
+            <length_mm type="float">564.99</length_mm>
+            <limit_C_up_mm type="float">0.0</limit_C_up_mm>
+            <limit_C_down_mm type="float">0.0</limit_C_down_mm>
+        </Tray_01>
+        <Tray_02 type="element">
+            <length_mm type="float">564.99375</length_mm>
+            <limit_C_up_mm type="float">0.0</limit_C_up_mm>
+            <limit_C_down_mm type="float">0.0</limit_C_down_mm>
+        </Tray_02>
+        <Tray_03 type="element">
+            <length_mm type="float">564.9875</length_mm>
+            <limit_C_up_mm type="float">0.0</limit_C_up_mm>
+            <limit_C_down_mm type="float">0.0</limit_C_down_mm>
+        </Tray_03>
+
+        <tbl_fp_ref_cr_offset type="dict">
+            <item type="tuple">
+                <item type="str">x</item>
+                <item type="float">-28.0</item>
+            </item>
+            <item type="tuple">
+                <item type="str">y</item>
+                <item type="float">0.0</item>
+            </item>
+            <item type="tuple">
+                <item type="str">z</item>
+                <item type="float">0.0</item>
+            </item>
+        </tbl_fp_ref_cr_offset>
+        <automation type="element">
+            <prefetch_offset_z_mm type="int">-30</prefetch_offset_z_mm>
+            <postfetch_offset_z_mm type="int">50</postfetch_offset_z_mm>
+            <tbl_fp_calibration_neutral_offset_mm type="dict">
+                <item type="tuple">
+                    <item type="str">table x</item>
+                    <item type="int">-120</item>
+                </item>
+                <item type="tuple">
+                    <item type="str">table y</item>
+                    <item type="int">0</item>
+                </item>
+                <item type="tuple">
+                    <item type="str">table z</item>
+                    <item type="int">-300</item>
+                </item>
+            </tbl_fp_calibration_neutral_offset_mm>
+            <tbl_fp_calibration_tc_calib_offset_mm type="dict">
+                <item type="tuple">
+                    <item type="str">table x</item>
+                    <item type="int">-120</item>
+                </item>
+                <item type="tuple">
+                    <item type="str">table y</item>
+                    <item type="int">0</item>
+                </item>
+                <item type="tuple">
+                    <item type="str">table z</item>
+                    <item type="int">-550</item>
+                </item>
+            </tbl_fp_calibration_tc_calib_offset_mm>
+            <prefetch_speed_mm_s type="dict">
+                <item type="tuple">
+                    <item type="str">x</item>
+                    <item type="float">20.0</item>
+                </item>
+                <item type="tuple">
+                    <item type="str">y</item>
+                    <item type="float">20.0</item>
+                </item>
+                <item type="tuple">
+                    <item type="str">z</item>
+                    <item type="float">50.0</item>
+                </item>
+            </prefetch_speed_mm_s>
+            <slow_fetch_speed_mm_s type="dict">
+                <item type="tuple">
+                    <item type="str">x</item>
+                    <item type="float">10.0</item>
+                </item>
+                <item type="tuple">
+                    <item type="str">y</item>
+                    <item type="float">10.0</item>
+                </item>
+                <item type="tuple">
+                    <item type="str">z</item>
+                    <item type="float">15.0</item>
+                </item>
+            </slow_fetch_speed_mm_s>
+            <neutral_speed_mm_s type="dict">
+                <item type="tuple">
+                    <item type="str">table x</item>
+                    <item type="float">20.0</item>
+                </item>
+                <item type="tuple">
+                    <item type="str">table y</item>
+                    <item type="float">20.0</item>
+                </item>
+                <item type="tuple">
+                    <item type="str">table z</item>
+                    <item type="float">50.0</item>
+                </item>
+                <item type="tuple">
+                    <item type="str">x</item>
+                    <item type="float">20.0</item>
+                </item>
+                <item type="tuple">
+                    <item type="str">y</item>
+                    <item type="float">20.0</item>
+                </item>
+                <item type="tuple">
+                    <item type="str">z</item>
+                    <item type="float">50.0</item>
+                </item>
+            </neutral_speed_mm_s>
+            <tray_speed_mm_s type="dict">
+                <item type="tuple">
+                    <item type="str">tray</item>
+                    <item type="float">150.0</item>
+                </item>
+            </tray_speed_mm_s>
+            <chin_rest_dz_mm type="int">38</chin_rest_dz_mm>
+            <frontpanel_home_z_mm type="int">1310</frontpanel_home_z_mm>
+            <frontpanel_z_margin_mm type="int">30</frontpanel_z_margin_mm>
+            <headrest_home_z_mm type="int">200</headrest_home_z_mm>
+            <headrest_clearance_mm type="int">45</headrest_clearance_mm>
+        </automation>
+        <PatientInteraction type="element">
+            <remote_speech_address type="str">127.0.0.1:1234</remote_speech_address>
+        </PatientInteraction>
+        <Patient type="element">
+            <morphology_settings type="dict">
+                <item type="tuple">
+                    <item type="str">smallest</item>
+                    <item type="dict">
+                        <item type="tuple">
+                            <item type="str">height_mm</item>
+                            <item type="int">1500</item>
+                        </item>
+                        <item type="tuple">
+                            <item type="str">Seat_Z</item>
+                            <item type="float">100.0</item>
+                        </item>
+                        <item type="tuple">
+                            <item type="str">Seat_X</item>
+                            <item type="float">100.0</item>
+                        </item>
+                        <item type="tuple">
+                            <item type="str">FrontPanel</item>
+                            <item type="float">100.0</item>
+                        </item>
+                    </item>
+                </item>
+                <item type="tuple">
+                    <item type="str">tallest</item>
+                    <item type="dict">
+                        <item type="tuple">
+                            <item type="str">height_mm</item>
+                            <item type="float">1900.0</item>
+                        </item>
+                        <item type="tuple">
+                            <item type="str">Seat_Z</item>
+                            <item type="float">100.0</item>
+                        </item>
+                        <item type="tuple">
+                            <item type="str">Seat_X</item>
+                            <item type="float">100.0</item>
+                        </item>
+                        <item type="tuple">
+                            <item type="str">FrontPanel</item>
+                            <item type="float">100.0</item>
+                        </item>
+                    </item>
+                </item>
+                <item type="tuple">
+                    <item type="str">alpha_seat_z</item>
+                    <item type="float">0.0</item>
+                </item>
+                <item type="tuple">
+                    <item type="str">alpha_seat_x</item>
+                    <item type="float">0.0</item>
+                </item>
+                <item type="tuple">
+                    <item type="str">alpha_frontpanel</item>
+                    <item type="float">0.0</item>
+                </item>
+            </morphology_settings>
+        </Patient>
+
+        <PS1_HeadRest type="element">
+            <taught_points type="dict">
+                <item type="tuple">
+                    <item type="str">opened</item>
+                    <item type="dict">
+                        <item type="tuple">
+                            <item type="str">head_rest</item>
+                            <item type="float">20.003750000000004</item>
+                        </item>
+                    </item>
+                </item>
+                <item type="tuple">
+                    <item type="str">closed</item>
+                    <item type="dict">
+                        <item type="tuple">
+                            <item type="str">head_rest</item>
+                            <item type="float">192.99499999999998</item>
+                        </item>
+                    </item>
+                </item>
+                <item type="tuple">
+                    <item type="str">open</item>
+                    <item type="dict">
+                        <item type="tuple">
+                            <item type="str">head_rest</item>
+                            <item type="float">13.008749999999985</item>
+                        </item>
+                    </item>
+                </item>
+            </taught_points>
+        </PS1_HeadRest>
+    </PS1>
+    <IS type="element">
+        <instruments type="dict">
+            <item type="tuple">
+                <item type="str">DI001-01</item>
+                <item type="str">DI001</item>
+            </item>
+            <item type="tuple">
+                <item type="str">DRS-01</item>
+                <item type="str">DRS</item>
+            </item>
+            <item type="tuple">
+                <item type="str">VX120-01</item>
+                <item type="str">VX120</item>
+            </item>
+            <item type="tuple">
+                <item type="str">VX120-02</item>
+                <item type="str">VX120</item>
+            </item>
+            <item type="tuple">
+                <item type="str">REVO-01</item>
+                <item type="str">REVO</item>
+            </item>
+        </instruments>
+        <slot_payload type="dict">
+            <item type="tuple">
+                <item type="str">01</item>
+                <item type="str">REVO-01</item>
+            </item>
+            <item type="tuple">
+                <item type="str">02</item>
+                <item type="str">VX120-01</item>
+            </item>
+        </slot_payload>
+        <instruments_parameters type="dict">
+            <item type="tuple">
+                <item type="str">VX120-01</item>
+                <item type="dict">
+                    <item type="tuple">
+                        <item type="str">mac</item>
+                        <item type="str">30:9c:23:5c:16:a9</item>
+                    </item>
+                    <item type="tuple">
+                        <item type="str">ruia</item>
+                        <item type="dict">
+                            <item type="tuple">
+                                <item type="str">rest_host</item>
+                                <item type="str">127.0.0.1</item>
+                            </item>
+                            <item type="tuple">
+                                <item type="str">rest_port</item>
+                                <item type="int">6002</item>
+                            </item>
+                        </item>
+                    </item>
+                    <item type="tuple">
+                        <item type="str">tc_target_depth</item>
+                        <item type="float">80.000390625</item>
+                    </item>
+                    <item type="tuple">
+                        <item type="str">c2tc</item>
+                        <item type="dict">
+                            <item type="tuple">
+                                <item type="str">x</item>
+                                <item type="float">75.401953125</item>
+                            </item>
+                            <item type="tuple">
+                                <item type="str">y</item>
+                                <item type="float">-25.501171875000004</item>
+                            </item>
+                            <item type="tuple">
+                                <item type="str">z</item>
+                                <item type="float">-187.015517578125</item>
+                            </item>
+                        </item>
+                    </item>
+                    <item type="tuple">
+                        <item type="str">p2tc</item>
+                        <item type="dict">
+                            <item type="tuple">
+                                <item type="str">x</item>
+                                <item type="float">-11.0</item>
+                            </item>
+                            <item type="tuple">
+                                <item type="str">y</item>
+                                <item type="float">0.0</item>
+                            </item>
+                            <item type="tuple">
+                                <item type="str">z</item>
+                                <item type="float">240.0</item>
+                            </item>
+                        </item>
+                    </item>
+                    <item type="tuple">
+                        <item type="str">tc_settings</item>
+                        <item type="dict">
+                            <item type="tuple">
+                                <item type="str">url</item>
+                                <item type="str">127.0.0.1:5004</item>
+                            </item>
+                        </item>
+                    </item>
+                    <item type="tuple">
+                        <item type="str">cp_settings</item>
+                        <item type="dict">
+                            <item type="tuple">
+                                <item type="str">axes_conversion</item>
+                                <item type="dict">
+                                    <item type="tuple">
+                                        <item type="str">y</item>
+                                        <item type="str">-x</item>
+                                    </item>
+                                    <item type="tuple">
+                                        <item type="str">z</item>
+                                        <item type="str">-y</item>
+                                    </item>
+                                </item>
+                            </item>
+                            <item type="tuple">
+                                <item type="str">beta_threshold</item>
+                                <item type="float">0.05</item>
+                            </item>
+                            <item type="tuple">
+                                <item type="str">beta_x</item>
+                                <item type="float">1.0</item>
+                            </item>
+                            <item type="tuple">
+                                <item type="str">beta_y</item>
+                                <item type="float">1.0</item>
+                            </item>
+                            <item type="tuple">
+                                <item type="str">ref_mm</item>
+                                <item type="float">15.0</item>
+                            </item>
+                            <item type="tuple">
+                                <item type="str">ref_pixels</item>
+                                <item type="float">137.5</item>
+                            </item>
+                            <item type="tuple">
+                                <item type="str">initial_depth</item>
+                                <item type="float">147.160546875</item>
+                            </item>
+                            <item type="tuple">
+                                <item type="str">image_shape</item>
+                                <item type="tuple">
+                                    <item type="int">768</item>
+                                    <item type="int">1024</item>
+                                </item>
+                            </item>
+                            <item type="tuple">
+                                <item type="str">gamma</item>
+                                <item type="float">1.0122315392149837</item>
+                            </item>
+                        </item>
+                    </item>
+                    <item type="tuple">
+                        <item type="str">iid</item>
+                        <item type="str">VX120-01</item>
+                    </item>
+                </item>
+            </item>
+            <item type="tuple">
+                <item type="str">REVO-01</item>
+                <item type="dict">
+                    <item type="tuple">
+                        <item type="str">z_adj_offset</item>
+                        <item type="float">-20.0</item>
+                    </item>
+                    <item type="tuple">
+                        <item type="str">ruia</item>
+                        <item type="dict">
+                            <item type="tuple">
+                                <item type="str">vnc_host</item>
+                                <item type="str">192.168.11.140</item>
+                            </item>
+                            <item type="tuple">
+                                <item type="str">vnc_port</item>
+                                <item type="int">5900</item>
+                            </item>
+                            <item type="tuple">
+                                <item type="str">vnc_password</item>
+                                <item type="str">MjkAdm</item>
+                            </item>
+                            <item type="tuple">
+                                <item type="str">rest_host</item>
+                                <item type="str">127.0.0.1</item>
+                            </item>
+                            <item type="tuple">
+                                <item type="str">rest_port</item>
+                                <item type="int">6001</item>
+                            </item>
+                        </item>
+                    </item>
+                    <item type="tuple">
+                        <item type="str">tc_settings</item>
+                        <item type="dict">
+                            <item type="tuple">
+                                <item type="str">url</item>
+                                <item type="str">127.0.0.1:5005</item>
+                            </item>
+                        </item>
+                    </item>
+                    <item type="tuple">
+                        <item type="str">cp_settings</item>
+                        <item type="dict">
+                            <item type="tuple">
+                                <item type="str">axes_conversion</item>
+                                <item type="dict">
+                                    <item type="tuple">
+                                        <item type="str">y</item>
+                                        <item type="str">-x</item>
+                                    </item>
+                                    <item type="tuple">
+                                        <item type="str">z</item>
+                                        <item type="str">-y</item>
+                                    </item>
+                                </item>
+                            </item>
+                            <item type="tuple">
+                                <item type="str">beta_threshold</item>
+                                <item type="float">0.05</item>
+                            </item>
+                            <item type="tuple">
+                                <item type="str">beta_x</item>
+                                <item type="float">1.0</item>
+                            </item>
+                            <item type="tuple">
+                                <item type="str">beta_y</item>
+                                <item type="float">1.0</item>
+                            </item>
+                            <item type="tuple">
+                                <item type="str">ref_mm</item>
+                                <item type="float">15.0</item>
+                            </item>
+                            <item type="tuple">
+                                <item type="str">ref_pixels</item>
+                                <item type="float">81.5</item>
+                            </item>
+                            <item type="tuple">
+                                <item type="str">initial_depth</item>
+                                <item type="float">199.801171875</item>
+                            </item>
+                            <item type="tuple">
+                                <item type="str">image_shape</item>
+                                <item type="tuple">
+                                    <item type="int">768</item>
+                                    <item type="int">1024</item>
+                                </item>
+                            </item>
+                            <item type="tuple">
+                                <item type="str">gamma</item>
+                                <item type="float">0.7380423115949254</item>
+                            </item>
+                        </item>
+                    </item>
+                    <item type="tuple">
+                        <item type="str">c2tc</item>
+                        <item type="dict">
+                            <item type="tuple">
+                                <item type="str">x</item>
+                                <item type="float">75.362890625</item>
+                            </item>
+                            <item type="tuple">
+                                <item type="str">y</item>
+                                <item type="float">-29.5</item>
+                            </item>
+                            <item type="tuple">
+                                <item type="str">z</item>
+                                <item type="float">-164.50617919921876</item>
+                            </item>
+                        </item>
+                    </item>
+                    <item type="tuple">
+                        <item type="str">p2tc</item>
+                        <item type="dict">
+                            <item type="tuple">
+                                <item type="str">x</item>
+                                <item type="float">-11.0</item>
+                            </item>
+                            <item type="tuple">
+                                <item type="str">y</item>
+                                <item type="float">0.0</item>
+                            </item>
+                            <item type="tuple">
+                                <item type="str">z</item>
+                                <item type="int">210</item>
+                            </item>
+                        </item>
+                    </item>
+                    <item type="tuple">
+                        <item type="str">tc_target_depth</item>
+                        <item type="float">80.000390625</item>
+                    </item>
+                    <item type="tuple">
+                        <item type="str">iid</item>
+                        <item type="str">REVO-01</item>
+                    </item>
+                </item>
+            </item>
+        </instruments_parameters>
+    </IS>
+</root>
