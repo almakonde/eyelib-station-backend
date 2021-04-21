@@ -184,43 +184,27 @@
 
         <HeadRest_Z type="element">
             <length_mm type="float">209.94750000000002</length_mm>
-            <limit_C_up_mm type="float">0.0</limit_C_up_mm>
-            <limit_C_down_mm type="float">0.0</limit_C_down_mm>
         </HeadRest_Z>
         <FrontPanel type="element">
             <length_mm type="float">351.96374999999995</length_mm>
-            <limit_C_up_mm type="float">0.0</limit_C_up_mm>
-            <limit_C_down_mm type="float">0.0</limit_C_down_mm>
         </FrontPanel>
         <InstrumentTable_X type="element">
             <length_mm type="float">118.99000000000001</length_mm>
-            <limit_C_up_mm type="float">0.0</limit_C_up_mm>
-            <limit_C_down_mm type="float">0.0</limit_C_down_mm>
         </InstrumentTable_X>
         <InstrumentTable_Y type="element">
             <length_mm type="float">79.97875</length_mm>
-            <limit_C_up_mm type="float">0.0</limit_C_up_mm>
-            <limit_C_down_mm type="float">0.0</limit_C_down_mm>
         </InstrumentTable_Y>
         <InstrumentTable_Z type="element">
             <length_mm type="float">1517.9837499999999</length_mm>
-            <limit_C_up_mm type="float">749.9849999999999</limit_C_up_mm>
-            <limit_C_down_mm type="float">755.0074999999999</limit_C_down_mm>
         </InstrumentTable_Z>
         <Tray_01 type="element">
             <length_mm type="float">564.99</length_mm>
-            <limit_C_up_mm type="float">0.0</limit_C_up_mm>
-            <limit_C_down_mm type="float">0.0</limit_C_down_mm>
         </Tray_01>
         <Tray_02 type="element">
             <length_mm type="float">564.99375</length_mm>
-            <limit_C_up_mm type="float">0.0</limit_C_up_mm>
-            <limit_C_down_mm type="float">0.0</limit_C_down_mm>
         </Tray_02>
         <Tray_03 type="element">
             <length_mm type="float">564.9875</length_mm>
-            <limit_C_up_mm type="float">0.0</limit_C_up_mm>
-            <limit_C_down_mm type="float">0.0</limit_C_down_mm>
         </Tray_03>
 
         <tbl_fp_ref_cr_offset type="dict">
