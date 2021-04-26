@@ -27,91 +27,7 @@
         </PS1_Table_FrontPanel_Reference>
         <PS1_Table type="element">
             <taught_points type="dict">
-                <item type="tuple">
-                    <item type="str">High Fetch/Deposit</item>
-                    <item type="dict">
-                        <item type="tuple">
-                            <item type="str">x</item>
-                            <item type="float">1.698828125</item>
-                        </item>
-                        <item type="tuple">
-                            <item type="str">y</item>
-                            <item type="float">46.49296875</item>
-                        </item>
-                        <item type="tuple">
-                            <item type="str">z</item>
-                            <item type="float">1404.1928979492188</item>
-                        </item>
-                    </item>
-                </item>
-                <item type="tuple">
-                    <item type="str">Low Fetch/Deposit</item>
-                    <item type="dict">
-                        <item type="tuple">
-                            <item type="str">x</item>
-                            <item type="float">2.900390625</item>
-                        </item>
-                        <item type="tuple">
-                            <item type="str">y</item>
-                            <item type="float">44.580859375</item>
-                        </item>
-                        <item type="tuple">
-                            <item type="str">z</item>
-                            <item type="float">706.5517456054688</item>
-                        </item>
-                    </item>
-                </item>
-                <item type="tuple">
-                    <item type="str">Tray 01 Fetch/Deposit</item>
-                    <item type="dict">
-                        <item type="tuple">
-                            <item type="str">x</item>
-                            <item type="float">2.798828125</item>
-                        </item>
-                        <item type="tuple">
-                            <item type="str">y</item>
-                            <item type="float">48.39296875</item>
-                        </item>
-                        <item type="tuple">
-                            <item type="str">z</item>
-                            <item type="float">1400.1912377929689</item>
-                        </item>
-                    </item>
-                </item>
-                <item type="tuple">
-                    <item type="str">Tray 02 Fetch/Deposit</item>
-                    <item type="dict">
-                        <item type="tuple">
-                            <item type="str">x</item>
-                            <item type="float">2.900390625</item>
-                        </item>
-                        <item type="tuple">
-                            <item type="str">y</item>
-                            <item type="float">44.580859375</item>
-                        </item>
-                        <item type="tuple">
-                            <item type="str">z</item>
-                            <item type="float">706.5517456054688</item>
-                        </item>
-                    </item>
-                </item>
-                <item type="tuple">
-                    <item type="str">Tray 03 Fetch/Deposit</item>
-                    <item type="dict">
-                        <item type="tuple">
-                            <item type="str">y</item>
-                            <item type="float">41.563671875</item>
-                        </item>
-                        <item type="tuple">
-                            <item type="str">x</item>
-                            <item type="float">3.0</item>
-                        </item>
-                        <item type="tuple">
-                            <item type="str">z</item>
-                            <item type="float">56.847722167968755</item>
-                        </item>
-                    </item>
-                </item>
+                            
             </taught_points>
         </PS1_Table>
         <PS1_Tray_01 type="element">
@@ -197,15 +113,6 @@
         <InstrumentTable_Z type="element">
             <length_mm type="float">1517.9837499999999</length_mm>
         </InstrumentTable_Z>
-        <Tray_01 type="element">
-            <length_mm type="float">564.99</length_mm>
-        </Tray_01>
-        <Tray_02 type="element">
-            <length_mm type="float">564.99375</length_mm>
-        </Tray_02>
-        <Tray_03 type="element">
-            <length_mm type="float">564.9875</length_mm>
-        </Tray_03>
 
         <tbl_fp_ref_cr_offset type="dict">
             <item type="tuple">
@@ -221,9 +128,7 @@
                 <item type="float">0.0</item>
             </item>
         </tbl_fp_ref_cr_offset>
-        <automation type="element">
-            <prefetch_offset_z_mm type="int">-30</prefetch_offset_z_mm>
-            <postfetch_offset_z_mm type="int">50</postfetch_offset_z_mm>
+        <automation type="element">           
             <tbl_fp_calibration_neutral_offset_mm type="dict">
                 <item type="tuple">
                     <item type="str">table x</item>
@@ -252,34 +157,7 @@
                     <item type="int">-550</item>
                 </item>
             </tbl_fp_calibration_tc_calib_offset_mm>
-            <prefetch_speed_mm_s type="dict">
-                <item type="tuple">
-                    <item type="str">x</item>
-                    <item type="float">20.0</item>
-                </item>
-                <item type="tuple">
-                    <item type="str">y</item>
-                    <item type="float">20.0</item>
-                </item>
-                <item type="tuple">
-                    <item type="str">z</item>
-                    <item type="float">50.0</item>
-                </item>
-            </prefetch_speed_mm_s>
-            <slow_fetch_speed_mm_s type="dict">
-                <item type="tuple">
-                    <item type="str">x</item>
-                    <item type="float">10.0</item>
-                </item>
-                <item type="tuple">
-                    <item type="str">y</item>
-                    <item type="float">10.0</item>
-                </item>
-                <item type="tuple">
-                    <item type="str">z</item>
-                    <item type="float">15.0</item>
-                </item>
-            </slow_fetch_speed_mm_s>
+            
             <neutral_speed_mm_s type="dict">
                 <item type="tuple">
                     <item type="str">table x</item>
@@ -306,12 +184,6 @@
                     <item type="float">50.0</item>
                 </item>
             </neutral_speed_mm_s>
-            <tray_speed_mm_s type="dict">
-                <item type="tuple">
-                    <item type="str">tray</item>
-                    <item type="float">150.0</item>
-                </item>
-            </tray_speed_mm_s>
             <chin_rest_dz_mm type="int">38</chin_rest_dz_mm>
             <frontpanel_home_z_mm type="int">1310</frontpanel_home_z_mm>
             <frontpanel_z_margin_mm type="int">30</frontpanel_z_margin_mm>

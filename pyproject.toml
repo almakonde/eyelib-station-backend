@@ -16,7 +16,7 @@ pywin32 = {'version'="225",  'platform'="win32"}
 mjk-utils = {git = "ssh://git@192.168.11.103:30001/software/mjk-utils.git", branch = "master"}
 mjk-backend = {git = "ssh://git@192.168.11.103:30001/software/mjk-backend.git", branch = "master"}
 mjk-vnc-backend = {git = "ssh://git@192.168.11.103:30001/software/mjk-vnc-backend.git", branch = "master"}
-station-common = {git = "ssh://git@192.168.11.103:30001/software/gen2-station-common.git", branch = "master"}
+station-common = {path="../gen2-station-common"}
 
 
 [tool.poetry.dev-dependencies]

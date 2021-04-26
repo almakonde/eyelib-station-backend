@@ -176,12 +176,12 @@ if con:
                         station_view = StationView(app, psa)
                         ''' Generate all programs state diagrams'''
                         # for filtered in [False, True]:                       
-                        #     for prog in psa.programs.keys():
+                        #     for prog in ['gen2']:#psa.programs.keys():
                         #         psa.switch_program(prog)
                         #         filtered_target_states = []
                         #         if filtered:
                         #             filtered_target_states = ['fault']
-                        #             if prog in ['eyel_421', 'full_auto']:
+                        #             if prog in ['gen2', 'full_auto']:
                         #                 filtered_target_states.append('restart')
                         #         filtered_text = ''
                         #         if len(filtered_target_states)>0:
