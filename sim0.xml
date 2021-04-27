@@ -30,74 +30,7 @@
                             
             </taught_points>
         </PS1_Table>
-        <PS1_Tray_01 type="element">
-            <taught_points type="dict">
-                <item type="tuple">
-                    <item type="str">out</item>
-                    <item type="dict">
-                        <item type="tuple">
-                            <item type="str">tray</item>
-                            <item type="float">531.9925000000001</item>
-                        </item>
-                    </item>
-                </item>
-                <item type="tuple">
-                    <item type="str">in</item>
-                    <item type="dict">
-                        <item type="tuple">
-                            <item type="str">tray</item>
-                            <item type="float">2.7312499999999993</item>
-                        </item>
-                    </item>
-                </item>
-            </taught_points>
-        </PS1_Tray_01>
-        <PS1_Tray_02 type="element">
-            <taught_points type="dict">
-                <item type="tuple">
-                    <item type="str">out</item>
-                    <item type="dict">
-                        <item type="tuple">
-                            <item type="str">tray</item>
-                            <item type="float">531.99125</item>
-                        </item>
-                    </item>
-                </item>
-                <item type="tuple">
-                    <item type="str">in</item>
-                    <item type="dict">
-                        <item type="tuple">
-                            <item type="str">tray</item>
-                            <item type="float">3.3549999999999995</item>
-                        </item>
-                    </item>
-                </item>
-            </taught_points>
-        </PS1_Tray_02>
-        <PS1_Tray_03 type="element">
-            <taught_points type="dict">
-                <item type="tuple">
-                    <item type="str">out</item>
-                    <item type="dict">
-                        <item type="tuple">
-                            <item type="str">tray</item>
-                            <item type="float">719.9937500000001</item>
-                        </item>
-                    </item>
-                </item>
-                <item type="tuple">
-                    <item type="str">in</item>
-                    <item type="dict">
-                        <item type="tuple">
-                            <item type="str">tray</item>
-                            <item type="float">3.3512499999999985</item>
-                        </item>
-                    </item>
-                </item>
-            </taught_points>
-        </PS1_Tray_03>
-
-
+        
         <HeadRest_Z type="element">
             <length_mm type="float">209.94750000000002</length_mm>
         </HeadRest_Z>
@@ -285,23 +218,11 @@
         </PS1_HeadRest>
     </PS1>
     <IS type="element">
-        <instruments type="dict">
-            <item type="tuple">
-                <item type="str">DI001-01</item>
-                <item type="str">DI001</item>
-            </item>
-            <item type="tuple">
-                <item type="str">DRS-01</item>
-                <item type="str">DRS</item>
-            </item>
+        <instruments type="dict">           
             <item type="tuple">
                 <item type="str">VX120-01</item>
                 <item type="str">VX120</item>
-            </item>
-            <item type="tuple">
-                <item type="str">VX120-02</item>
-                <item type="str">VX120</item>
-            </item>
+            </item>           
             <item type="tuple">
                 <item type="str">REVO-01</item>
                 <item type="str">REVO</item>

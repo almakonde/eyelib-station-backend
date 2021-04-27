@@ -154,7 +154,7 @@ if con:
                 if settings.simulation:
                     simulation_view = SimulationView(app, sim0)
 
-                    simulation_view._put_timescaling(2)
+                    simulation_view._put_timescaling(5)
 
                     vx120 = platform.instrument_storage.get_instrument_from_iid('VX120-01')
                     revo = platform.instrument_storage.get_instrument_from_iid('REVO-01')
