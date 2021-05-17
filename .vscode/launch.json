@@ -12,7 +12,8 @@
             "program": "${workspaceFolder}\\station_backend\\main.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
-            "env": {"PYTHONPATH": "${workspaceFolder}"}
+            "env": {"PYTHONPATH": "${workspaceFolder}"},
+            "autoReload": {"enable": true}
         },
         {
             "name": "Dummy Exams server",

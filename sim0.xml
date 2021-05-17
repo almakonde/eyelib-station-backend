@@ -31,9 +31,9 @@
             </taught_points>
         </PS1_Table>
         
-        <HeadRest_Z type="element">
+        <ChinRest_Z type="element">
             <length_mm type="float">209.94750000000002</length_mm>
-        </HeadRest_Z>
+        </ChinRest_Z>
         <FrontPanel type="element">
             <length_mm type="float">351.96374999999995</length_mm>
         </FrontPanel>
@@ -185,13 +185,13 @@
             </morphology_settings>
         </Patient>
 
-        <PS1_HeadRest type="element">
+        <PS1_ChinRest type="element">
             <taught_points type="dict">
                 <item type="tuple">
                     <item type="str">opened</item>
                     <item type="dict">
                         <item type="tuple">
-                            <item type="str">head_rest</item>
+                            <item type="str">chin_rest</item>
                             <item type="float">20.003750000000004</item>
                         </item>
                     </item>
@@ -200,22 +200,13 @@
                     <item type="str">closed</item>
                     <item type="dict">
                         <item type="tuple">
-                            <item type="str">head_rest</item>
+                            <item type="str">chin_rest</item>
                             <item type="float">192.99499999999998</item>
                         </item>
                     </item>
-                </item>
-                <item type="tuple">
-                    <item type="str">open</item>
-                    <item type="dict">
-                        <item type="tuple">
-                            <item type="str">head_rest</item>
-                            <item type="float">13.008749999999985</item>
-                        </item>
-                    </item>
-                </item>
+                </item>                
             </taught_points>
-        </PS1_HeadRest>
+        </PS1_ChinRest>
     </PS1>
     <IS type="element">
         <instruments type="dict">           
