@@ -26,7 +26,7 @@ class SimulationTrackingCamera(Restful, Stream):
         self._ps.axes['InstrumentTable_X'].bind('position_mm', self.on_x_movement)
         self._ps.axes['InstrumentTable_Y'].bind('position_mm', self.on_y_movement)
         self._ps.axes['InstrumentTable_Z'].bind('position_mm', self.on_z_movement)
-        self._ps.axes['ChinRest_Z'].bind('position_mm', self.on_hr_movement)
+        self._ps.axes['ChinRest_Z'].bind('position_mm', self.on_cr_movement)
         self._ps.bind('instrument', self.on_instrument_changed)
         self._ps.safety.bind('presence', self.on_presence_changed)
 
@@ -98,8 +98,9 @@ class SimulationTrackingCamera(Restful, Stream):
     def on_z_movement(self, *args, **kwargs):
         self.push_event('tbz', {'relative_z_mm': self._get_tbz_rel()})
 
-    def on_hr_movement(self, *args, **kwargs):
-        self.push_event('cr', {'cr_mm': self._ps.axes['ChinRest_Z'].position_mm})
+    def on_cr_movement(self, *args, **kwargs):
+        #Todo: Find the event
+        self.push_event('hr', {'cr_mm': self._ps.axes['ChinRest_Z'].position_mm})
 
     def on_instrument_changed(self, *args, **kwargs):
         activated = False

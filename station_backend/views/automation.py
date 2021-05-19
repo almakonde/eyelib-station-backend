@@ -21,8 +21,8 @@ class AutomationAdjust:
             'right': ('InstrumentTable_Y', -1.0*self.epsilon),
             'front': ('InstrumentTable_X', self.epsilon),
             'back': ('InstrumentTable_X', -1.0*self.epsilon),
-            'cr_up': ('ChinRest_Z', 2.0*self.epsilon),
-            'cr_down': ('ChinRest_Z', -2.0*self.epsilon),
+            'cr_up': ('ChinRest_Z', -2.0*self.epsilon),
+            'cr_down': ('ChinRest_Z', 2.0*self.epsilon),
             'fp_up': ('FrontPanel', 5.0*self.epsilon),
             'fp_down': ('FrontPanel', -5.0*self.epsilon)
         }
