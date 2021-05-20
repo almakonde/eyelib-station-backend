@@ -22,7 +22,12 @@ class SimulationTrackingCamera(Restful, Stream):
         self._pixel_to_mm_ratio = 0.5
 
         self._tray_z_rel_mm = kwargs.get("tray_z_rel_mm", 0.0)
-           
+
+        '''
+        When one of the following _ps properties is changed the a function is called (self.on_...).
+        The function push an event. 
+        The event is treated on the station-rtcu/sim.py _events_run loop.
+        ''' 
         self._ps.axes['InstrumentTable_X'].bind('position_mm', self.on_x_movement)
         self._ps.axes['InstrumentTable_Y'].bind('position_mm', self.on_y_movement)
         self._ps.axes['InstrumentTable_Z'].bind('position_mm', self.on_z_movement)
@@ -99,7 +104,6 @@ class SimulationTrackingCamera(Restful, Stream):
         self.push_event('tbz', {'relative_z_mm': self._get_tbz_rel()})
 
     def on_cr_movement(self, *args, **kwargs):
-        #Todo: Find the event
         self.push_event('cr', {'cr_mm': self._ps.axes['ChinRest_Z'].position_mm})
 
     def on_instrument_changed(self, *args, **kwargs):

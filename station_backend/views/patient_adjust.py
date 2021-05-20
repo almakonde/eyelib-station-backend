@@ -16,9 +16,11 @@ class PatientAdjustView(Restful):
 
     @roles_required("stationFrontendAllowed")
     def get(self, *args, **kwargs):
-        data = {
+        # Collect data for station-frontend from station-common
+        data = {            
             'chin_z': self._psa.chin_z_from_front_panel(),
-            'chin_to_eyeline': self._psa.chin_to_eyeline_from_headrest_z(),
+            'chin_to_eyeline': self._psa.chin_to_eyeline_from_chinrest_z(),
+            # fixed values, defined at initialization from sim0.xml
             'chin_to_eyeline_min': self._psa.chin_to_eyeline_min(),
             'chin_z_max': self._psa.chin_z_max(),
             'chin_to_eyeline_max': self._psa.chin_to_eyeline_max(),
@@ -37,7 +39,7 @@ class PatientAdjustView(Restful):
                     self._ps.axes['FrontPanel'].move_to_mm(fp)
                     return jsonify({})
                 elif command == 'chin_to_eyeline':
-                    fp = self._psa.headrest_from_chin_to_eyeline(data)
+                    fp = self._psa.chinrest_from_chin_to_eyeline(data)
                     self._ps.axes['ChinRest_Z'].move_to_mm(fp)
                     return jsonify({})
                 else:
@@ -49,7 +51,7 @@ class PatientAdjustView(Restful):
 
     @roles_required("stationFrontendAllowed")
     def _on_crz_changed(self, *args, **kwargs):        
-        chin_to_eyeline = self._psa.chin_to_eyeline_from_headrest_z()
+        chin_to_eyeline = self._psa.chin_to_eyeline_from_chinrest_z()
         logger.info("sse.push: chin_to_eyeline=%f",chin_to_eyeline)
         sse.push('patient_adjust', 'chin_to_eyeline', chin_to_eyeline)
 
