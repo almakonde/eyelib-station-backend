@@ -100,7 +100,7 @@ class SimulationTrackingCamera(Restful, Stream):
 
     def on_cr_movement(self, *args, **kwargs):
         #Todo: Find the event
-        self.push_event('hr', {'cr_mm': self._ps.axes['ChinRest_Z'].position_mm})
+        self.push_event('cr', {'cr_mm': self._ps.axes['ChinRest_Z'].position_mm})
 
     def on_instrument_changed(self, *args, **kwargs):
         activated = False
