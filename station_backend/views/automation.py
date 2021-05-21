@@ -21,18 +21,19 @@ class AutomationAdjust:
             'right': ('InstrumentTable_Y', -1.0*self.epsilon),
             'front': ('InstrumentTable_X', self.epsilon),
             'back': ('InstrumentTable_X', -1.0*self.epsilon),
-            'hr_up': ('HeadRest_Z', -2.0*self.epsilon),
-            'hr_down': ('HeadRest_Z', 2.0*self.epsilon),
+            'cr_up': ('ChinRest_Z', 2.0*self.epsilon),
+            'cr_down': ('ChinRest_Z', -2.0*self.epsilon),
             'fp_up': ('FrontPanel', 5.0*self.epsilon),
             'fp_down': ('FrontPanel', -5.0*self.epsilon)
         }
 
     def adjust(self, action) -> bool:
-        ret = False
+        ret = False        
         if self.psa:
             if action:
                 axis, increment = self.actions.get(action, (None, 0.0))
                 if axis is not None:
+                    logger.info("adjust: %s by %f",axis,increment)
                     resume = (self.psa.running_state == "running")
                     self.psa.pause()
                     self.psa.patient_station.axes[axis].move_by_mm(increment)

@@ -31,9 +31,9 @@
             </taught_points>
         </PS1_Table>
         
-        <HeadRest_Z type="element">
+        <ChinRest_Z type="element">
             <length_mm type="float">209.94750000000002</length_mm>
-        </HeadRest_Z>
+        </ChinRest_Z>
         <FrontPanel type="element">
             <length_mm type="float">351.96374999999995</length_mm>
         </FrontPanel>
@@ -120,8 +120,7 @@
             <chin_rest_dz_mm type="int">38</chin_rest_dz_mm>
             <frontpanel_home_z_mm type="int">1310</frontpanel_home_z_mm>
             <frontpanel_z_margin_mm type="int">30</frontpanel_z_margin_mm>
-            <headrest_home_z_mm type="int">200</headrest_home_z_mm>
-            <headrest_clearance_mm type="int">45</headrest_clearance_mm>
+            <chinrest_clearance_mm type="int">45</chinrest_clearance_mm>
         </automation>
         <PatientInteraction type="element">
             <remote_speech_address type="str">127.0.0.1:1234</remote_speech_address>
@@ -185,13 +184,13 @@
             </morphology_settings>
         </Patient>
 
-        <PS1_HeadRest type="element">
+        <PS1_ChinRest type="element">
             <taught_points type="dict">
                 <item type="tuple">
                     <item type="str">opened</item>
                     <item type="dict">
                         <item type="tuple">
-                            <item type="str">head_rest</item>
+                            <item type="str">chin_rest</item>
                             <item type="float">20.003750000000004</item>
                         </item>
                     </item>
@@ -200,22 +199,13 @@
                     <item type="str">closed</item>
                     <item type="dict">
                         <item type="tuple">
-                            <item type="str">head_rest</item>
+                            <item type="str">chin_rest</item>
                             <item type="float">192.99499999999998</item>
                         </item>
                     </item>
-                </item>
-                <item type="tuple">
-                    <item type="str">open</item>
-                    <item type="dict">
-                        <item type="tuple">
-                            <item type="str">head_rest</item>
-                            <item type="float">13.008749999999985</item>
-                        </item>
-                    </item>
-                </item>
+                </item>                
             </taught_points>
-        </PS1_HeadRest>
+        </PS1_ChinRest>
     </PS1>
     <IS type="element">
         <instruments type="dict">           

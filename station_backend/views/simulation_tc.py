@@ -22,11 +22,16 @@ class SimulationTrackingCamera(Restful, Stream):
         self._pixel_to_mm_ratio = 0.5
 
         self._tray_z_rel_mm = kwargs.get("tray_z_rel_mm", 0.0)
-           
+
+        '''
+        When one of the following _ps properties is changed the a function is called (self.on_...).
+        The function push an event. 
+        The event is treated on the station-rtcu/sim.py _events_run loop.
+        ''' 
         self._ps.axes['InstrumentTable_X'].bind('position_mm', self.on_x_movement)
         self._ps.axes['InstrumentTable_Y'].bind('position_mm', self.on_y_movement)
         self._ps.axes['InstrumentTable_Z'].bind('position_mm', self.on_z_movement)
-        self._ps.axes['HeadRest_Z'].bind('position_mm', self.on_hr_movement)
+        self._ps.axes['ChinRest_Z'].bind('position_mm', self.on_cr_movement)
         self._ps.bind('instrument', self.on_instrument_changed)
         self._ps.safety.bind('presence', self.on_presence_changed)
 
@@ -68,10 +73,10 @@ class SimulationTrackingCamera(Restful, Stream):
 
         data['relative_z_mm'] = self._get_tbz_rel()
         data['relative_y_mm'] = self._get_tby_rel()
-        if self._ps.axes['HeadRest_Z'].position_mm is not None:
-            data['hr_mm'] = self._ps.axes['HeadRest_Z'].position_mm
+        if self._ps.axes['ChinRest_Z'].position_mm is not None:
+            data['cr_mm'] = self._ps.axes['ChinRest_Z'].position_mm
         else:
-            data['hr_mm'] = 0.0
+            data['cr_mm'] = 0.0
 
         return jsonify(data)
 
@@ -98,8 +103,8 @@ class SimulationTrackingCamera(Restful, Stream):
     def on_z_movement(self, *args, **kwargs):
         self.push_event('tbz', {'relative_z_mm': self._get_tbz_rel()})
 
-    def on_hr_movement(self, *args, **kwargs):
-        self.push_event('hr', {'hr_mm': self._ps.axes['HeadRest_Z'].position_mm})
+    def on_cr_movement(self, *args, **kwargs):
+        self.push_event('cr', {'cr_mm': self._ps.axes['ChinRest_Z'].position_mm})
 
     def on_instrument_changed(self, *args, **kwargs):
         activated = False
