@@ -40,8 +40,8 @@ class SimulationTrackingCamera(Restful, Stream):
         tbz_rel = 0.0
         table_fp_ref = self._ps.tbl_fp
         point = table_fp_ref.taught_points['Table/Front Panel Reference']
-        if self._ps.axes['FrontPanel'].position_mm is not None and self._ps.axes['InstrumentTable_Z'].position_mm is not None:
-            fp_rel_offset =  self._ps.axes['FrontPanel'].position_mm - point['front panel']
+        if self._ps.axes['StationHeight'].position_mm is not None and self._ps.axes['InstrumentTable_Z'].position_mm is not None:
+            fp_rel_offset =  self._ps.axes['StationHeight'].position_mm - point['front panel']
             tbz_rel_offset = self._ps.axes['InstrumentTable_Z'].position_mm - point['table z'] 
             tbz_rel = tbz_rel_offset - fp_rel_offset
         return tbz_rel

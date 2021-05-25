@@ -12,7 +12,7 @@ class PatientAdjustView(Restful):
         self._ps = psa.patient_station
 
         self._ps.axes['ChinRest_Z'].bind('position_mm', self._on_crz_changed)
-        self._ps.axes['FrontPanel'].bind('position_mm', self._on_fp_changed)
+        self._ps.axes['StationHeight'].bind('position_mm', self._on_fp_changed)
 
     @roles_required("stationFrontendAllowed")
     def get(self, *args, **kwargs):
@@ -36,7 +36,7 @@ class PatientAdjustView(Restful):
             if data is not None:
                 if command == 'chin_z':
                     fp = self._psa.front_panel_from_chin_z(data)
-                    self._ps.axes['FrontPanel'].move_to_mm(fp)
+                    self._ps.axes['StationHeight'].move_to_mm(fp)
                     return jsonify({})
                 elif command == 'chin_to_eyeline':
                     fp = self._psa.chinrest_from_chin_to_eyeline(data)
