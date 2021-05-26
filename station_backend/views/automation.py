@@ -23,8 +23,8 @@ class AutomationAdjust:
             'back': ('InstrumentTable_X', -1.0*self.epsilon),
             'cr_up': ('ChinRest_Z', 2.0*self.epsilon),
             'cr_down': ('ChinRest_Z', -2.0*self.epsilon),
-            'fp_up': ('StationHeight', 5.0*self.epsilon),
-            'fp_down': ('StationHeight', -5.0*self.epsilon)
+            'station_up': ('StationHeight', 5.0*self.epsilon),
+            'station_down': ('StationHeight', -5.0*self.epsilon)
         }
 
     def adjust(self, action) -> bool:

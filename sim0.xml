@@ -7,7 +7,7 @@
                     <item type="dict">
                         <item type="tuple">
                             <item type="str">front panel</item>
-                            <item type="float">0.0</item>
+                            <item type="float">1350.0</item>
                         </item>
                         <item type="tuple">
                             <item type="str">table x</item>
@@ -35,7 +35,7 @@
             <length_mm type="float">209.94750000000002</length_mm>
         </ChinRest_Z>
         <StationHeight type="element">
-            <length_mm type="float">352.0</length_mm>
+            <length_mm type="float">1700.0</length_mm>
         </StationHeight>
         <InstrumentTable_X type="element">
             <length_mm type="float">118.99000000000001</length_mm>
@@ -118,8 +118,8 @@
                 </item>
             </neutral_speed_mm_s>
             <chin_rest_dz_mm type="int">38</chin_rest_dz_mm>
-            <frontpanel_home_z_mm type="int">1310</frontpanel_home_z_mm>
-            <frontpanel_z_margin_mm type="int">30</frontpanel_z_margin_mm>
+            <stationheight_home_z_mm type="int">0</stationheight_home_z_mm>
+            <stationheight_z_margin_mm type="int">30</stationheight_z_margin_mm>
             <chinrest_clearance_mm type="int">45</chinrest_clearance_mm>
         </automation>
         <PatientInteraction type="element">
