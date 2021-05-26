@@ -1,13 +1,13 @@
 <root>
     <PS1 type="element">
-        <PS1_Table_FrontPanel_Reference type="element">
+        <PS1_Table_StationHeight_Reference type="element">
             <taught_points type="dict">
                 <item type="tuple">
                     <item type="str">Table/Front Panel Reference</item>
                     <item type="dict">
                         <item type="tuple">
                             <item type="str">front panel</item>
-                            <item type="float">0.027045703125</item>
+                            <item type="float">1350.0</item>
                         </item>
                         <item type="tuple">
                             <item type="str">table x</item>
@@ -24,7 +24,7 @@
                     </item>
                 </item>
             </taught_points>
-        </PS1_Table_FrontPanel_Reference>
+        </PS1_Table_StationHeight_Reference>
         <PS1_Table type="element">
             <taught_points type="dict">
                             
@@ -34,9 +34,9 @@
         <ChinRest_Z type="element">
             <length_mm type="float">209.94750000000002</length_mm>
         </ChinRest_Z>
-        <FrontPanel type="element">
-            <length_mm type="float">351.96374999999995</length_mm>
-        </FrontPanel>
+        <StationHeight type="element">
+            <length_mm type="float">1700.0</length_mm>
+        </StationHeight>
         <InstrumentTable_X type="element">
             <length_mm type="float">118.99000000000001</length_mm>
         </InstrumentTable_X>
@@ -118,70 +118,14 @@
                 </item>
             </neutral_speed_mm_s>
             <chin_rest_dz_mm type="int">38</chin_rest_dz_mm>
-            <frontpanel_home_z_mm type="int">1310</frontpanel_home_z_mm>
-            <frontpanel_z_margin_mm type="int">30</frontpanel_z_margin_mm>
+            <stationheight_home_z_mm type="int">0</stationheight_home_z_mm>
+            <stationheight_z_margin_mm type="int">30</stationheight_z_margin_mm>
             <chinrest_clearance_mm type="int">45</chinrest_clearance_mm>
         </automation>
         <PatientInteraction type="element">
             <remote_speech_address type="str">127.0.0.1:1234</remote_speech_address>
         </PatientInteraction>
-        <Patient type="element">
-            <morphology_settings type="dict">
-                <item type="tuple">
-                    <item type="str">smallest</item>
-                    <item type="dict">
-                        <item type="tuple">
-                            <item type="str">height_mm</item>
-                            <item type="int">1500</item>
-                        </item>
-                        <item type="tuple">
-                            <item type="str">Seat_Z</item>
-                            <item type="float">100.0</item>
-                        </item>
-                        <item type="tuple">
-                            <item type="str">Seat_X</item>
-                            <item type="float">100.0</item>
-                        </item>
-                        <item type="tuple">
-                            <item type="str">FrontPanel</item>
-                            <item type="float">100.0</item>
-                        </item>
-                    </item>
-                </item>
-                <item type="tuple">
-                    <item type="str">tallest</item>
-                    <item type="dict">
-                        <item type="tuple">
-                            <item type="str">height_mm</item>
-                            <item type="float">1900.0</item>
-                        </item>
-                        <item type="tuple">
-                            <item type="str">Seat_Z</item>
-                            <item type="float">100.0</item>
-                        </item>
-                        <item type="tuple">
-                            <item type="str">Seat_X</item>
-                            <item type="float">100.0</item>
-                        </item>
-                        <item type="tuple">
-                            <item type="str">FrontPanel</item>
-                            <item type="float">100.0</item>
-                        </item>
-                    </item>
-                </item>
-                <item type="tuple">
-                    <item type="str">alpha_seat_z</item>
-                    <item type="float">0.0</item>
-                </item>
-                <item type="tuple">
-                    <item type="str">alpha_seat_x</item>
-                    <item type="float">0.0</item>
-                </item>
-                <item type="tuple">
-                    <item type="str">alpha_frontpanel</item>
-                    <item type="float">0.0</item>
-                </item>
-            </morphology_settings>
+        <Patient type="element">            
         </Patient>
 
         <PS1_ChinRest type="element">
