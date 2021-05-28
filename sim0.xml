@@ -1,109 +1,27 @@
 <root>
-    <PS1 type="element">
-        <PS1_Table_StationHeight_Reference type="element">
-            <taught_points type="dict">
-                <item type="tuple">
-                    <item type="str">Table/Front Panel Reference</item>
-                    <item type="dict">
-                        <item type="tuple">
-                            <item type="str">front panel</item>
-                            <item type="float">1350.0</item>
-                        </item>
-                        <item type="tuple">
-                            <item type="str">table x</item>
-                            <item type="float">110.160546875</item>
-                        </item>
-                        <item type="tuple">
-                            <item type="str">table y</item>
-                            <item type="float">42.49296875</item>
-                        </item>
-                        <item type="tuple">
-                            <item type="str">table z</item>
-                            <item type="float">956.5037182617189</item>
-                        </item>
-                    </item>
-                </item>
-            </taught_points>
-        </PS1_Table_StationHeight_Reference>
+    <PS1 type="element">      
         <PS1_Table type="element">
-            <taught_points type="dict">
-                            
-            </taught_points>
         </PS1_Table>
         
         <ChinRest_Z type="element">
-            <length_mm type="float">209.94750000000002</length_mm>
+            <length_mm type="float">210.0</length_mm>
         </ChinRest_Z>
         <StationHeight type="element">
             <length_mm type="float">1700.0</length_mm>
         </StationHeight>
         <InstrumentTable_X type="element">
-            <length_mm type="float">118.99000000000001</length_mm>
+            <length_mm type="float">119.0</length_mm>
         </InstrumentTable_X>
         <InstrumentTable_Y type="element">
-            <length_mm type="float">79.97875</length_mm>
+            <length_mm type="float">80.0</length_mm>
         </InstrumentTable_Y>
         <InstrumentTable_Z type="element">
-            <length_mm type="float">1517.9837499999999</length_mm>
+            <length_mm type="float">1518.0</length_mm>
         </InstrumentTable_Z>
-
-        <tbl_fp_ref_cr_offset type="dict">
-            <item type="tuple">
-                <item type="str">x</item>
-                <item type="float">-28.0</item>
-            </item>
-            <item type="tuple">
-                <item type="str">y</item>
-                <item type="float">0.0</item>
-            </item>
-            <item type="tuple">
-                <item type="str">z</item>
-                <item type="float">0.0</item>
-            </item>
-        </tbl_fp_ref_cr_offset>
-        <automation type="element">           
-            <tbl_fp_calibration_neutral_offset_mm type="dict">
-                <item type="tuple">
-                    <item type="str">table x</item>
-                    <item type="int">-120</item>
-                </item>
-                <item type="tuple">
-                    <item type="str">table y</item>
-                    <item type="int">0</item>
-                </item>
-                <item type="tuple">
-                    <item type="str">table z</item>
-                    <item type="int">-300</item>
-                </item>
-            </tbl_fp_calibration_neutral_offset_mm>
-            <tbl_fp_calibration_tc_calib_offset_mm type="dict">
-                <item type="tuple">
-                    <item type="str">table x</item>
-                    <item type="int">-120</item>
-                </item>
-                <item type="tuple">
-                    <item type="str">table y</item>
-                    <item type="int">0</item>
-                </item>
-                <item type="tuple">
-                    <item type="str">table z</item>
-                    <item type="int">-550</item>
-                </item>
-            </tbl_fp_calibration_tc_calib_offset_mm>
+       
+        <automation type="element">
             
-            <neutral_speed_mm_s type="dict">
-                <item type="tuple">
-                    <item type="str">table x</item>
-                    <item type="float">20.0</item>
-                </item>
-                <item type="tuple">
-                    <item type="str">table y</item>
-                    <item type="float">20.0</item>
-                </item>
-                <item type="tuple">
-                    <item type="str">table z</item>
-                    <item type="float">50.0</item>
-                </item>
+            <neutral_speed_mm_s type="dict">               
                 <item type="tuple">
                     <item type="str">x</item>
                     <item type="float">20.0</item>
