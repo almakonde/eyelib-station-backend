@@ -61,21 +61,7 @@
                 <item type="float">0.0</item>
             </item>
         </tbl_fp_ref_cr_offset>
-        <automation type="element">           
-            <tbl_fp_calibration_neutral_offset_mm type="dict">
-                <item type="tuple">
-                    <item type="str">table x</item>
-                    <item type="int">-120</item>
-                </item>
-                <item type="tuple">
-                    <item type="str">table y</item>
-                    <item type="int">0</item>
-                </item>
-                <item type="tuple">
-                    <item type="str">table z</item>
-                    <item type="int">-300</item>
-                </item>
-            </tbl_fp_calibration_neutral_offset_mm>            
+        <automation type="element">
             
             <neutral_speed_mm_s type="dict">
                 <item type="tuple">
