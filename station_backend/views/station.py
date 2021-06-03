@@ -20,6 +20,7 @@ class StationView(Restful):
         }
         self.getcommands = {
             'view': self.view,
+            'bc': self.bc,
             'audio_speech': self.audio_speech,
         }
 
@@ -55,6 +56,9 @@ class StationView(Restful):
         if self.psa.patient_station.examination is not None:
             ret = {k:v for k,v in self.psa.patient_station.examination.items() if k!='slots'}
         return ret
+
+    def bc(self, data):
+        return self.psa.patient_station.back_camera.tc_settings['url']
 
     def pick_examination(self, data):
         self.psa.patient_station.next_patient_examination()

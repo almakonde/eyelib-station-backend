@@ -1,8 +1,49 @@
 <root>
-    <PS1 type="element">      
+    <PS1 type="element">
         <PS1_Table type="element">
+            <taught_points type="dict">
+                <item type="tuple">
+                    <item type="str">instrument_1</item>
+                    <item type="dict">
+                        <item type="tuple">
+                            <item type="str">x</item>
+                            <item type="float">51.993750000000006</item>
+                        </item>
+                        <item type="tuple">
+                            <item type="str">y</item>
+                            <item type="float">35.006249999999994</item>
+                        </item>
+                    </item>
+                </item>
+                <item type="tuple">
+                    <item type="str">instrument_2</item>
+                    <item type="dict">
+                        <item type="tuple">
+                            <item type="str">x</item>
+                            <item type="float">51.995</item>
+                        </item>
+                        <item type="tuple">
+                            <item type="str">y</item>
+                            <item type="float">479.995</item>
+                        </item>
+                    </item>
+                </item>
+                <item type="tuple">
+                    <item type="str">camera</item>
+                    <item type="dict">
+                        <item type="tuple">
+                            <item type="str">x</item>
+                            <item type="float">4.996249999999999</item>
+                        </item>
+                        <item type="tuple">
+                            <item type="str">y</item>
+                            <item type="float">262.49</item>
+                        </item>
+                    </item>
+                </item>
+            </taught_points>
         </PS1_Table>
-        
+
         <ChinRest_Z type="element">
             <length_mm type="float">210.0</length_mm>
         </ChinRest_Z>
@@ -10,18 +51,18 @@
             <length_mm type="float">1700.0</length_mm>
         </StationHeight>
         <InstrumentTable_X type="element">
-            <length_mm type="float">119.0</length_mm>
+            <length_mm type="float">57.96875</length_mm>
         </InstrumentTable_X>
         <InstrumentTable_Y type="element">
-            <length_mm type="float">80.0</length_mm>
+            <length_mm type="float">524.9925000000001</length_mm>
         </InstrumentTable_Y>
         <InstrumentTable_Z type="element">
             <length_mm type="float">1518.0</length_mm>
         </InstrumentTable_Z>
-       
+
         <automation type="element">
-            
-            <neutral_speed_mm_s type="dict">               
+
+            <neutral_speed_mm_s type="dict">
                 <item type="tuple">
                     <item type="str">x</item>
                     <item type="float">20.0</item>
@@ -43,7 +84,7 @@
         <PatientInteraction type="element">
             <remote_speech_address type="str">127.0.0.1:1234</remote_speech_address>
         </PatientInteraction>
-        <Patient type="element">            
+        <Patient type="element">
         </Patient>
 
         <PS1_ChinRest type="element">
@@ -65,16 +106,70 @@
                             <item type="float">192.99499999999998</item>
                         </item>
                     </item>
-                </item>                
+                </item>
             </taught_points>
         </PS1_ChinRest>
+        <BackCamera type="element">
+            <cp_settings type="dict">
+                <item type="tuple">
+                    <item type="str">ref_pixels</item>
+                    <item type="float">137.5</item>
+                </item>
+                <item type="tuple">
+                    <item type="str">ref_mm</item>
+                    <item type="float">15.0</item>
+                </item>
+                <item type="tuple">
+                    <item type="str">image_shape</item>
+                    <item type="tuple">
+                        <item type="int">768</item>
+                        <item type="int">1024</item>
+                    </item>
+                </item>
+                <item type="tuple">
+                    <item type="str">beta_x</item>
+                    <item type="float">1.0</item>
+                </item>
+                <item type="tuple">
+                    <item type="str">beta_y</item>
+                    <item type="float">1.0</item>
+                </item>
+                <item type="tuple">
+                    <item type="str">gamma</item>
+                    <item type="float">1.0</item>
+                </item>
+                <item type="tuple">
+                    <item type="str">initial_depth</item>
+                    <item type="float">700.0</item>
+                </item>
+                <item type="tuple">
+                    <item type="str">axes_conversion</item>
+                    <item type="dict">
+                        <item type="tuple">
+                            <item type="str">y</item>
+                            <item type="str">-x</item>
+                        </item>
+                        <item type="tuple">
+                            <item type="str">z</item>
+                            <item type="str">-y</item>
+                        </item>
+                    </item>
+                </item>
+            </cp_settings>
+            <tc_settings type="dict">
+                <item type="tuple">
+                    <item type="str">url</item>
+                    <item type="str">127.0.0.1:5004</item>
+                </item>
+            </tc_settings>
+        </BackCamera>
     </PS1>
     <IS type="element">
-        <instruments type="dict">           
+        <instruments type="dict">
             <item type="tuple">
                 <item type="str">VX120-01</item>
                 <item type="str">VX120</item>
-            </item>           
+            </item>
             <item type="tuple">
                 <item type="str">REVO-01</item>
                 <item type="str">REVO</item>

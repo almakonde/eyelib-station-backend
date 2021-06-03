@@ -23,6 +23,7 @@ class InstrumentView(Restful):
 
         self.instrument = instrument
         self.vnc_url = None
+        self.tc_url = None
         self.instrument.bind('auto_targeting', self._on_auto_target_changed)
         self.instrument.bind('force_align', self._on_force_align_changed)
 
