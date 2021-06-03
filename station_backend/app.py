@@ -47,7 +47,7 @@ import time
 
 
 from station_common.implementation.sim.simulation import SimConnection, Simulation
-from station_common.implementation.sim.poc_v1 import poc_v1_simulation
+from station_common.implementation.sim.gen2 import gen2_simulation
 from station_common.platform import EyeLibPlatform
 from station_common.connection import connection_factory
 
@@ -102,7 +102,7 @@ login_view = LoginView(app)
 logout_view = LogoutView(app)
 
 if settings.simulation:
-    sim0 = poc_v1_simulation("sim0")
+    sim0 = gen2_simulation("sim0")
     addr = "sim0"
     
 else:
