@@ -58,7 +58,10 @@ class StationView(Restful):
         return ret
 
     def bc(self, data):
-        return self.psa.patient_station.back_camera.tc_settings['url']
+        return {
+                'tc_url': self.psa.patient_station.back_camera.tc_settings['url'],
+                'extents_mm': self.psa.patient_station.back_camera.get_extents_mm()
+                }
 
     def pick_examination(self, data):
         self.psa.patient_station.next_patient_examination()
