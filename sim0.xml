@@ -113,7 +113,7 @@
             <cp_settings type="dict">
                 <item type="tuple">
                     <item type="str">ref_pixels</item>
-                    <item type="float">137.5</item>
+                    <item type="float">30.0</item>
                 </item>
                 <item type="tuple">
                     <item type="str">ref_mm</item>
