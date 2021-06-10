@@ -15,8 +15,6 @@ class AutomationAdjust:
         self.epsilon = 0.5
 
         self.actions = {
-            'up': ('InstrumentTable_Z', self.epsilon),
-            'down': ('InstrumentTable_Z', -1.0*self.epsilon),
             'left': ('InstrumentTable_Y', self.epsilon),
             'right': ('InstrumentTable_Y', -1.0*self.epsilon),
             'front': ('InstrumentTable_X', self.epsilon),
