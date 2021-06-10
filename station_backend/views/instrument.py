@@ -1,9 +1,7 @@
 from flask import jsonify, request, make_response
 from mjk_backend.restful import Restful
 
-# from station_backend.views.vnc import VNCView
 from mjk_vnc_backend.vnc import VNCView
-from station_backend.views.tracking_camera import TCAdjustView
 
 from station_backend import sse
 
@@ -25,14 +23,7 @@ class InstrumentView(Restful):
         self.vnc_url = None
         self.tc_url = None
         self.instrument.bind('auto_targeting', self._on_auto_target_changed)
-        self.instrument.bind('force_align', self._on_force_align_changed)
-
-        if hasattr(self.instrument, 'tracking_camera'):
-            
-            self.tca = TCAdjustView(app, psa, instrument, name=instrument.iid.lower()+'_tca', path=self._path+'/tca')
-
-            if hasattr(self.instrument.tracking_camera, 'rest_url'):
-                self.tc_url = self.instrument.tracking_camera.rest_url
+        self.instrument.bind('force_align', self._on_force_align_changed)        
 
         if hasattr(self.instrument, 'ruia'):
             self.instrument.ruia.connect()
