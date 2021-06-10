@@ -28,17 +28,9 @@ class SimulationBackCamera(Restful, Stream):
         ''' 
         # self._ps.axes['InstrumentTable_X'].bind('position_mm', self.on_x_movement)
         self._ps.axes['InstrumentTable_Y'].bind('position_mm', self.on_y_movement)
-        # self._ps.axes['InstrumentTable_Z'].bind('position_mm', self.on_z_movement)
         self._ps.axes['ChinRest_Z'].bind('position_mm', self.on_cr_movement)
-        # self._ps.bind('instrument', self.on_instrument_changed)
         self._ps.safety.bind('presence', self.on_presence_changed)
 
-
-    # def _get_tbz_rel(self):
-    #     tbz_rel = 0.0
-    #     if self._ps.axes['StationHeight'].position_mm is not None and self._ps.axes['InstrumentTable_Z'].position_mm is not None:
-    #         tbz_rel = (self._ps.axes['InstrumentTable_Z'].position_mm - 956.5) - (self._ps.axes['StationHeight'].position_mm - 1350.0)
-    #     return tbz_rel
 
     def _get_tby_rel(self):
         ret = 0.0
@@ -53,19 +45,9 @@ class SimulationBackCamera(Restful, Stream):
         data = {
             'activated': False,
             'pixel_to_mm_ratio': self._pixel_to_mm_ratio,
-            # 'relative_z_mm': 0.0,
-            # 'tc_z_offset': self._instrument.parameters['p2tc']['z'],
-            # 'tray_z_rel_mm': self._tray_z_rel_mm,
             'presence': self._ps.safety.presence
         }
-        # if self._ps.instrument is not None:
-        #     if self._ps.instrument == self._instrument:
-        #         data['activated'] = True
-        #         if hasattr(self._ps.instrument, 'camera_plane'):
-        #             data['pixel_to_mm_ratio'] = self._ps.instrument.camera_plane.alpha * self._ps.instrument.camera_plane.gamma # (beta is ignored as sim is perfect)
-        #             data['tc_z_offset'] = self._ps.instrument.parameters['p2tc']['z']
-
-        # data['relative_z_mm'] = self._get_tbz_rel()
+     
         data['relative_y_mm'] = self._get_tby_rel()
         if self._ps.axes['ChinRest_Z'].position_mm is not None:
             data['cr_mm'] = self._ps.axes['ChinRest_Z'].position_mm
@@ -94,19 +76,8 @@ class SimulationBackCamera(Restful, Stream):
     def on_y_movement(self, *args, **kwargs):
         self.push_event('tby', {'relative_y_mm': self._get_tby_rel()})
 
-    # def on_z_movement(self, *args, **kwargs):
-    #     self.push_event('tbz', {'relative_z_mm': self._get_tbz_rel()})
-
     def on_cr_movement(self, *args, **kwargs):
         self.push_event('cr', {'cr_mm': self._ps.axes['ChinRest_Z'].position_mm})
-
-    # def on_instrument_changed(self, *args, **kwargs):
-    #     activated = False
-    #     if self._ps.instrument is not None:
-    #         if self._ps.instrument == self._instrument:
-    #             activated = True
-        
-    #     self.push_event('instrument', {'activated': activated})
 
     def on_presence_changed(self, *args, **kwargs):
         self.push_event('presence', {'presence': self._ps.safety.presence})
