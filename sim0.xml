@@ -209,40 +209,6 @@
                         <item type="float">80.000390625</item>
                     </item>
                     <item type="tuple">
-                        <item type="str">c2tc</item>
-                        <item type="dict">
-                            <item type="tuple">
-                                <item type="str">x</item>
-                                <item type="float">75.401953125</item>
-                            </item>
-                            <item type="tuple">
-                                <item type="str">y</item>
-                                <item type="float">-25.501171875000004</item>
-                            </item>
-                            <item type="tuple">
-                                <item type="str">z</item>
-                                <item type="float">-187.015517578125</item>
-                            </item>
-                        </item>
-                    </item>
-                    <item type="tuple">
-                        <item type="str">p2tc</item>
-                        <item type="dict">
-                            <item type="tuple">
-                                <item type="str">x</item>
-                                <item type="float">-11.0</item>
-                            </item>
-                            <item type="tuple">
-                                <item type="str">y</item>
-                                <item type="float">0.0</item>
-                            </item>
-                            <item type="tuple">
-                                <item type="str">z</item>
-                                <item type="float">240.0</item>
-                            </item>
-                        </item>
-                    </item>
-                    <item type="tuple">
                         <item type="str">tc_settings</item>
                         <item type="dict">
                             <item type="tuple">
@@ -401,40 +367,6 @@
                             <item type="tuple">
                                 <item type="str">gamma</item>
                                 <item type="float">0.7380423115949254</item>
-                            </item>
-                        </item>
-                    </item>
-                    <item type="tuple">
-                        <item type="str">c2tc</item>
-                        <item type="dict">
-                            <item type="tuple">
-                                <item type="str">x</item>
-                                <item type="float">75.362890625</item>
-                            </item>
-                            <item type="tuple">
-                                <item type="str">y</item>
-                                <item type="float">-29.5</item>
-                            </item>
-                            <item type="tuple">
-                                <item type="str">z</item>
-                                <item type="float">-164.50617919921876</item>
-                            </item>
-                        </item>
-                    </item>
-                    <item type="tuple">
-                        <item type="str">p2tc</item>
-                        <item type="dict">
-                            <item type="tuple">
-                                <item type="str">x</item>
-                                <item type="float">-11.0</item>
-                            </item>
-                            <item type="tuple">
-                                <item type="str">y</item>
-                                <item type="float">0.0</item>
-                            </item>
-                            <item type="tuple">
-                                <item type="str">z</item>
-                                <item type="int">210</item>
                             </item>
                         </item>
                     </item>
