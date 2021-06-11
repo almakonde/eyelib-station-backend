@@ -68,10 +68,6 @@
                     <item type="str">y</item>
                     <item type="float">20.0</item>
                 </item>
-                <item type="tuple">
-                    <item type="str">z</item>
-                    <item type="float">50.0</item>
-                </item>
             </neutral_speed_mm_s>
             <chin_rest_dz_mm type="int">38</chin_rest_dz_mm>
             <stationheight_home_z_mm type="int">0</stationheight_home_z_mm>
@@ -203,73 +199,7 @@
                                 <item type="int">6002</item>
                             </item>
                         </item>
-                    </item>
-                    <item type="tuple">
-                        <item type="str">tc_target_depth</item>
-                        <item type="float">80.000390625</item>
-                    </item>
-                    <item type="tuple">
-                        <item type="str">tc_settings</item>
-                        <item type="dict">
-                            <item type="tuple">
-                                <item type="str">url</item>
-                                <item type="str">127.0.0.1:5004</item>
-                            </item>
-                        </item>
-                    </item>
-                    <item type="tuple">
-                        <item type="str">cp_settings</item>
-                        <item type="dict">
-                            <item type="tuple">
-                                <item type="str">axes_conversion</item>
-                                <item type="dict">
-                                    <item type="tuple">
-                                        <item type="str">y</item>
-                                        <item type="str">-x</item>
-                                    </item>
-                                    <item type="tuple">
-                                        <item type="str">z</item>
-                                        <item type="str">-y</item>
-                                    </item>
-                                </item>
-                            </item>
-                            <item type="tuple">
-                                <item type="str">beta_threshold</item>
-                                <item type="float">0.05</item>
-                            </item>
-                            <item type="tuple">
-                                <item type="str">beta_x</item>
-                                <item type="float">1.0</item>
-                            </item>
-                            <item type="tuple">
-                                <item type="str">beta_y</item>
-                                <item type="float">1.0</item>
-                            </item>
-                            <item type="tuple">
-                                <item type="str">ref_mm</item>
-                                <item type="float">15.0</item>
-                            </item>
-                            <item type="tuple">
-                                <item type="str">ref_pixels</item>
-                                <item type="float">137.5</item>
-                            </item>
-                            <item type="tuple">
-                                <item type="str">initial_depth</item>
-                                <item type="float">147.160546875</item>
-                            </item>
-                            <item type="tuple">
-                                <item type="str">image_shape</item>
-                                <item type="tuple">
-                                    <item type="int">768</item>
-                                    <item type="int">1024</item>
-                                </item>
-                            </item>
-                            <item type="tuple">
-                                <item type="str">gamma</item>
-                                <item type="float">1.0122315392149837</item>
-                            </item>
-                        </item>
-                    </item>
+                    </item>                                                            
                     <item type="tuple">
                         <item type="str">iid</item>
                         <item type="str">VX120-01</item>
@@ -280,24 +210,12 @@
                 <item type="str">REVO-01</item>
                 <item type="dict">
                     <item type="tuple">
-                        <item type="str">z_adj_offset</item>
-                        <item type="float">-20.0</item>
-                    </item>
+                        <item type="str">mac</item>
+                        <item type="str">1C:69:7A:02:40:85</item>
+                    </item>                  
                     <item type="tuple">
                         <item type="str">ruia</item>
-                        <item type="dict">
-                            <item type="tuple">
-                                <item type="str">vnc_host</item>
-                                <item type="str">192.168.11.140</item>
-                            </item>
-                            <item type="tuple">
-                                <item type="str">vnc_port</item>
-                                <item type="int">5900</item>
-                            </item>
-                            <item type="tuple">
-                                <item type="str">vnc_password</item>
-                                <item type="str">MjkAdm</item>
-                            </item>
+                        <item type="dict">                            
                             <item type="tuple">
                                 <item type="str">rest_host</item>
                                 <item type="str">127.0.0.1</item>
@@ -307,72 +225,6 @@
                                 <item type="int">6001</item>
                             </item>
                         </item>
-                    </item>
-                    <item type="tuple">
-                        <item type="str">tc_settings</item>
-                        <item type="dict">
-                            <item type="tuple">
-                                <item type="str">url</item>
-                                <item type="str">127.0.0.1:5005</item>
-                            </item>
-                        </item>
-                    </item>
-                    <item type="tuple">
-                        <item type="str">cp_settings</item>
-                        <item type="dict">
-                            <item type="tuple">
-                                <item type="str">axes_conversion</item>
-                                <item type="dict">
-                                    <item type="tuple">
-                                        <item type="str">y</item>
-                                        <item type="str">-x</item>
-                                    </item>
-                                    <item type="tuple">
-                                        <item type="str">z</item>
-                                        <item type="str">-y</item>
-                                    </item>
-                                </item>
-                            </item>
-                            <item type="tuple">
-                                <item type="str">beta_threshold</item>
-                                <item type="float">0.05</item>
-                            </item>
-                            <item type="tuple">
-                                <item type="str">beta_x</item>
-                                <item type="float">1.0</item>
-                            </item>
-                            <item type="tuple">
-                                <item type="str">beta_y</item>
-                                <item type="float">1.0</item>
-                            </item>
-                            <item type="tuple">
-                                <item type="str">ref_mm</item>
-                                <item type="float">15.0</item>
-                            </item>
-                            <item type="tuple">
-                                <item type="str">ref_pixels</item>
-                                <item type="float">81.5</item>
-                            </item>
-                            <item type="tuple">
-                                <item type="str">initial_depth</item>
-                                <item type="float">199.801171875</item>
-                            </item>
-                            <item type="tuple">
-                                <item type="str">image_shape</item>
-                                <item type="tuple">
-                                    <item type="int">768</item>
-                                    <item type="int">1024</item>
-                                </item>
-                            </item>
-                            <item type="tuple">
-                                <item type="str">gamma</item>
-                                <item type="float">0.7380423115949254</item>
-                            </item>
-                        </item>
-                    </item>
-                    <item type="tuple">
-                        <item type="str">tc_target_depth</item>
-                        <item type="float">80.000390625</item>
                     </item>
                     <item type="tuple">
                         <item type="str">iid</item>
