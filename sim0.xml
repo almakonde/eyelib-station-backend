@@ -44,9 +44,9 @@
             </taught_points>
         </PS1_Table>
 
-        <ChinRest_Z type="element">
+        <ChinRest type="element">
             <length_mm type="float">210.0</length_mm>
-        </ChinRest_Z>
+        </ChinRest>
         <StationHeight type="element">
             <length_mm type="float">1700.0</length_mm>
         </StationHeight>

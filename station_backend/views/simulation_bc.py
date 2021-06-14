@@ -28,7 +28,7 @@ class SimulationBackCamera(Restful, Stream):
         ''' 
         # self._ps.axes['InstrumentTable_X'].bind('position_mm', self.on_x_movement)
         self._ps.axes['InstrumentTable_Y'].bind('position_mm', self.on_y_movement)
-        self._ps.axes['ChinRest_Z'].bind('position_mm', self.on_cr_movement)
+        self._ps.axes['ChinRest'].bind('position_mm', self.on_cr_movement)
         self._ps.safety.bind('presence', self.on_presence_changed)
 
 
@@ -49,8 +49,8 @@ class SimulationBackCamera(Restful, Stream):
         }
      
         data['relative_y_mm'] = self._get_tby_rel()
-        if self._ps.axes['ChinRest_Z'].position_mm is not None:
-            data['cr_mm'] = self._ps.axes['ChinRest_Z'].position_mm
+        if self._ps.axes['ChinRest'].position_mm is not None:
+            data['cr_mm'] = self._ps.axes['ChinRest'].position_mm
         else:
             data['cr_mm'] = 0.0
 
@@ -77,7 +77,7 @@ class SimulationBackCamera(Restful, Stream):
         self.push_event('tby', {'relative_y_mm': self._get_tby_rel()})
 
     def on_cr_movement(self, *args, **kwargs):
-        self.push_event('cr', {'cr_mm': self._ps.axes['ChinRest_Z'].position_mm})
+        self.push_event('cr', {'cr_mm': self._ps.axes['ChinRest'].position_mm})
 
     def on_presence_changed(self, *args, **kwargs):
         self.push_event('presence', {'presence': self._ps.safety.presence})

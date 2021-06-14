@@ -71,18 +71,3 @@ class ExaminationsView(Restful):
         if item is not None:
             ret = self._exs.delete(item.get('examination_id', None))
         return jsonify({'ret':ret})
-
-    # def sanitize_incoming_examination(self, examination) -> bool:
-    #     ret = True
-    #     if isinstance(examination, dict):
-    #         if 'morphology' in examination.keys()
-    #             numeric_fields = ['chin_z', 'chin_to_eyeline']
-    #             for num_field in numeric_fields:
-    #                 pass
-    #         if not isinstance(examination['morphology']['chin_z'], numbers.Number):
-    #             chin_z = float(chin_z)
-    #             morphology['chin_z'] = chin_z
-
-    #         if not isinstance(chin_to_eyeline, numbers.Number):
-    #             chin_to_eyeline = float(chin_to_eyeline)
-    #             morphology['chin_to_eyeline'] = chin_to_eyeline

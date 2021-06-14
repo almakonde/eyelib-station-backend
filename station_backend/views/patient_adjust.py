@@ -11,7 +11,7 @@ class PatientAdjustView(Restful):
         self._psa = psa
         self._ps = psa.patient_station
 
-        self._ps.axes['ChinRest_Z'].bind('position_mm', self._on_crz_changed)
+        self._ps.axes['ChinRest'].bind('position_mm', self._on_crz_changed)
         self._ps.axes['StationHeight'].bind('position_mm', self._on_station_height_changed)
 
     @roles_required("stationFrontendAllowed")
@@ -40,7 +40,7 @@ class PatientAdjustView(Restful):
                     return jsonify({})
                 elif command == 'chin_to_eyeline':
                     z = self._psa.chinrest_from_chin_to_eyeline(data)
-                    self._ps.axes['ChinRest_Z'].move_to_mm(z)
+                    self._ps.axes['ChinRest'].move_to_mm(z)
                     return jsonify({})
                 else:
                     return make_response('unknown command', 500)
