@@ -69,7 +69,6 @@
                     <item type="float">20.0</item>
                 </item>
             </neutral_speed_mm_s>
-            <chin_rest_dz_mm type="int">38</chin_rest_dz_mm>
             <stationheight_home_z_mm type="int">0</stationheight_home_z_mm>
             <stationheight_z_margin_mm type="int">30</stationheight_z_margin_mm>
             <chinrest_clearance_mm type="int">45</chinrest_clearance_mm>
