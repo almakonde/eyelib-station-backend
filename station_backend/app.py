@@ -16,7 +16,6 @@ from station_backend.views.safety import SafetyView
 from station_backend.views.patient_adjust import PatientAdjustView
 from station_backend.views.station import StationView
 from station_backend.views.simulation import SimulationView
-from station_backend.views.simulation_tc import SimulationTrackingCamera
 from station_backend.views.simulation_bc import SimulationBackCamera
 
 
@@ -161,8 +160,6 @@ if con:
                     revo = platform.instrument_storage.get_instrument_from_iid('REVO-01')
 
                     bc_sim = SimulationBackCamera(app, station, path="/bc_sim")
-                    tc_01_sim = SimulationTrackingCamera(app, station, vx120, path="/tc-01", tray_z_rel_mm=-100.0)
-                    tc_02_sim = SimulationTrackingCamera(app, station, revo, path="/tc-02", tray_z_rel_mm=400.0)
                 
                 axes_view = AxesView(app, station)
 
