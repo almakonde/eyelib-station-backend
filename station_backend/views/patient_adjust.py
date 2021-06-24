@@ -58,5 +58,5 @@ class PatientAdjustView(Restful):
 
     def _on_station_height_changed(self, *args, **kwargs):
         chin_z = self._psa.chin_z_from_station_height()
-        logger.info("sse.push: chin_z=%f",chin_z)
+        # logger.info("sse.push: chin_z=%f",chin_z)
         sse.push('patient_adjust', 'chin_z', chin_z)

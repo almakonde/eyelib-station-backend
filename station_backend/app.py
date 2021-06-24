@@ -4,7 +4,7 @@ from flask_cors import CORS
 from station_backend.views.login import LoginView
 from station_backend.views.logout import LogoutView
 from station_backend.views.symbols import SymbolManager
-from station_backend.views.axes import AxesView
+from station_backend.views.axes import AxesView, SHAxesView
 from station_backend.views.automation import AutomationView
 from station_backend.views.examinations import ExaminationsView
 from station_backend.views.instruments import InstrumentsView
@@ -136,6 +136,7 @@ if con:
             station = platform.patient_stations.get('PS1', None)
             if station:
                 axes = station.axes
+                sh_axes = station.sh_axes
 
                 station.init() # pwr to the trays
 
@@ -162,6 +163,7 @@ if con:
                     bc_sim = SimulationBackCamera(app, station, path="/bc_sim")
                 
                 axes_view = AxesView(app, station)
+                sh_axes_view = SHAxesView(app, station)
 
                 pa = PlatformAutomation(platform)
                 if pa is not None:
@@ -194,6 +196,12 @@ if con:
                     for symbol in axis.symbols.values():
                         path = "/"+axis_name+"/"+symbol.variable
                         print("registering %s "% path)
+                        symbol_manager.register_symbol(symbol, path=path)
+
+                for axis_name, axis in sh_axes.items():
+                    for symbol in axis.symbols.values():
+                        path = "/"+axis_name+"/"+symbol.variable
+                        print("registering SH: %s "% path)
                         symbol_manager.register_symbol(symbol, path=path)
 
                 for symbol in station.safety.symbols.values():
