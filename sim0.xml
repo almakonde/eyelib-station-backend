@@ -48,7 +48,7 @@
             <length_mm type="float">210.0</length_mm>
         </ChinRest>
         <StationHeight type="element">
-            <length_mm type="float">1700.0</length_mm>
+            <length_mm type="float">1250.0</length_mm>
         </StationHeight>
         <InstrumentTable_X type="element">
             <length_mm type="float">57.96875</length_mm>
@@ -69,8 +69,8 @@
                     <item type="float">20.0</item>
                 </item>
             </neutral_speed_mm_s>
-            <stationheight_home_z_mm type="int">0</stationheight_home_z_mm>
-            <stationheight_z_margin_mm type="int">30</stationheight_z_margin_mm>
+            <stationheight_home_z_mm type="int">700</stationheight_home_z_mm>
+            <stationheight_z_margin_mm type="int">0</stationheight_z_margin_mm>
             <chinrest_clearance_mm type="int">45</chinrest_clearance_mm>
         </automation>
         <PatientInteraction type="element">
