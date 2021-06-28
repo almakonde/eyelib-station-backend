@@ -201,7 +201,7 @@ if con:
                 for axis_name, axis in sh_axes.items():
                     for symbol in axis.symbols.values():
                         path = "/"+axis_name+"/"+symbol.variable
-                        print("registering SH: %s "% path)
+                        print("registering %s "% path)
                         symbol_manager.register_symbol(symbol, path=path)
 
                 for symbol in station.safety.symbols.values():

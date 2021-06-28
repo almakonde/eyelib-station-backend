@@ -52,7 +52,7 @@ class PatientAdjustView(Restful):
     @roles_required("stationFrontendAllowed")
     def _on_crz_changed(self, *args, **kwargs):        
         chin_to_eyeline = self._psa.chin_to_eyeline_from_chinrest_z()
-        logger.info("sse.push: chin_to_eyeline=%f",chin_to_eyeline)
+        # logger.info("sse.push: chin_to_eyeline=%f",chin_to_eyeline)
         sse.push('patient_adjust', 'chin_to_eyeline', chin_to_eyeline)
 
 
