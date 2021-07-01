@@ -17,6 +17,7 @@ from station_backend.views.patient_adjust import PatientAdjustView
 from station_backend.views.station import StationView
 from station_backend.views.simulation import SimulationView
 from station_backend.views.simulation_bc import SimulationBackCamera
+from station_backend.views.side_cameras import SideCamerasView
 
 
 from station_backend.settings import load as load_settings
@@ -174,6 +175,7 @@ if con:
                         patient_adjust_view = PatientAdjustView(app, psa)
                         teaching_view = PatientStationTeachingView(app, psa)
                         instruments_view = InstrumentsView(app, platform, station, psa)
+                        side_cameras_view = SideCamerasView(app, platform, station, psa)
                         station_view = StationView(app, psa)
                         ''' Generate all programs state diagrams'''
                         # for filtered in [False, True]:                       
@@ -216,24 +218,4 @@ if con:
 
                 platform.initialize_instruments()
                 
-
-
-        # server = ThreadedServer(app, 'test', port=5003)
-        # server.start()
-        # print("Server started")
-        # server.join()
-#         con.close()
-#         platform.on_connection_closed(con)
-
-#         if examination_view is not None:
-#             examination_view.stop()
-
-# vnc_clean()
-
-# if wp is not None:
-#     wp.terminate()
-
-# if settings.simulation:
-#     sim0.stop_realtime()
-
 
