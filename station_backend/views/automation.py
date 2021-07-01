@@ -21,8 +21,8 @@ class AutomationAdjust:
             'back': ('InstrumentTable_X', -1.0*self.epsilon),
             'cr_up': ('ChinRest', 2.0*self.epsilon),
             'cr_down': ('ChinRest', -2.0*self.epsilon),
-            'station_up': ('StationHeight', 5.0*self.epsilon),
-            'station_down': ('StationHeight', -5.0*self.epsilon)
+            'station_up': ('StationHeight', 6.0*self.epsilon),
+            'station_down': ('StationHeight', -6.0*self.epsilon)
         }
 
     def adjust(self, action) -> bool:
@@ -34,7 +34,10 @@ class AutomationAdjust:
                     logger.info("adjust: %s by %f",axis,increment)
                     resume = (self.psa.running_state == "running")
                     self.psa.pause()
-                    self.psa.patient_station.axes[axis].move_by_mm(increment)
+                    if axis == 'StationHeight':
+                        self.psa.patient_station.sh_axes[axis].move_by_mm(increment)
+                    else:
+                        self.psa.patient_station.axes[axis].move_by_mm(increment)
                     if resume:
                         self.psa.resume()
                     ret = True

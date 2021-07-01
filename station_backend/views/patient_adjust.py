@@ -12,7 +12,7 @@ class PatientAdjustView(Restful):
         self._ps = psa.patient_station
 
         self._ps.axes['ChinRest'].bind('position_mm', self._on_crz_changed)
-        self._ps.axes['StationHeight'].bind('position_mm', self._on_station_height_changed)
+        self._ps.sh_axes['StationHeight'].bind('position_mm', self._on_station_height_changed)
 
     @roles_required("stationFrontendAllowed")
     def get(self, *args, **kwargs):
@@ -36,7 +36,7 @@ class PatientAdjustView(Restful):
             if data is not None:
                 if command == 'chin_z':
                     height = self._psa.station_height_from_chin_z(data)
-                    self._ps.axes['StationHeight'].move_to_mm(height)
+                    self._ps.sh_axes['StationHeight'].move_to_mm(height)
                     return jsonify({})
                 elif command == 'chin_to_eyeline':
                     z = self._psa.chinrest_from_chin_to_eyeline(data)
@@ -52,11 +52,11 @@ class PatientAdjustView(Restful):
     @roles_required("stationFrontendAllowed")
     def _on_crz_changed(self, *args, **kwargs):        
         chin_to_eyeline = self._psa.chin_to_eyeline_from_chinrest_z()
-        logger.info("sse.push: chin_to_eyeline=%f",chin_to_eyeline)
+        # logger.info("sse.push: chin_to_eyeline=%f",chin_to_eyeline)
         sse.push('patient_adjust', 'chin_to_eyeline', chin_to_eyeline)
 
 
     def _on_station_height_changed(self, *args, **kwargs):
         chin_z = self._psa.chin_z_from_station_height()
-        logger.info("sse.push: chin_z=%f",chin_z)
+        # logger.info("sse.push: chin_z=%f",chin_z)
         sse.push('patient_adjust', 'chin_z', chin_z)
