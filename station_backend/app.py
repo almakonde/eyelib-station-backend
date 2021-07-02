@@ -211,6 +211,11 @@ if con:
                     print("registering %s "% path)
                     symbol_manager.register_symbol(symbol, path=path)
 
+                for pwr_switch in station.pwr.pwr_sws.values():
+                    path = "/pwr/"+pwr_switch.symbol.variable
+                    print("registering %s "% path)
+                    symbol_manager.register_symbol(pwr_switch.symbol, path=path)
+
 
                 SafetyView(app, station.safety)
                 
