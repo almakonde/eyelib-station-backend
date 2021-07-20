@@ -70,7 +70,7 @@
             <chinrest_clearance_mm type="int">45</chinrest_clearance_mm>
         </automation>
         <PatientInteraction type="element">
-            <remote_speech_address type="str">127.0.0.1:1234</remote_speech_address>
+            <remote_speech_address type="str">10.1.1.10:1234</remote_speech_address>
         </PatientInteraction>
         <Patient type="element">
         </Patient>
@@ -147,7 +147,7 @@
             <tc_settings type="dict">
                 <item type="tuple">
                     <item type="str">url</item>
-                    <item type="str">127.0.0.1:5004</item>
+                    <item type="str">10.1.1.100:5003</item>
                 </item>
             </tc_settings>
             <eyeline_target type="float">0.5</eyeline_target>
@@ -187,7 +187,7 @@
                         <item type="dict">
                             <item type="tuple">
                                 <item type="str">rest_host</item>
-                                <item type="str">127.0.0.1</item>
+                                <item type="str">10.1.1.20</item>
                             </item>
                             <item type="tuple">
                                 <item type="str">rest_port</item>
@@ -213,11 +213,11 @@
                         <item type="dict">                            
                             <item type="tuple">
                                 <item type="str">rest_host</item>
-                                <item type="str">127.0.0.1</item>
+                                <item type="str">10.1.1.10</item>
                             </item>
                             <item type="tuple">
                                 <item type="str">rest_port</item>
-                                <item type="int">6001</item>
+                                <item type="int">6002</item>
                             </item>
                         </item>
                     </item>
