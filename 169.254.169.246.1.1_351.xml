@@ -48,10 +48,10 @@
             <length_mm type="float">210.0</length_mm>
         </ChinRest>
         <InstrumentTable_X type="element">
-            <length_mm type="float">57.96875</length_mm>
+            <length_mm type="float">66.3134765625</length_mm>
         </InstrumentTable_X>
         <InstrumentTable_Y type="element">
-            <length_mm type="float">524.9925000000001</length_mm>
+            <length_mm type="float">270.478515625</length_mm>
         </InstrumentTable_Y>
 
         <automation type="element">
@@ -82,7 +82,7 @@
                     <item type="dict">
                         <item type="tuple">
                             <item type="str">chin_rest</item>
-                            <item type="float">35.12625000000002</item>
+                            <item type="float">0.0</item>
                         </item>
                     </item>
                 </item>
@@ -152,6 +152,7 @@
             </tc_settings>
             <eyeline_target type="float">0.5</eyeline_target>
         </BackCamera>
+        <StationHeight type="element" />
     </PS1>
     <IS type="element">
         <instruments type="dict">
@@ -194,7 +195,7 @@
                                 <item type="int">6002</item>
                             </item>
                         </item>
-                    </item>                                                            
+                    </item>
                     <item type="tuple">
                         <item type="str">iid</item>
                         <item type="str">VX120-01</item>
@@ -207,10 +208,10 @@
                     <item type="tuple">
                         <item type="str">mac</item>
                         <item type="str">1C:69:7A:02:40:85</item>
-                    </item>                  
+                    </item>
                     <item type="tuple">
                         <item type="str">ruia</item>
-                        <item type="dict">                            
+                        <item type="dict">
                             <item type="tuple">
                                 <item type="str">rest_host</item>
                                 <item type="str">10.1.1.10</item>
