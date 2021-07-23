@@ -181,7 +181,7 @@
                 <item type="dict">
                     <item type="tuple">
                         <item type="str">mac</item>
-                        <item type="str">30:9c:23:5c:16:a9</item>
+                        <item type="str">00:04:5f:a8:3b:eb</item>
                     </item>
                     <item type="tuple">
                         <item type="str">ruia</item>
@@ -207,7 +207,7 @@
                 <item type="dict">
                     <item type="tuple">
                         <item type="str">mac</item>
-                        <item type="str">1C:69:7A:02:40:85</item>
+                        <item type="str">1c:69:7a:a4:4a:25</item>
                     </item>
                     <item type="tuple">
                         <item type="str">ruia</item>

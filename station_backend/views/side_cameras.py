@@ -18,7 +18,7 @@ class SideCamerasView(Restful):
             self.storage = platform.instrument_storage
             self.iids = ['SC-R','SC-L']
             self.types = ['SideCamera-Right','SideCamera-Left']
-            self.urls = ['http://localhost:5011', 'http://localhost:5012']
+            self.urls = ['http://10.1.1.110:5011', 'http://10.1.1.120:5011']
 
         for iid, type, url in zip(self.iids, self.types, self.urls):          
             side_camera_view = SideCameraView(app, psa, iid, type, url)
