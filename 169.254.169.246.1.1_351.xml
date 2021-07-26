@@ -45,7 +45,7 @@
         </PS1_Table>
 
         <ChinRest type="element">
-            <length_mm type="float">210.0</length_mm>
+            <length_mm type="float">41.60403002929688</length_mm>
         </ChinRest>
         <InstrumentTable_X type="element">
             <length_mm type="float">66.3134765625</length_mm>
