@@ -7,11 +7,11 @@
                     <item type="dict">
                         <item type="tuple">
                             <item type="str">x</item>
-                            <item type="float">51.991249999999994</item>
+                            <item type="float">43.0029296875</item>
                         </item>
                         <item type="tuple">
                             <item type="str">y</item>
-                            <item type="float">50.00374999999996</item>
+                            <item type="float">50.999755859375</item>
                         </item>
                     </item>
                 </item>
@@ -20,11 +20,11 @@
                     <item type="dict">
                         <item type="tuple">
                             <item type="str">x</item>
-                            <item type="float">51.995</item>
+                            <item type="float">60.0</item>
                         </item>
                         <item type="tuple">
                             <item type="str">y</item>
-                            <item type="float">479.995</item>
+                            <item type="float">253.9990234375</item>
                         </item>
                     </item>
                 </item>
@@ -33,11 +33,11 @@
                     <item type="dict">
                         <item type="tuple">
                             <item type="str">x</item>
-                            <item type="float">4.996249999999999</item>
+                            <item type="float">3.0029296875</item>
                         </item>
                         <item type="tuple">
                             <item type="str">y</item>
-                            <item type="float">262.49</item>
+                            <item type="float">135.2392578125</item>
                         </item>
                     </item>
                 </item>
@@ -82,7 +82,7 @@
                     <item type="dict">
                         <item type="tuple">
                             <item type="str">chin_rest</item>
-                            <item type="float">0.0</item>
+                            <item type="float">2.91386279296875</item>
                         </item>
                     </item>
                 </item>
@@ -91,7 +91,7 @@
                     <item type="dict">
                         <item type="tuple">
                             <item type="str">chin_rest</item>
-                            <item type="float">192.99499999999998</item>
+                            <item type="float">37.999074462890626</item>
                         </item>
                     </item>
                 </item>
