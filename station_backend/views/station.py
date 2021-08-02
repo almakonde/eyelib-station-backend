@@ -105,7 +105,7 @@ class StationView(Restful, Stream):
 
     def on_bc_last_measurement_changed(self, back_camera, data):
         key, value, old_value = data
-        logger.info("sse.push bc_measurement: %s",value)
+        # logger.info("sse.push bc_measurement: %s",value)
         sse.push('station', 'bc_measurement', value)
 
     def on_bc_last_extents_mm_changed(self, back_camera, data):
