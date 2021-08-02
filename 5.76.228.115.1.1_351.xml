@@ -7,11 +7,11 @@
                     <item type="dict">
                         <item type="tuple">
                             <item type="str">x</item>
-                            <item type="float">53.0029296875</item>
+                            <item type="float">60.0</item>
                         </item>
                         <item type="tuple">
                             <item type="str">y</item>
-                            <item type="float">46.99951171875</item>
+                            <item type="float">253.9990234375</item>
                         </item>
                     </item>
                 </item>
@@ -20,11 +20,11 @@
                     <item type="dict">
                         <item type="tuple">
                             <item type="str">x</item>
-                            <item type="float">60.0</item>
+                            <item type="float">53.0029296875</item>
                         </item>
                         <item type="tuple">
                             <item type="str">y</item>
-                            <item type="float">253.9990234375</item>
+                            <item type="float">46.99951171875</item>
                         </item>
                     </item>
                 </item>
@@ -67,7 +67,7 @@
                 </item>
             </neutral_speed_mm_s>
             <stationheight_z_margin_mm type="int">0</stationheight_z_margin_mm>
-            <chinrest_clearance_mm type="int">45</chinrest_clearance_mm>
+            <chinrest_clearance_mm type="int">-40</chinrest_clearance_mm>
         </automation>
         <PatientInteraction type="element">
             <remote_speech_address type="str">10.1.1.10:1234</remote_speech_address>
@@ -124,11 +124,11 @@
                 </item>
                 <item type="tuple">
                     <item type="str">gamma</item>
-                    <item type="float">1.0</item>
+                    <item type="float">1.2</item>
                 </item>
                 <item type="tuple">
                     <item type="str">initial_depth</item>
-                    <item type="float">700.0</item>
+                    <item type="float">630.0</item>
                 </item>
                 <item type="tuple">
                     <item type="str">axes_conversion</item>
