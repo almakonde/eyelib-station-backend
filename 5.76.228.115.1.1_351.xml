@@ -11,7 +11,7 @@
                         </item>
                         <item type="tuple">
                             <item type="str">y</item>
-                            <item type="float">233.9990234375</item>
+                            <item type="float">213.9990234375</item>
                         </item>
                     </item>
                 </item>
@@ -24,7 +24,7 @@
                         </item>
                         <item type="tuple">
                             <item type="str">y</item>
-                            <item type="float">46.99951171875</item>
+                            <item type="float">16.99951171875</item>
                         </item>
                     </item>
                 </item>
@@ -59,11 +59,11 @@
             <neutral_speed_mm_s type="dict">
                 <item type="tuple">
                     <item type="str">x</item>
-                    <item type="float">20.0</item>
+                    <item type="float">15.0</item>
                 </item>
                 <item type="tuple">
                     <item type="str">y</item>
-                    <item type="float">20.0</item>
+                    <item type="float">15.0</item>
                 </item>
             </neutral_speed_mm_s>
             <stationheight_z_margin_mm type="int">0</stationheight_z_margin_mm>

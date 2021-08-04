@@ -24,9 +24,11 @@
     "fetch_start": [],
     "fetch_end": [],
 
+    "back_camera_measurement":["Please look straight ahead.", "After eye detection, the chin rest could move."],
+
     "instrument_state_changed": [
         {
-            "format": "Please look at the smiley face between the two red lights.",
+            "format": "Please stay still during the examination.",
             "match": {"state": "InstrumentState.Preparing"}
         },
         {
