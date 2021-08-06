@@ -150,7 +150,9 @@
                     <item type="str">127.0.0.1:5004</item>
                 </item>
             </tc_settings>
-            <eyeline_target type="float">0.5</eyeline_target>
+            <eyeline_target type="float">0.5</eyeline_target>            
+            <consecutive_detections_thr type="int">20</consecutive_detections_thr>
+            <adjustment_tolerance type="float">1.5</adjustment_tolerance>
         </BackCamera>
     </PS1>
     <IS type="element">

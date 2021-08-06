@@ -66,7 +66,7 @@
                     <item type="float">15.0</item>
                 </item>
             </neutral_speed_mm_s>
-            <stationheight_z_margin_mm type="int">0</stationheight_z_margin_mm>
+            <stationheight_z_margin_mm type="int">20</stationheight_z_margin_mm>
             <chinrest_clearance_mm type="int">-40</chinrest_clearance_mm>
         </automation>
         <PatientInteraction type="element">
@@ -151,6 +151,8 @@
                 </item>
             </tc_settings>
             <eyeline_target type="float">0.5</eyeline_target>
+            <consecutive_detections_thr type="int">5</consecutive_detections_thr>
+            <adjustment_tolerance type="float">3.5</adjustment_tolerance>
         </BackCamera>
         <StationHeight type="element" />
     </PS1>
