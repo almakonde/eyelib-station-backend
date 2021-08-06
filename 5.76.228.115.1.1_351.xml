@@ -150,7 +150,7 @@
                     <item type="str">10.1.1.100:5003</item>
                 </item>
             </tc_settings>
-            <eyeline_target type="float">0.5</eyeline_target>
+            <eyeline_target type="float">0.485</eyeline_target>
             <consecutive_detections_thr type="int">5</consecutive_detections_thr>
             <adjustment_tolerance type="float">3.5</adjustment_tolerance>
         </BackCamera>
