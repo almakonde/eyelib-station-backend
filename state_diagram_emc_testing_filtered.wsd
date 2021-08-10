@@ -1,7 +1,7 @@
 @startuml
 
 header
-<font color=red>2021/08/09 16:40:28</font>
+<font color=red>2021/08/10 09:15:25</font>
 Filtered out target states:<font color=blue>['fault', 'restart']</font>
 endheader
 
@@ -15,7 +15,7 @@ idle : do_init=True
 idle : is_first_intrument=True
 idle : emc_full_cycles=0
 init --> ready : init_error==0
-ready --> emc_patient_start
+ready --> emc_patient_simulation
 neutral_x --> neutral_y
 neutral_y --> instrument_1_y : is_first_intrument
 neutral_y --> instrument_2_y : not is_first_intrument
@@ -24,8 +24,7 @@ instrument_1_y --> instrument_1_x
 instrument_2_x --> switch_instrument
 instrument_2_y --> instrument_2_x
 switch_instrument --> neutral_x : not is_first_intrument
-switch_instrument --> emc_patient_end : is_first_intrument
-emc_patient_start --> neutral_x
-emc_patient_end --> ready
+switch_instrument --> ready : is_first_intrument
+emc_patient_simulation --> neutral_x
 
 @enduml
