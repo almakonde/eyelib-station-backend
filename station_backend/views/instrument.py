@@ -21,9 +21,7 @@ class InstrumentView(Restful):
 
         self.instrument = instrument
         self.vnc_url = None
-        self.tc_url = None
-        self.instrument.bind('auto_targeting', self._on_auto_target_changed)
-        self.instrument.bind('force_align', self._on_force_align_changed)        
+        self.tc_url = None    
 
         if hasattr(self.instrument, 'ruia'):
             self.instrument.ruia.connect()
@@ -54,8 +52,6 @@ class InstrumentView(Restful):
             'vnc_url': self.instrument.parameters.get('vnc_url', self.vnc_url if (self.vnc_url is not None) else 'http://'+request.host+self._path+'/vnc'),
             'state': _instrument_state_conv(self.instrument.state),
             'error': str(self.instrument.error_string),
-            'auto_target': self.instrument.auto_targeting,
-            'force_align': self.instrument.force_align,
             'can_wake_up': hasattr(self.instrument, 'wake_up')
         }
         if hasattr(self.instrument, 'ruia'):
@@ -96,19 +92,7 @@ class InstrumentView(Restful):
             if command == 'stop_ruia':
                 if hasattr(self.instrument, 'ruia'):
                     self.instrument.ruia.set_as_finished()
-                    return jsonify({})
-            elif command == 'set_auto_target':
-                if isinstance(data, bool):
-                    self.instrument.auto_targeting = data
-                    return jsonify({})
-                else:
-                    return make_response('bad type for auto_target', 500)
-            elif command == 'set_force_align':
-                if isinstance(data, bool):
-                    self.instrument.force_align = data
-                    return jsonify({})
-                else:
-                    return make_response('bad type for force_align', 500)
+                    return jsonify({})         
             elif command == 'wake_up':
                 if hasattr(self.instrument, 'wake_up'):
                     self.instrument.wake_up()
@@ -128,8 +112,3 @@ class InstrumentView(Restful):
         state = _instrument_state_conv(self.instrument.state)
         sse.push(self.instrument.iid, 'state', state)
     
-    def _on_auto_target_changed(self, *args, **kwargs):
-        sse.push(self.instrument.iid, 'auto_target', self.instrument.auto_targeting)
-
-    def _on_force_align_changed(self, *args, **kwargs):
-        sse.push(self.instrument.iid, 'force_align', self.instrument.force_align)
