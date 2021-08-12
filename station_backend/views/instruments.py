@@ -32,8 +32,7 @@ class InstrumentsView(Restful):
             self.on_current_instrument_changed()
 
         self.commands = {
-            'fetch': self._put_fetch,
-            'exam_only': self._put_exam_only
+            'one_instrument_exam': self._put_one_instrument_exam
         }
 
     def on_current_instrument_changed(self, *args, **kwargs):
@@ -75,8 +74,7 @@ class InstrumentsView(Restful):
             return make_response('no command provided', 500)
 
     @roles_required("stationFrontendAllowed")
-    def _put_fetch(self, *args, **kwargs):
-        ret = None
+    def _put_one_instrument_exam(self, *args, **kwargs):
         data = args[0]
         iid = data.get('instrument', None)
         if iid is None:
@@ -85,14 +83,9 @@ class InstrumentsView(Restful):
             if iid in self.instruments:
                 instrument = self.storage.get_instrument_from_iid(iid)
                 if instrument is not None:
-                    self.psa.fetch(instrument)
+                    self.psa.one_instrument_exam(instrument)
                     ret = jsonify({})
         if ret is None:
-            return make_response('fetch_failed', 500)
+            return make_response('one_instrument_exam failed', 500)
         else:
             return ret
-
-    @roles_required("stationFrontendAllowed")
-    def _put_exam_only(self, *args, **kwargs):
-        self.psa.exam_only()
-        return jsonify({})
