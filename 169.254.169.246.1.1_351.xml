@@ -153,6 +153,7 @@
             <eyeline_target type="float">0.5</eyeline_target>            
             <consecutive_detections_thr type="int">5</consecutive_detections_thr>
             <adjustment_tolerance type="float">3.5</adjustment_tolerance>
+            <tilt_accepted_measurement type="float">30.0</tilt_accepted_measurement>
         </BackCamera>
         <StationHeight type="element" />
     </PS1>
