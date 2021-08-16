@@ -51,7 +51,7 @@
             <length_mm type="float">66.3134765625</length_mm>
         </InstrumentTable_X>
         <InstrumentTable_Y type="element">
-            <length_mm type="float">270.478515625</length_mm>
+            <length_mm type="float">266.514892578125</length_mm>
         </InstrumentTable_Y>
 
         <automation type="element">
