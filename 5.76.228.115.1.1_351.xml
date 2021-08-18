@@ -33,11 +33,11 @@
                     <item type="dict">
                         <item type="tuple">
                             <item type="str">x</item>
-                            <item type="float">3.0029296875</item>
+                            <item type="float">3.0</item>
                         </item>
                         <item type="tuple">
                             <item type="str">y</item>
-                            <item type="float">135.2392578125</item>
+                            <item type="float">133.257446289063</item>
                         </item>
                     </item>
                 </item>
@@ -150,10 +150,10 @@
                     <item type="str">10.1.1.100:5003</item>
                 </item>
             </tc_settings>
-            <eyeline_target type="float">0.485</eyeline_target>
+            <eyeline_target type="float">0.5</eyeline_target>
             <consecutive_detections_thr type="int">5</consecutive_detections_thr>
             <adjustment_tolerance type="float">3.5</adjustment_tolerance>
-            <tilt_accepted_measurement type="float">30.0</tilt_accepted_measurement>
+            <tilt_accepted_measurement type="float">20.0</tilt_accepted_measurement>
         </BackCamera>
         <StationHeight type="element" />
     </PS1>
