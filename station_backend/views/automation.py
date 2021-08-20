@@ -60,7 +60,8 @@ class AutomationView(Restful):
             'state': self.state,
             'show': self.show,
             'adjust': self.adjust,
-            'adjustment_done': self.adjustment_done
+            'adjustment_done': self.adjustment_done,
+            'disable_patient_validation': self.disable_patient_validation
         }
 
         self.psa.bind('recursive_state_str', self.on_state_changed)
@@ -159,6 +160,10 @@ class AutomationView(Restful):
 
     def adjustment_done(self, *args, **kwargs):
         self.psa.adjustment_done()
+        return jsonify({})
+
+    def disable_patient_validation(self, *args, **kwargs):
+        self.psa.disable_patient_validation()
         return jsonify({})
 
     def switch_program(self, *args, **kwargs):
