@@ -67,7 +67,8 @@
                 </item>
             </neutral_speed_mm_s>
             <stationheight_z_margin_mm type="int">0</stationheight_z_margin_mm>
-            <chinrest_clearance_mm type="int">45</chinrest_clearance_mm>            
+            <chinrest_clearance_mm type="int">45</chinrest_clearance_mm> 
+            <chinrest_cover_position_mm type="int">55</chinrest_cover_position_mm>           
             <chin_to_eyeline_min_mm type="int">90</chin_to_eyeline_min_mm>
         </automation>
         <PatientInteraction type="element">
