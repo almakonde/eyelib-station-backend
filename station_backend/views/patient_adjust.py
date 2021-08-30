@@ -24,8 +24,8 @@ class PatientAdjustView(Restful):
             'chin_z_min': self._psa.chin_z_min(),
             'chin_z_max': self._psa.chin_z_max(),
             'chin_to_eyeline_max': self._psa.chin_to_eyeline_max(),
+            'chin_to_eyeline_min': self._psa.chin_to_eyeline_min(),
             'chinrest_length': self._psa.chinrest_length()
-
         }
         return jsonify(data)
 

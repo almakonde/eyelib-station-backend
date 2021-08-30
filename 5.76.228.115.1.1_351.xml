@@ -45,7 +45,7 @@
         </PS1_Table>
 
         <ChinRest type="element">
-            <length_mm type="float">125.0352235107422</length_mm>
+            <length_mm type="float">134.193115234375</length_mm>
         </ChinRest>
         <InstrumentTable_X type="element">
             <length_mm type="float">61.4111328125</length_mm>
@@ -66,8 +66,10 @@
                     <item type="float">15.0</item>
                 </item>
             </neutral_speed_mm_s>
-            <stationheight_z_margin_mm type="int">20</stationheight_z_margin_mm>
-            <chinrest_clearance_mm type="int">-40</chinrest_clearance_mm>
+            <stationheight_z_margin_mm type="int">65</stationheight_z_margin_mm>
+            <chinrest_clearance_mm type="int">-50</chinrest_clearance_mm>
+            <chinrest_cover_position_mm type="int">55</chinrest_cover_position_mm>
+            <chin_to_eyeline_min_mm type="int">70</chin_to_eyeline_min_mm>
         </automation>
         <PatientInteraction type="element">
             <remote_speech_address type="str">10.1.1.10:1234</remote_speech_address>
@@ -150,7 +152,7 @@
                     <item type="str">10.1.1.100:5003</item>
                 </item>
             </tc_settings>
-            <eyeline_target type="float">0.5</eyeline_target>
+            <eyeline_target type="float">0.4925</eyeline_target>
             <consecutive_detections_thr type="int">5</consecutive_detections_thr>
             <adjustment_tolerance type="float">3.5</adjustment_tolerance>
             <tilt_accepted_measurement type="float">20.0</tilt_accepted_measurement>
