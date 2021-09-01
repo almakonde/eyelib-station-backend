@@ -43,7 +43,7 @@ logging.info("number_of_patients_to_generate=%d",number_of_patients_to_generate)
 logging.info("patient_arrival (min, max) =(%d, %d) minutes",patient_arrival_range_in_min[0],patient_arrival_range_in_min[1])
 
 # input data for creating a random patient
-prefix_name = "DUMMY"
+prefix_name = "TEST-"
 
 females = ("Mary","Elizabeth","Patricia","Jennifer","Linda","Barbara","Margaret","Susan","Dorothy","Sarah",
             "Jessica","Helen","Nancy","Betty","Karen","Lisa","Anna","Sandra","Emily","Ashley",
@@ -115,7 +115,7 @@ while index < number_of_patients_to_generate:
 
     # register a patient and get the patient ID
     patient_data = {
-                'firstName': prefix_name+' '+first_name,
+                'firstName': prefix_name+first_name,
                 'surname': last_name,
                 'gender': int(gender_flag),
                 'birthDate': random_date()
