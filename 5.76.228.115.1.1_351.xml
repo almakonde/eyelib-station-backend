@@ -7,11 +7,11 @@
                     <item type="dict">
                         <item type="tuple">
                             <item type="str">x</item>
-                            <item type="float">51.991249999999994</item>
+                            <item type="float">59.4</item>
                         </item>
                         <item type="tuple">
                             <item type="str">y</item>
-                            <item type="float">50.00374999999996</item>
+                            <item type="float">244.698486328125</item>
                         </item>
                     </item>
                 </item>
@@ -20,11 +20,11 @@
                     <item type="dict">
                         <item type="tuple">
                             <item type="str">x</item>
-                            <item type="float">51.995</item>
+                            <item type="float">58.0029296875</item>
                         </item>
                         <item type="tuple">
                             <item type="str">y</item>
-                            <item type="float">479.995</item>
+                            <item type="float">45.698974609375</item>
                         </item>
                     </item>
                 </item>
@@ -33,11 +33,11 @@
                     <item type="dict">
                         <item type="tuple">
                             <item type="str">x</item>
-                            <item type="float">4.996249999999999</item>
+                            <item type="float">3.0</item>
                         </item>
                         <item type="tuple">
                             <item type="str">y</item>
-                            <item type="float">262.49</item>
+                            <item type="float">133.257446289063</item>
                         </item>
                     </item>
                 </item>
@@ -45,13 +45,13 @@
         </PS1_Table>
 
         <ChinRest type="element">
-            <length_mm type="float">210.0</length_mm>
+            <length_mm type="float">134.193115234375</length_mm>
         </ChinRest>
         <InstrumentTable_X type="element">
-            <length_mm type="float">57.96875</length_mm>
+            <length_mm type="float">61.4111328125</length_mm>
         </InstrumentTable_X>
         <InstrumentTable_Y type="element">
-            <length_mm type="float">524.9925000000001</length_mm>
+            <length_mm type="float">266.514892578125</length_mm>
         </InstrumentTable_Y>
 
         <automation type="element">
@@ -59,20 +59,20 @@
             <neutral_speed_mm_s type="dict">
                 <item type="tuple">
                     <item type="str">x</item>
-                    <item type="float">20.0</item>
+                    <item type="float">15.0</item>
                 </item>
                 <item type="tuple">
                     <item type="str">y</item>
-                    <item type="float">20.0</item>
+                    <item type="float">15.0</item>
                 </item>
             </neutral_speed_mm_s>
-            <stationheight_z_margin_mm type="int">0</stationheight_z_margin_mm>
-            <chinrest_clearance_mm type="int">45</chinrest_clearance_mm> 
-            <chinrest_cover_position_mm type="int">55</chinrest_cover_position_mm>           
-            <chin_to_eyeline_min_mm type="int">90</chin_to_eyeline_min_mm>
+            <stationheight_z_margin_mm type="int">65</stationheight_z_margin_mm>
+            <chinrest_clearance_mm type="int">-50</chinrest_clearance_mm>
+            <chinrest_cover_position_mm type="int">48</chinrest_cover_position_mm>
+            <chin_to_eyeline_min_mm type="int">80</chin_to_eyeline_min_mm>
         </automation>
         <PatientInteraction type="element">
-            <remote_speech_address type="str">127.0.0.1:1234</remote_speech_address>
+            <remote_speech_address type="str">10.1.1.10:1234</remote_speech_address>
         </PatientInteraction>
         <Patient type="element">
         </Patient>
@@ -84,7 +84,7 @@
                     <item type="dict">
                         <item type="tuple">
                             <item type="str">chin_rest</item>
-                            <item type="float">35.12625000000002</item>
+                            <item type="float">3.0157464111328127</item>
                         </item>
                     </item>
                 </item>
@@ -93,7 +93,7 @@
                     <item type="dict">
                         <item type="tuple">
                             <item type="str">chin_rest</item>
-                            <item type="float">192.99499999999998</item>
+                            <item type="float">119.99999311523439</item>
                         </item>
                     </item>
                 </item>
@@ -126,11 +126,11 @@
                 </item>
                 <item type="tuple">
                     <item type="str">gamma</item>
-                    <item type="float">1.0</item>
+                    <item type="float">1.2</item>
                 </item>
                 <item type="tuple">
                     <item type="str">initial_depth</item>
-                    <item type="float">700.0</item>
+                    <item type="float">630.0</item>
                 </item>
                 <item type="tuple">
                     <item type="str">axes_conversion</item>
@@ -149,14 +149,15 @@
             <tc_settings type="dict">
                 <item type="tuple">
                     <item type="str">url</item>
-                    <item type="str">127.0.0.1:5004</item>
+                    <item type="str">10.1.1.100:5003</item>
                 </item>
             </tc_settings>
-            <eyeline_target type="float">0.5</eyeline_target>            
-            <consecutive_detections_thr type="int">20</consecutive_detections_thr>
-            <adjustment_tolerance type="float">1.5</adjustment_tolerance>
-            <tilt_accepted_measurement type="float">15.0</tilt_accepted_measurement>
+            <eyeline_target type="float">0.4925</eyeline_target>
+            <consecutive_detections_thr type="int">5</consecutive_detections_thr>
+            <adjustment_tolerance type="float">3.5</adjustment_tolerance>
+            <tilt_accepted_measurement type="float">20.0</tilt_accepted_measurement>
         </BackCamera>
+        <StationHeight type="element" />
     </PS1>
     <IS type="element">
         <instruments type="dict">
@@ -185,21 +186,21 @@
                 <item type="dict">
                     <item type="tuple">
                         <item type="str">mac</item>
-                        <item type="str">30:9c:23:5c:16:a9</item>
+                        <item type="str">30:9C:23:5C:16:A9</item>
                     </item>
                     <item type="tuple">
                         <item type="str">ruia</item>
                         <item type="dict">
                             <item type="tuple">
                                 <item type="str">rest_host</item>
-                                <item type="str">127.0.0.1</item>
+                                <item type="str">10.1.1.20</item>
                             </item>
                             <item type="tuple">
                                 <item type="str">rest_port</item>
                                 <item type="int">6002</item>
                             </item>
                         </item>
-                    </item>                                                            
+                    </item>
                     <item type="tuple">
                         <item type="str">iid</item>
                         <item type="str">VX120-01</item>
@@ -211,18 +212,18 @@
                 <item type="dict">
                     <item type="tuple">
                         <item type="str">mac</item>
-                        <item type="str">1C:69:7A:02:40:85</item>
-                    </item>                  
+                        <item type="str">1C-69-7A-02-40-85</item>
+                    </item>
                     <item type="tuple">
                         <item type="str">ruia</item>
-                        <item type="dict">                            
+                        <item type="dict">
                             <item type="tuple">
                                 <item type="str">rest_host</item>
-                                <item type="str">127.0.0.1</item>
+                                <item type="str">10.1.1.10</item>
                             </item>
                             <item type="tuple">
                                 <item type="str">rest_port</item>
-                                <item type="int">6001</item>
+                                <item type="int">6002</item>
                             </item>
                         </item>
                     </item>

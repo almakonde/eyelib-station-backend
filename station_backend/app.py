@@ -52,6 +52,11 @@ from station_common.implementation.sim.gen2 import gen2_simulation
 from station_common.platform import EyeLibPlatform
 from station_common.connection import connection_factory
 
+import logging
+
+logger = logging.getLogger('main_app')
+logger.setLevel(logging.INFO)
+
 
 settings = load_settings()
 
@@ -154,6 +159,7 @@ if con:
                 power_view = PowerView(app, pwr=station.pwr)
 
                 if settings.simulation:
+                    logger.info("Application type: SIMULATION")
                     simulation_view = SimulationView(app, sim0)
 
                     simulation_view._put_timescaling(5)
@@ -162,6 +168,9 @@ if con:
                     revo = platform.instrument_storage.get_instrument_from_iid('REVO-01')
 
                     bc_sim = SimulationBackCamera(app, station, path="/bc_sim")
+                else:
+                    logger.info("Application type: REAL STATION")
+                    logger.info("STATION: %s", addr)
                 
                 axes_view = AxesView(app, station)
                 sh_axes_view = SHAxesView(app, station)
@@ -197,23 +206,23 @@ if con:
                 for axis_name, axis in axes.items():
                     for symbol in axis.symbols.values():
                         path = "/"+axis_name+"/"+symbol.variable
-                        print("registering %s "% path)
+                        logger.info("registering %s ", path)
                         symbol_manager.register_symbol(symbol, path=path)
 
                 for axis_name, axis in sh_axes.items():
                     for symbol in axis.symbols.values():
                         path = "/"+axis_name+"/"+symbol.variable
-                        print("registering %s "% path)
+                        logger.info("registering %s ", path)
                         symbol_manager.register_symbol(symbol, path=path)
 
                 for symbol in station.safety.symbols.values():
                     path = "/safety/"+symbol.variable
-                    print("registering %s "% path)
+                    logger.info("registering %s ", path)
                     symbol_manager.register_symbol(symbol, path=path)
 
                 for pwr_switch in station.pwr.pwr_sws.values():
                     path = "/pwr/"+pwr_switch.symbol.variable
-                    print("registering %s "% path)
+                    logger.info("registering %s ", path)
                     symbol_manager.register_symbol(pwr_switch.symbol, path=path)
 
 

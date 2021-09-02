@@ -24,9 +24,11 @@
     "fetch_start": [],
     "fetch_end": [],
 
+    "back_camera_measurement":["Regardez droit devant", "La mentonnière pourra bouger"],
+
     "instrument_state_changed": [
         {
-            "format": "Veuillez fixer le smiley entre les deux lumières rouge",
+            "format": "Veuillez rester immobile au cours de l'examination",
             "match": {"state": "InstrumentState.Preparing"}
         },
         {

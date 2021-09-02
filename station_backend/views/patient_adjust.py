@@ -19,12 +19,13 @@ class PatientAdjustView(Restful):
         # Collect data for station-frontend from station-common
         data = {            
             'chin_z': self._psa.chin_z_from_station_height(),
-            'chin_to_eyeline': self._psa.chin_to_eyeline_from_chinrest_z(),
-            # fixed values, defined at initialization from sim0.xml
-            'chin_to_eyeline_min': self._psa.chin_to_eyeline_min(),
+            'chinrest_z': self._psa.chinrest_z(),
+            # fixed values, defined at initialization from sim0.xml            
+            'chin_z_min': self._psa.chin_z_min(),
             'chin_z_max': self._psa.chin_z_max(),
             'chin_to_eyeline_max': self._psa.chin_to_eyeline_max(),
-            'chin_z_min': self._psa.chin_z_min()
+            'chin_to_eyeline_min': self._psa.chin_to_eyeline_min(),
+            'chinrest_length': self._psa.chinrest_length()
         }
         return jsonify(data)
 
@@ -38,9 +39,8 @@ class PatientAdjustView(Restful):
                     height = self._psa.station_height_from_chin_z(data)
                     self._ps.sh_axes['StationHeight'].move_to_mm(height)
                     return jsonify({})
-                elif command == 'chin_to_eyeline':
-                    z = self._psa.chinrest_from_chin_to_eyeline(data)
-                    self._ps.axes['ChinRest'].move_to_mm(z)
+                elif command == 'chinrest_z':
+                    self._ps.axes['ChinRest'].move_to_mm(data)
                     return jsonify({})
                 else:
                     return make_response('unknown command', 500)
@@ -51,9 +51,9 @@ class PatientAdjustView(Restful):
 
     @roles_required("stationFrontendAllowed")
     def _on_crz_changed(self, *args, **kwargs):        
-        chin_to_eyeline = self._psa.chin_to_eyeline_from_chinrest_z()
-        # logger.info("sse.push: chin_to_eyeline=%f",chin_to_eyeline)
-        sse.push('patient_adjust', 'chin_to_eyeline', chin_to_eyeline)
+        chinrest_pos = self._psa.chinrest_z()
+        # logger.info("sse.push: chinrest_z=%f",chinrest_z)
+        sse.push('patient_adjust', 'chinrest_z', chinrest_pos)
 
 
     def _on_station_height_changed(self, *args, **kwargs):
