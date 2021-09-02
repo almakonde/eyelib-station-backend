@@ -17,6 +17,7 @@ Output:
 
 logging.basicConfig(filename='examinations_generator.log', format='%(asctime)s %(message)s', level=logging.INFO)
 
+patient_ids_file = 'patients_ids.txt'
 number_of_patients_to_generate = 100
 patient_arrival_range_in_min = (3, 10)
 
@@ -41,6 +42,10 @@ logging.info("station_address=%s",station_address)
 logging.info("manager_address=%s",manager_address)
 logging.info("number_of_patients_to_generate=%d",number_of_patients_to_generate)
 logging.info("patient_arrival (min, max) =(%d, %d) minutes",patient_arrival_range_in_min[0],patient_arrival_range_in_min[1])
+
+def store_id(id):
+    with open(patient_ids_file,'a') as f:
+        f.write(str(id)+'\n')
 
 # input data for creating a random patient
 prefix_name = "TEST-"
@@ -125,6 +130,7 @@ while index < number_of_patients_to_generate:
         logging.error('patient request failure with code %d', response.status_code)
         break
     patient_id = response.json()
+    store_id(patient_id)
 
     # register patient morphology
     morpho_data = {
