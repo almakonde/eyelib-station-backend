@@ -25,6 +25,7 @@
     "fetch_end": [],
 
     "back_camera_measurement":["Regardez droit devant", "La mentonnière pourra bouger"],
+    "back_camera_correction":["Veuillez placer votre menton sur la mentonnière"],
 
     "instrument_state_changed": [
         {

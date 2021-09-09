@@ -24,7 +24,8 @@
     "fetch_start": [],
     "fetch_end": [],
 
-    "back_camera_measurement":["Please look straight ahead.", "After eye detection, the chin rest could move."],
+    "back_camera_measurement":["Please look straight ahead.", "After eye detection, the chin rest could move."],    
+    "back_camera_correction":["Please place your chin on the chin rest."],
 
     "instrument_state_changed": [
         {
