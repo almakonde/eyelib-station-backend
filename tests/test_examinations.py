@@ -17,15 +17,15 @@ url = 'http://127.0.0.1:5000/examinations'
 exs = Examinations()
 
 patients = [
-    {'patient_name': 'Henry', 'patient_id':1},
+    {'patient_name': 'George', 'patient_id':1},
     {'patient_name': 'Paul', 'patient_id':2},
     {'patient_name': 'John', 'patient_id':3},
     {'patient_name': 'Ringo', 'patient_id':4}
 ]
 
 def add_patients():
-    for i in range(0, 4):
-        resp = requests.put(url, json={'command':'examinations', 'data': exs.factory(**patients[i])})
+    for patient in patients:
+        resp = requests.put(url, json={'command':'examinations', 'data': exs.factory(**patient)})
 
 
 class TestExaminations(unittest.TestCase):
