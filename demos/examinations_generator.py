@@ -79,8 +79,8 @@ def random_date():
 automation_response = requests.get(station_automation_url)
 program = automation_response.json().get('program')
 logging.info("program: %s",program)
-if program != 'gen2':
-    logging.warning('gen2 is not the current program. current = %s', program)
+if program != 'default_automation':
+    logging.warning('default_automation is not the current program. current = %s', program)
 
 # disable patient validation (i.e.: do not wait for patient departure because the dummy head is always present)
 automation_response = requests.put(station_automation_url, json={'command':'disable_patient_validation'})
