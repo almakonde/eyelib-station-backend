@@ -1,75 +1,55 @@
-import unittest
-from station_backend.views.examinations import Examinations, ExaminationsView
-from mjk_backend.threaded_server import ThreadedServer
-import threading
 import requests
-import queue
-import time
 
-from flask import Flask
-
-app = Flask("test_examination")
-
-server = ThreadedServer(app, 'test')
-
-url = 'http://127.0.0.1:5000/examinations'
-
-exs = Examinations()
-
-patients = [
-    {'patient_name': 'Henry', 'patient_id':1},
-    {'patient_name': 'Paul', 'patient_id':2},
-    {'patient_name': 'John', 'patient_id':3},
-    {'patient_name': 'Ringo', 'patient_id':4}
-]
-
-def add_patients():
-    for i in range(0, 4):
-        resp = requests.put(url, json={'command':'examinations', 'data': exs.factory(**patients[i])})
+def add_patients(patients, url, exs):
+    for patient in patients:
+        resp = requests.put(url, json={'command':'examinations', 'data': exs.factory(**patient)})
 
 
-class TestExaminations(unittest.TestCase):
+class TestExaminations:
     
-    def test_start(self):
-        ex = ExaminationsView(app, exs)
+    def test_start(self, requests_server):
+        server, _, _ = requests_server
         server.start()
-        self.assertTrue(server.is_running())       
+        assert server.is_running()
         server.shutdown()
         server.join()
-        self.assertFalse(server.is_running())
+        assert not server.is_running()
     
-    def test_add(self):
-        ex = ExaminationsView(app, exs)
+    def test_add(self, requests_server, patients):
+        server, url, exs = requests_server
         server.start()
 
-        for i in range(0, 4):
-            resp = requests.put(url, json={'command': 'examinations', 'data': exs.factory(**patients[i])})
+        for patient in patients:
+            resp = requests.put(url, json={'command': 'examinations', 'data': exs.factory(**patient)})
             if resp is not None:
-                self.assertTrue(resp.json().get('ret', False))
+                print(f'\n{32*"="}\nResult: {resp}\n{32*"="}\n')
+                # print(f'\n{32*"="}\nResult: {resp.json()}\n{32*"="}\n')
+                assert resp.json().get('ret', False)
+
+        server.shutdown()
+        server.join()
 
         pool = exs.get()
-        self.assertEqual(len(pool), 4)
+        assert len(pool) == 4
 
-        server.shutdown()
-        server.join()
-
-    def test_get(self):
-        ex = ExaminationsView(app, exs)
+    def A_test_get(self, requests_server, patients):
+        server, url, exs = requests_server
         server.start()
 
-        add_patients()
+        add_patients(patients, url, exs)
         
         resp = requests.get(url)
-        self.assertEqual(len(resp.json()), 4)
 
         server.shutdown()
         server.join()
+
+        assert len(resp.json()) == 4
     
-    def test_delete(self):
-        ex = ExaminationsView(app, exs)
+    def A_test_delete(self, requests_server, patients):
+        server, url, exs = requests_server
         server.start()
 
-        add_patients()
+        add_patients(patients, url, exs)
         
         resp1 = requests.get(url)
 
@@ -81,53 +61,56 @@ class TestExaminations(unittest.TestCase):
         server.shutdown()
         server.join()
 
-        self.assertEqual(len(resp1.json()), 4)
-        self.assertEqual(len(resp2.json()), 2)
+        assert len(resp1.json()) == 4
+        assert len(resp2.json()) == 2
 
-        self.assertIn(str(2), resp2.json().keys())
-        self.assertIn(str(4), resp2.json().keys())
-        self.assertNotIn(str(1), resp2.json().keys())
-        self.assertNotIn(str(3), resp2.json().keys())
+        assert str(2) in resp2.json().keys()
+        assert str(4) in resp2.json().keys()
+        assert str(1) not in resp2.json().keys()
+        assert str(3) not in resp2.json().keys()
     
-    def test_get_config(self):
-        ex = ExaminationsView(app, exs)
+    def A_test_get_config(self, requests_server):
+        server, url, exs = requests_server
         server.start()
         resp = requests.get(url, json={'command': 'config'})
-        self.assertIsNotNone(resp)
-        self.assertIn('auto_pick', resp.json())
+
         server.shutdown()
         server.join()
 
-    def test_get_sparse(self):
-        ex = ExaminationsView(app, exs)
+        assert resp is not None
+        assert 'auto_pick' in resp.json()
+
+    def A_test_get_sparse(self, requests_server, patients):
+        server, url, exs = requests_server
         server.start()
 
-        add_patients()
+        add_patients(patients, url, exs)
 
-        resp = requests.get(url, json={'command': 'item', 'data': 1})
-        self.assertIsNotNone(resp)
-        self.assertEqual(1, resp.json()['examination_id'])
+        resp1 = requests.get(url, json={'command': 'item', 'data': 1})
+        resp2 = requests.get(url, json={'command': 'item', 'data': [1, 2]})
 
-        resp = requests.get(url, json={'command': 'item', 'data': [1, 2]})
-        sparse = resp.json()
-        self.assertEqual(len(sparse), 2)
-        self.assertEqual(1, sparse[0]['examination_id'])
-        self.assertEqual(2, sparse[1]['examination_id'])
-        
         server.shutdown()
         server.join()
 
+        assert resp1 is not None
+        assert resp1.json()['examination_id'] == 1
 
-    def test_set_config(self):
-        ex = ExaminationsView(app, exs)
+        sparse = resp2.json()
+        assert len(sparse) == 2
+        assert sparse[0]['examination_id'] == 1
+        assert sparse[1]['examination_id'] == 2
+
+
+    def A_test_set_config(self, requests_server):
+        server, url, exs = requests_server
         server.start()
 
         config = exs.get_config()
-        self.assertTrue(config['auto_pick'])
+        assert config['auto_pick']
         
         resp = requests.put(url, json={'command': 'config', 'data': {'auto_pick': False}})
         config = exs.get_config()
-        self.assertFalse(config['auto_pick'])
+        assert not config['auto_pick']
 
         server.shutdown()
         server.join()
