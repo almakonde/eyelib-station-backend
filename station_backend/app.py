@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, send_from_directory, render_template, Response
 from flask_cors import CORS
+from flasgger import Swagger
 
 from station_backend.views.login import LoginView
 from station_backend.views.logout import LogoutView
@@ -66,6 +67,7 @@ static_folder = os.path.abspath(settings.staticFolder)
 app = Flask(__name__,   static_url_path='',
                         static_folder=static_folder,
                         template_folder='web/templates')
+swagger = Swagger(app)
 
 app.secret_key = 'b3\\x81\\x1e9\\x9d\\xd0H]!})\\xf9F\\xefU\\xd8\\xf9\\x99\\x023[\\xd4%0'
 

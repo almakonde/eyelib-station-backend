@@ -1,97 +1,78 @@
 import requests
+from pprint import pprint as pp
 
 def add_patients(patients, url, exs):
     for patient in patients:
         resp = requests.put(url, json={'command':'examinations', 'data': exs.factory(**patient)})
 
+title_bar = lambda title='', rep=64: f' {title} '.rjust(1+rep//2 + len(title)//2, '=').ljust(rep, '=')
+box = lambda text, title='', prefix='', rep=64: f'\n{rep*"=" if not title else title_bar(title, rep)}\n{prefix}{text}\n{rep*"="}\n'
 
 class TestExaminations:
-    
-    def test_start(self, requests_server):
-        server, _, _ = requests_server
-        server.start()
-        assert server.is_running()
-        server.shutdown()
-        server.join()
-        assert not server.is_running()
-    
-    def test_add(self, requests_server, patients):
-        server, url, exs = requests_server
-        server.start()
+    def test_examination_add(self, server_examinations, patients):
+        _, url, exs = server_examinations
 
         for patient in patients:
             resp = requests.put(url, json={'command': 'examinations', 'data': exs.factory(**patient)})
-            if resp is not None:
-                print(f'\n{32*"="}\nResult: {resp}\n{32*"="}\n')
-                # print(f'\n{32*"="}\nResult: {resp.json()}\n{32*"="}\n')
+            print(box(resp))
+            if resp is not None and resp.ok:
+                print(box(resp.json(), prefix='Result: '))
                 assert resp.json().get('ret', False)
 
-        server.shutdown()
-        server.join()
-
         pool = exs.get()
-        assert len(pool) == 4
+        print(box(pool, f'test_add POOL (exs.get)'))
+        new_patients = [{k: v for k, v in patient[1].items() if k.startswith('patient')} for patient in pool.items()]
+        assert new_patients == patients
 
-    def A_test_get(self, requests_server, patients):
-        server, url, exs = requests_server
-        server.start()
+    def test_examination_get(self, server_examinations, patients):
+        _, url, exs = server_examinations
 
         add_patients(patients, url, exs)
         
         resp = requests.get(url)
+        print(box(resp.json(), f'test_get RESP json (resp.json())'))
+        print(box(resp.text, f'test_get RESP text (resp.text)'))
+        new_patients = [{k: v for k, v in patient[1].items() if k.startswith('patient')} for patient in resp.json().items()]
 
-        server.shutdown()
-        server.join()
-
-        assert len(resp.json()) == 4
+        assert new_patients == patients
     
-    def A_test_delete(self, requests_server, patients):
-        server, url, exs = requests_server
-        server.start()
+    def test_examination_delete(self, server_examinations, patients):
+        _, url, exs = server_examinations
 
         add_patients(patients, url, exs)
+        deletes = [1, 3]
+        remaining_patients = [patient for patient in patients if patient['patient_id'] not in deletes]
         
         resp1 = requests.get(url)
+        new_patients1 = [{k: v for k, v in patient[1].items() if k.startswith('patient')} for patient in resp1.json().items()]
 
-        requests.delete(url, json={'item':{'examination_id':1}})
-        requests.delete(url, json={'item':{'examination_id':3}})
+        for delete in deletes:
+            requests.delete(url, json={'item': {'examination_id': delete}})
         
         resp2 = requests.get(url)
+        new_patients2 = [{k: v for k, v in patient[1].items() if k.startswith('patient')} for patient in resp2.json().items()]
+        print(box(new_patients2))
+        print(box(remaining_patients))
 
-        server.shutdown()
-        server.join()
+        assert new_patients1 == patients
+        assert new_patients2 == remaining_patients
 
-        assert len(resp1.json()) == 4
-        assert len(resp2.json()) == 2
-
-        assert str(2) in resp2.json().keys()
-        assert str(4) in resp2.json().keys()
-        assert str(1) not in resp2.json().keys()
-        assert str(3) not in resp2.json().keys()
     
-    def A_test_get_config(self, requests_server):
-        server, url, exs = requests_server
-        server.start()
+    def test_examination_get_config(self, server_examinations):
+        _, url, exs = server_examinations
         resp = requests.get(url, json={'command': 'config'})
-
-        server.shutdown()
-        server.join()
 
         assert resp is not None
         assert 'auto_pick' in resp.json()
+        pp(box(resp.json(), 'test_get_config', 'resp: '))
 
-    def A_test_get_sparse(self, requests_server, patients):
-        server, url, exs = requests_server
-        server.start()
+    def test_examination_get_sparse(self, server_examinations, patients):
+        _, url, exs = server_examinations
 
         add_patients(patients, url, exs)
 
         resp1 = requests.get(url, json={'command': 'item', 'data': 1})
         resp2 = requests.get(url, json={'command': 'item', 'data': [1, 2]})
-
-        server.shutdown()
-        server.join()
-
         assert resp1 is not None
         assert resp1.json()['examination_id'] == 1
 
@@ -101,9 +82,8 @@ class TestExaminations:
         assert sparse[1]['examination_id'] == 2
 
 
-    def A_test_set_config(self, requests_server):
-        server, url, exs = requests_server
-        server.start()
+    def test_examination_set_config(self, server_examinations):
+        _, url, exs = server_examinations
 
         config = exs.get_config()
         assert config['auto_pick']
@@ -112,5 +92,3 @@ class TestExaminations:
         config = exs.get_config()
         assert not config['auto_pick']
 
-        server.shutdown()
-        server.join()
