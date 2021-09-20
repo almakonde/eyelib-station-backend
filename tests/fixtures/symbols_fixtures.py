@@ -17,7 +17,7 @@ def actor():
     return lambda actor_name: Actor(Environment(), name=actor_name)
 
 @fixture(scope='function')
-def symbol(actor):
+def symbol_symbols(actor):
     # return lambda module_name, symbol_name: Symbol(module_name, symbol_name, type_name='BOOL')
     return lambda module_name, symbol_name, actor_name: create_symbol(module_name, symbol_name, actor(actor_name), type_name='BOOL')
 

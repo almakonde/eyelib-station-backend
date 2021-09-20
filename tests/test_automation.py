@@ -10,7 +10,7 @@ box = lambda text, title='', prefix='', rep=64: f'\n{rep*"=" if not title else t
 
 class TestAutomation:
     def test_automation_get(self, server_safety):
-        _, url, safety = server_safety
+        url, safety = server_safety
 
         resp = requests.get(url)
         assert not resp.json()
@@ -19,7 +19,7 @@ class TestAutomation:
         assert not any(attrs)
 
     def test_automation_add(self, server_safety, symbol):
-        _, url, safety = server_safety
+        url, safety = server_safety
         symbols = []
         for s in safety.notified_symbols:
             sym = symbol('Test safety', s)
@@ -30,7 +30,7 @@ class TestAutomation:
         print(box(resp.json(), f'test_automation_add RESP json (resp.json())'))
 
     def test_automation_change(self, server_safety):
-        _, url, safety = server_safety
+        url, safety = server_safety
 
         for symbol in safety.notified_symbols:
             setattr(safety, symbol, True)

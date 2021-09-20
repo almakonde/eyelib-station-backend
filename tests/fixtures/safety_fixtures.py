@@ -12,7 +12,7 @@ from station_common.implementation.sim.simulation import Symbol
 from station_backend.views.safety import Safety, SafetyView
 
 @fixture(scope='function')
-def symbol():
+def symbol_safety():
     return lambda module_name, symbol_name: Symbol(module_name, symbol_name, type_name='BOOL')
 
 @fixture(scope='function')

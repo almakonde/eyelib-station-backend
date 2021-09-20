@@ -1,3 +1,4 @@
+from tests.fixtures.safety_fixtures import symbol_safety
 import requests
 from pprint import pprint as pp
 
@@ -18,11 +19,11 @@ class TestSafety:
         print(box(tuple(attrs), f'test_safety_get attributes'))
         assert not any(attrs)
 
-    def test_safety_add(self, server_safety, symbol):
+    def test_safety_add(self, server_safety, symbol_safety):
         url, safety = server_safety
         symbols = []
         for s in safety.notified_symbols:
-            sym = symbol('Test safety', s)
+            sym = symbol_safety('Test safety', s)
             symbols.append(sym)
             print(box(sym.variable, f'test_safety_add generated symbol', f'{sym.module}: '))
         add_symbols(safety, symbols)
