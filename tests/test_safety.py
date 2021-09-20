@@ -15,7 +15,7 @@ class TestSafety:
 
         resp = requests.get(url)
         assert not resp.json()
-        attrs = (getattr(safety, symbol) for symbol in safety.notified_symbols)
+        attrs = (getattr(safety, symbol, False) for symbol in safety.notified_symbols)
         print(box(tuple(attrs), f'test_safety_get attributes'))
         assert not any(attrs)
 
@@ -39,6 +39,6 @@ class TestSafety:
         print(box(resp.json(), f'test_safety_change RESP json (resp.json())'))
         print(box(resp.text, f'test_safety_change RESP text (resp.text)'))
         assert not resp.json()
-        attrs = (getattr(safety, symbol) for symbol in safety.notified_symbols)
+        attrs = (getattr(safety, symbol, False) for symbol in safety.notified_symbols)
         print(box(tuple(attrs), f'test_safety_change attributes'))
         assert all(attrs)
