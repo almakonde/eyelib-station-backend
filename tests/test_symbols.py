@@ -25,13 +25,13 @@ class TestSymbols:
         site_mapper(site_map)
         assert True
 
-    def test_symbols_add(self, server_symbols, symbol):
+    def test_symbols_add(self, server_symbols, symbol_symbols):
         url, sm, site_map = server_symbols
         symbols = []
         symbol_names = ['sym_a', 'sym_b', 'sym_c', 'sym_d']
         actor_names = ['act_a', 'act_b', 'act_c', 'act_d']
         for s, a in zip(symbol_names, actor_names):
-            sym = symbol('Test symbols', s, a)
+            sym = symbol_symbols('Test symbols', s, a)
             symbols.append(sym)
             print(box(sym.variable, f'test_symbols_add generated symbol', f'{sym.module}: '))
         add_symbols(sm, symbols)
