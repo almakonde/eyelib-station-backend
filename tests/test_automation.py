@@ -18,11 +18,11 @@ class TestAutomation:
         print(box(tuple(attrs), f'test_automation_add attributes'))
         assert not any(attrs)
 
-    def test_automation_add(self, server_safety, symbol):
+    def test_automation_add(self, server_safety, symbol_safety):
         url, safety = server_safety
         symbols = []
         for s in safety.notified_symbols:
-            sym = symbol('Test safety', s)
+            sym = symbol_safety('Test automation', s)
             symbols.append(sym)
             print(box(sym.variable, f'test_automation_add generated symbol', f'{sym.module}: '))
         add_symbols(safety, symbols)
