@@ -17,11 +17,9 @@ def site_mapper(site_map):
 class TestSymbols:
     def test_symbols_get(self, server_symbols):
         url, sm, site_map = server_symbols
-
         resp = requests.get(url)
         print(box(dir(sm), f'test_symbols_get attributes', 'Attributes: '))
         print(box(sm.__dict__))
-
         site_mapper(site_map)
         assert True
 
