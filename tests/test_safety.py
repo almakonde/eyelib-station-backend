@@ -1,4 +1,3 @@
-from tests.fixtures.safety_fixtures import symbol_safety
 import requests
 from pprint import pprint as pp
 

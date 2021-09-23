@@ -121,7 +121,7 @@ atexit.register(app_cleanup)
 
 symbol_manager = SymbolManager(app)
 
-persistence_filename = os.path.realpath(script_dir()+'/../' + addr.replace(':', '_') + '.xml')
+persistence_filename = os.path.realpath(f"{os.getcwd()}/{addr.replace(':', '_')}.xml")
 persistence = PersistenceView(app, path=persistence_filename)
 
 if con:

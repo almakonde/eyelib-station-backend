@@ -9,17 +9,17 @@ title_bar = lambda title='', rep=64: f' {title} '.rjust(1+rep//2 + len(title)//2
 box = lambda text, title='', prefix='', rep=64: f'\n{rep*"=" if not title else title_bar(title, rep)}\n{prefix}{text}\n{rep*"="}\n'
 
 class TestAutomation:
-    def test_automation_get(self, server_safety):
-        url, safety = server_safety
+    def test_automation_get(self, server_automation):
+        url, safety = server_automation
 
         resp = requests.get(url)
         assert not resp.json()
-        attrs = (getattr(safety, symbol) for symbol in safety.notified_symbols)
+        attrs = (getattr(safety, symbol, False) for symbol in safety.notified_symbols)
         print(box(tuple(attrs), f'test_automation_add attributes'))
         assert not any(attrs)
 
-    def test_automation_add(self, server_safety, symbol_safety):
-        url, safety = server_safety
+    def test_automation_add(self, server_automation, symbol_safety):
+        url, safety = server_automation
         symbols = []
         for s in safety.notified_symbols:
             sym = symbol_safety('Test automation', s)
@@ -29,8 +29,8 @@ class TestAutomation:
         resp = requests.get(url)
         print(box(resp.json(), f'test_automation_add RESP json (resp.json())'))
 
-    def test_automation_change(self, server_safety):
-        url, safety = server_safety
+    def test_automation_change(self, server_automation):
+        url, safety = server_automation
 
         for symbol in safety.notified_symbols:
             setattr(safety, symbol, True)
@@ -38,6 +38,6 @@ class TestAutomation:
         print(box(resp.json(), f'test_automation_change RESP json (resp.json())'))
         print(box(resp.text, f'test_automation_change RESP text (resp.text)'))
         assert not resp.json()
-        attrs = (getattr(safety, symbol) for symbol in safety.notified_symbols)
+        attrs = (getattr(safety, symbol, False) for symbol in safety.notified_symbols)
         print(box(tuple(attrs), f'test_automation_change attributes'))
         assert all(attrs)
