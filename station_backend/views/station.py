@@ -101,7 +101,15 @@ class StationView(Restful, Stream):
             self.psa.patient_station.patient_interaction.say(sentence)
 
     def _on_examination_changed(self, *args, **kwargs):
-        sse.push('station', 'examination', self.psa.patient_station.examination)
+        '''
+        When a patient departs or a new patient appears, push to SSE.
+        '''
+        msg = self.psa.patient_station.examination
+        # If the msg is not none (it is a new patient), copy the message to prevent errors from memory lockup
+        if msg is not None:
+            msg = self.psa.patient_station.examination.copy()
+        logger.info('sse.push _on_examination_changed: %s', msg)
+        sse.push('station', 'examination', msg)
 
     def on_bc_last_measurement_changed(self, back_camera, data):
         key, value, old_value = data
