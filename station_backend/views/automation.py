@@ -61,7 +61,8 @@ class AutomationView(Restful):
             'show': self.show,
             'adjust': self.adjust,
             'adjustment_done': self.adjustment_done,
-            'disable_patient_validation': self.disable_patient_validation
+            'disable_patient_validation': self.disable_patient_validation,
+            'move_vx120_left': self.move_vx120_left
         }
 
         self.psa.bind('recursive_state_str', self.on_state_changed)
@@ -174,6 +175,14 @@ class AutomationView(Restful):
 
     def show(self, *args, **kwargs):
         return jsonify(self._variables_val())
+
+    def move_vx120_left(self, *args, **kwargs):
+        '''
+        Propagates the command to move the VX120 to station_common.
+        '''
+        ret = self.psa.move_vx120_left()
+        logger.info('In automation.py calling move_vx_120_left')
+        return make_response("success" if ret else "moving VX120 failed", 200 if ret else 500)
 
     def adjust(self, *args, **kwargs):
         ret = False
