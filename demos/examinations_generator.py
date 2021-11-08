@@ -1,25 +1,35 @@
-import requests
-import random
-from time import sleep
-from calendar import datetime
-import logging
-
 """"
 This script generates random patients and push them to manager. 
 The manager sends them to the station.
+When use_manager=False, the generated patients are sent directly to the station.
 
 Conditions: 
     The station shall be in gen2 automation mode.
     The VX and REVO instruments shall be apriori set up to work with dummy eyes.
 Output:
     At the end of each examination, the results from instruments should be found in the manager.
+    No instrument results are expected when use_manager=False.
 """
+
+import requests
+import random
+from time import sleep
+from calendar import datetime
+import logging
+
+def random_date() -> str:
+    random_number_of_days = random.randint(0,days_between_dates)
+    random_date = start_date + datetime.timedelta(days=random_number_of_days)
+    return str(random_date)
 
 logging.basicConfig(filename='examinations_generator.log', format='%(asctime)s %(message)s', level=logging.INFO)
 
-patient_ids_file = 'patients_ids.txt'
+use_manager = False
 number_of_patients_to_generate = 100
 patient_arrival_range_in_min = (3, 10)
+patient_id_offset = 0
+prefix_name = "TEST-"
+patient_ids_file = 'patients_ids.txt'
 
 # end points declarations
 station_ip = '10.1.1.1'
@@ -38,18 +48,14 @@ manager_morphology_registration_url = manager_address + 'registerMorphology'
 manager_patient_to_station_url = manager_address + 'pushToStation'
 
 logging.info("Start examinations_generator")
+logging.info("use_manager=%s",use_manager)
 logging.info("station_address=%s",station_address)
 logging.info("manager_address=%s",manager_address)
 logging.info("number_of_patients_to_generate=%d",number_of_patients_to_generate)
-logging.info("patient_arrival (min, max) =(%d, %d) minutes",patient_arrival_range_in_min[0],patient_arrival_range_in_min[1])
+logging.info("patient_arrival (min, max) = (%d, %d) minutes",patient_arrival_range_in_min[0],patient_arrival_range_in_min[1])
 
-def store_id(id):
-    with open(patient_ids_file,'a') as f:
-        f.write(str(id)+'\n')
 
 # input data for creating a random patient
-prefix_name = "TEST-"
-
 females = ("Mary","Elizabeth","Patricia","Jennifer","Linda","Barbara","Margaret","Susan","Dorothy","Sarah",
             "Jessica","Helen","Nancy","Betty","Karen","Lisa","Anna","Sandra","Emily","Ashley",
             "Kimberly","Donna","Ruth","Carol","Michelle","Laura","Amanda","Melissa","Rebecca","Deborah",
@@ -69,11 +75,6 @@ start_date = datetime.date(1920, 1, 1)
 end_date = datetime.date(2020, 12, 31)
 time_between_dates = end_date - start_date
 days_between_dates = time_between_dates.days
-
-def random_date():
-    random_number_of_days = random.randint(0,days_between_dates)
-    random_date = start_date + datetime.timedelta(days=random_number_of_days)
-    return str(random_date)
 
 # get program name and print it in the log file
 automation_response = requests.get(station_automation_url)
@@ -118,43 +119,63 @@ while index < number_of_patients_to_generate:
     chin_z = random.randint(chin_z_min, chin_z_max)
     chin_to_eyeline = random.randint(chin_to_eyeline_min, chin_to_eyeline_max)
 
-    # register a patient and get the patient ID
-    patient_data = {
-                'firstName': prefix_name+first_name,
-                'surname': last_name,
-                'gender': int(gender_flag),
-                'birthDate': random_date()
+    patient_id = index + patient_id_offset
+    
+    if use_manager:
+        # register a patient and get the patient ID
+        patient_data = {
+                    'firstName': prefix_name+first_name,
+                    'surname': last_name,
+                    'gender': int(gender_flag),
+                    'birthDate': random_date()
+                }
+        response = requests.post(manager_patient_registration_url, json=patient_data)
+        if response.status_code != requests.codes.ok:
+            logging.error('patient request failed with code %d', response.status_code)
+            break
+        patient_id = response.json()
+
+        # register patient morphology
+        morpho_data = {
+                    'chin2Eyes': chin_to_eyeline,
+                    'chin2Floor': chin_z
+                }
+        _ = requests.post(manager_morphology_registration_url, json=morpho_data)
+        logging.info('index=%d patient_id=%d patient_data=%s ', index, patient_id, patient_data)
+        logging.info('index=%d patient_id=%d morpho_data=%s', index, patient_id, morpho_data)
+
+        # send patient to station
+        _ = requests.post(manager_patient_to_station_url, json={
+                    'patientId': patient_id
+                })   
+    
+    else:
+        # use in simulation and when a manager is not attached
+        patient = {
+                'patient_name':prefix_name+' '+first_name+' '+last_name,
+                'patient_id':patient_id,
+                'examination_id':patient_id,
+                'morphology':{'chin_z': chin_z, 'chin_to_eyeline': chin_to_eyeline},
+                'instruments':['REVO', 'VX120'],
+                'birth_date':random_date(),
+                'gender': gender
             }
-    response = requests.post(manager_patient_registration_url, json=patient_data)
-    if response.status_code != requests.codes.ok:
-        logging.error('patient request failure with code %d', response.status_code)
-        break
-    patient_id = response.json()
-    store_id(patient_id)
+        response = requests.put(station_address + 'examinations', json={'command':'examinations', 'data':patient})
 
-    # register patient morphology
-    morpho_data = {
-                'chin2Eyes': chin_to_eyeline,
-                'chin2Floor': chin_z
-            }
-    _ = requests.post(manager_morphology_registration_url, json=morpho_data)
-    logging.info('index=%d patient_id=%d patient_data=%s morpho_data=%s', index, patient_id, patient_data, morpho_data)
+        logging.info('index=%d patient_id=%d examination_id=%d patient_name=%s', index, patient_id, patient["examination_id"], patient["patient_name"])
+        logging.info('index=%d patient_id=%d birth_date=%s gender=%s', index, patient_id, patient["birth_date"], patient["gender"])
+        logging.info('index=%d patient_id=%d morpho_data=%s', index, patient_id, patient["morphology"])
+        logging.info('index=%d patient_id=%d instruments=%s', index, patient_id, patient["instruments"])
 
-    # send patient to station
-    _ = requests.post(manager_patient_to_station_url, json={
-                'patientId': patient_id
-            })
+        if response.status_code != requests.codes.ok:
+            logging.error('examination request failed with code %d', response.status_code)
+            break
 
-    # use in simulation
-    # patient = {'patient_name':prefix_name+' '+first_name+' '+last_name,
-    #             'patient_id':index,
-    #             'examination_id':index,
-    #             'morphology':{'chin_z': chin_z, 'chin_to_eyeline': chin_to_eyeline},
-    #             'instruments':['REVO', 'VX120'],
-    #             'birth_date':random_date(),
-    #             'gender': gender}
-    # response = requests.put(station_address + 'examinations', json={'command':'examinations', 'data':patient})
-
-    sleep(random.randint(patient_arrival_range_in_min[0]*60, patient_arrival_range_in_min[1]*60)) # sleep entre 3 et 10 minutes
+    # store patient ID
+    with open(patient_ids_file,'a') as f:
+        f.write(str(patient_id)+'\n')
+        
+    # sleep between min and max in minutes
+    sleep(random.randint(patient_arrival_range_in_min[0]*60, patient_arrival_range_in_min[1]*60))
 
 logging.info("End examinations_generator")
