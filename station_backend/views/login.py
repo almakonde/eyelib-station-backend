@@ -9,10 +9,10 @@ from station_backend.settings import load as load_settings
 
 settings = load_settings()
 secret_key = settings.secretKey
-passwd = {
+local_passwd = {
     'admin': {
         'password': 'sha256$bemYnOoI$3ecaa2bfb25354a9a18c1365e9e4ffea86751377ff6f11b20894f3f0bbdca286',
-        'roles' : ['admin', 'tech', 'patient'],
+        'roles' : ['admin', 'tech'],
     },
 }
 
@@ -26,8 +26,7 @@ roles = {
         'roleCreation',
         'stationFrontend',
     ],
-    'tech': ['techFrontend','patientList'],
-    'patient': ['labRat'],
+    'tech': ['techFrontend','patientList']
 }
 
 class LoginView(Restful):
@@ -38,7 +37,7 @@ class LoginView(Restful):
     def post(self, *args, **kwargs):
         print('/login got:\n\tJSON', request.json, '\n\tDATA', request.data)
         username = request.json.get('username', None)
-        user = passwd.get(username)
+        user = local_passwd.get(username)
         if user:
             password = request.json.get('password', None)
             role_list = user.get('roles')
@@ -68,12 +67,3 @@ def encode_auth_token(username):
         return jwt.encode(payload, secret_key, algorithm='HS256')
     except Exception as e:
         return False
-
-def decode_auth_token(auth_token):
-    try:
-        payload = jwt.decode(auth_token, secret_key)
-        return payload['sub']
-    except jwt.ExpiredSignatureError:
-        return 'Signature expired. Please log in again.'
-    except jwt.InvalidTokenError:
-        return 'Invalid token. Please log in again.'
