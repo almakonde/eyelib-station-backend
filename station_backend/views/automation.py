@@ -62,7 +62,8 @@ class AutomationView(Restful):
             'adjust': self.adjust,
             'adjustment_done': self.adjustment_done,
             'disable_patient_validation': self.disable_patient_validation,
-            'move_vx120_left': self.move_vx120_left
+            'move_vx120_left': self.move_vx120_left,
+            'move_revo_right': self.move_revo_right
         }
 
         self.psa.bind('recursive_state_str', self.on_state_changed)
@@ -178,11 +179,19 @@ class AutomationView(Restful):
 
     def move_vx120_left(self, *args, **kwargs):
         '''
-        Propagates the command to move the VX120 to station_common.
+            Propagates the command to move the VX120 to station_common.
         '''
         ret = self.psa.move_vx120_left()
         logger.info('In automation.py calling move_vx_120_left')
         return make_response("success" if ret else "moving VX120 failed", 200 if ret else 500)
+
+    def move_revo_right(self, *args, **kwargs):
+        '''
+            Propagates the command to move the REVO to station_common.
+        '''
+        ret = self.psa.move_revo_right()
+        logger.info('In automation.py calling move_revo_right')
+        return make_response("success" if ret else "moving REVO failed", 200 if ret else 500)        
 
     def adjust(self, *args, **kwargs):
         ret = False
