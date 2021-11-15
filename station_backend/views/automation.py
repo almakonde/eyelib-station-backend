@@ -8,6 +8,7 @@ from station_common.automation.platform import logger
 
 from station_backend import sse
 import time
+import requests
 
 class AutomationAdjust:
     def __init__(self, psa: PatientStationAutomation):
@@ -63,6 +64,7 @@ class AutomationView(Restful):
             'adjustment_done': self.adjustment_done,
             'disable_patient_validation': self.disable_patient_validation,
             'move_vx120_left': self.move_vx120_left,
+            'relaunch_revo_automation': self.relaunch_revo_automation,
             'move_revo_right': self.move_revo_right
         }
 
@@ -184,6 +186,17 @@ class AutomationView(Restful):
         ret = self.psa.move_vx120_left()
         logger.info('In automation.py calling move_vx_120_left')
         return make_response("success" if ret else "moving VX120 failed", 200 if ret else 500)
+
+    def relaunch_revo_automation(self, *args, **kwargs):
+        '''
+            Sends a GET request to the REVO that triggers a shutdown.
+            This makes the REVO automation restart because it has a parameter that makes
+            it automatically restart.
+        '''
+        revo_params = self.psa.patient_station.platform.instrument_storage.instruments_parameters['REVO-01']['ruia']
+        path = f"http://{revo_params['rest_host']}:{(revo_params['rest_port'])}/shutdown"
+        ret = requests.get(path)
+        return make_response("success" if ret else "Relaunching RVO failed", 200 if ret else 500)
 
     def move_revo_right(self, *args, **kwargs):
         '''
