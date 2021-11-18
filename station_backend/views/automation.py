@@ -63,6 +63,7 @@ class AutomationView(Restful):
             'adjust': self.adjust,
             'adjustment_done': self.adjustment_done,
             'disable_patient_validation': self.disable_patient_validation,
+            'relaunch_vx120_automation': self.relaunch_vx120_automation,
             'move_vx120_left': self.move_vx120_left,
             'relaunch_revo_automation': self.relaunch_revo_automation,
             'move_revo_right': self.move_revo_right
@@ -178,6 +179,15 @@ class AutomationView(Restful):
 
     def show(self, *args, **kwargs):
         return jsonify(self._variables_val())
+
+    def relaunch_vx120_automation(self, *args, **kwargs):
+        '''
+            Sends a GET request to the VX120 that triggers a shutdown.
+        '''
+        vx120_params = self.psa.patient_station.platform.instrument_storage.instruments_parameters['VX120-01']['ruia']
+        path = f"http://{vx120_params['rest_host']}:{(vx120_params['rest_port'])}/shutdown"
+        ret = requests.get(path)
+        return make_response("success" if ret else "Relaunching VX120 failed", 200 if ret else 500)
 
     def move_vx120_left(self, *args, **kwargs):
         '''
