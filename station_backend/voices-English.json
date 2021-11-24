@@ -19,6 +19,7 @@
     "instrument_done": [],
     "instrument_calibration_done": ["Instrument calibration done."],
     "all_instruments_done": ["Thank you. You can now leave the station", "Please return back to the registration stand. Your report is being edited and will be ready in a few minutes."],
+    "halfway_doe": ["You have performed half of the examination.", "Please remain in place for the remainder of the examination."],
     "deposit_start": [],
     "deposit_end": [],
     "fetch_start": [],
