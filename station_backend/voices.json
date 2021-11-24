@@ -29,7 +29,7 @@
 
     "instrument_state_changed": [
         {
-            "format": "Veuillez rester immobile au cours de l'examination",
+            "format": "Veuillez rester immobile au cours de l'éxamen",
             "match": {"state": "InstrumentState.Preparing"}
         },
         {
