@@ -98,7 +98,8 @@ if __name__ == '__main__':
 
     autorestart = True
     while(autorestart):
-        autorestart = os.path.isfile(autorestart_filepath) and (not force_exit.is_set())
+        # autorestart = os.path.isfile(autorestart_filepath) and (not force_exit.is_set())
+        autorestart = settings.autoRestart and (not force_exit.is_set())
         b_logger.info("Starting backend (autorestart: %s)" % str(autorestart))
         parent_con, child_con = Pipe(duplex=True)
         p = Process(target=appp, args=(child_con,))
@@ -116,7 +117,8 @@ if __name__ == '__main__':
                 
                 
                 running = (p.exitcode is None)
-        autorestart = os.path.isfile(autorestart_filepath) and (not force_exit.is_set())
+        # autorestart = os.path.isfile(autorestart_filepath) and (not force_exit.is_set())
+        autorestart = settings.autoRestart and (not force_exit.is_set())
 
     systray.shutdown()
     exit(1)
