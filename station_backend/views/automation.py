@@ -66,7 +66,8 @@ class AutomationView(Restful):
             'relaunch_vx120_automation': self.relaunch_vx120_automation,
             'move_vx120_left': self.move_vx120_left,
             'relaunch_revo_automation': self.relaunch_revo_automation,
-            'move_revo_right': self.move_revo_right
+            'move_revo_right': self.move_revo_right,
+            'shutdown_instruments': self.shutdown_instruments
         }
 
         self.psa.bind('recursive_state_str', self.on_state_changed)
@@ -215,6 +216,15 @@ class AutomationView(Restful):
         ret = self.psa.move_instrument_head('REVO')
         logger.info('In automation.py calling move_instrument_head for REVO')
         return make_response("success" if ret else "moving REVO failed", 200 if ret else 500)        
+
+    def shutdown_instruments(self, *args, **kwargs):
+        '''
+            Propagates the command to shutdown the instruments.
+        '''        
+        logger.info('In automation.py caling shutdown_instruments')
+        ret = self.psa.instrument_shutdown()
+        return make_response("success" if ret else "shutdown instruments failed", 200 if ret else 500)        
+
 
     def adjust(self, *args, **kwargs):
         ret = False
