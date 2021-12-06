@@ -193,8 +193,8 @@ class AutomationView(Restful):
         '''
             Propagates the command to move the VX120 to station_common.
         '''
-        ret = self.psa.move_vx120_left()
-        logger.info('In automation.py calling move_vx_120_left')
+        ret = self.psa.move_instrument_head('VX120')
+        logger.info('In automation.py calling move_instrument_head for VX120')
         return make_response("success" if ret else "moving VX120 failed", 200 if ret else 500)
 
     def relaunch_revo_automation(self, *args, **kwargs):
@@ -212,8 +212,8 @@ class AutomationView(Restful):
         '''
             Propagates the command to move the REVO to station_common.
         '''
-        ret = self.psa.move_revo_right()
-        logger.info('In automation.py calling move_revo_right')
+        ret = self.psa.move_instrument_head('REVO')
+        logger.info('In automation.py calling move_instrument_head for REVO')
         return make_response("success" if ret else "moving REVO failed", 200 if ret else 500)        
 
     def adjust(self, *args, **kwargs):
