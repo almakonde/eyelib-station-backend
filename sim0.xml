@@ -67,15 +67,15 @@
                 </item>
             </neutral_speed_mm_s>
             <stationheight_z_margin_mm type="int">0</stationheight_z_margin_mm>
-            <chinrest_clearance_mm type="int">45</chinrest_clearance_mm> 
-            <chinrest_cover_position_mm type="int">25</chinrest_cover_position_mm>           
+            <chinrest_clearance_mm type="int">45</chinrest_clearance_mm>
+            <chinrest_cover_position_mm type="int">25</chinrest_cover_position_mm>
             <chin_to_eyeline_min_mm type="int">90</chin_to_eyeline_min_mm>
+            <stationheight_sit_down_pos_mm type="int">1150</stationheight_sit_down_pos_mm>
         </automation>
         <PatientInteraction type="element">
             <remote_speech_address type="str">127.0.0.1:1234</remote_speech_address>
         </PatientInteraction>
-        <Patient type="element">
-        </Patient>
+        <Patient type="element"></Patient>
 
         <PS1_ChinRest type="element">
             <taught_points type="dict">
@@ -152,11 +152,12 @@
                     <item type="str">127.0.0.1:5004</item>
                 </item>
             </tc_settings>
-            <eyeline_target type="float">0.5</eyeline_target>            
+            <eyeline_target type="float">0.5</eyeline_target>
             <consecutive_detections_thr type="int">20</consecutive_detections_thr>
             <adjustment_tolerance type="float">1.5</adjustment_tolerance>
             <tilt_accepted_measurement type="float">15.0</tilt_accepted_measurement>
         </BackCamera>
+        <StationHeight type="element" />
     </PS1>
     <IS type="element">
         <instruments type="dict">
@@ -199,7 +200,7 @@
                                 <item type="int">6002</item>
                             </item>
                         </item>
-                    </item>                                                            
+                    </item>
                     <item type="tuple">
                         <item type="str">iid</item>
                         <item type="str">VX120-01</item>
@@ -212,10 +213,10 @@
                     <item type="tuple">
                         <item type="str">mac</item>
                         <item type="str">1C:69:7A:02:40:85</item>
-                    </item>                  
+                    </item>
                     <item type="tuple">
                         <item type="str">ruia</item>
-                        <item type="dict">                            
+                        <item type="dict">
                             <item type="tuple">
                                 <item type="str">rest_host</item>
                                 <item type="str">127.0.0.1</item>
