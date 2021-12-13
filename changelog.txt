@@ -1,0 +1,22 @@
+Changelog
+
+### Version 1.1 ###
+New Features
+* Buttons to relaunch and shutdown the instruments and station.
+* Buttons to unblock the back-camera view (in case an instrument is in the way).
+* Voice notification when half of the examination is done.
+* Engineering access rights for the operator interface.
+* Buttons to put the station in sit-down mode or stand-up mode.
+
+Improvements
+* Speedup of the REVO examination
+* Improvements of the voice in French.
+* Better UI labels for the station management.
+* Indicate earlier when the patient can leave after the VX120 examination.
+* Unit tests added for backend, common and mjk-utils.
+
+Bug fixing
+* The Cancel or Redo button are now working.
+* Correct information is shown for the patients in the examination list.
+* Information abut the patient is correctly loaded when there has been a previous patient.
+* Selecting patients for examination in the REVO when the patientlist is long.
