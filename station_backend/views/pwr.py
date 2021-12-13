@@ -16,13 +16,11 @@ class PowerView(Restful):
     def get(self, *args, **kwargs):
         data = []
         pwr_id = kwargs.get('pwr_id', None)
-        print(f'\nGot in GET...\n\t{args}\n\t{kwargs}')
         if pwr_id:
             pwr_sw = self.pwr.pwr_sws.get(pwr_id, None)
             if pwr_sw:
                 data = {pwr_id: pwr_sw.state}
         else:
-            print(self.pwr)
             data = list(self.pwr.pwr_sws.keys())
         return jsonify(data)
 
