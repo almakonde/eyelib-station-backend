@@ -10,7 +10,5 @@ class SafetyView(Restful):
         self._safety = safety
       
     def get(self, *args, **kwargs):
-        ret = {
-            symbol.variable: symbol.read() for symbol in self._safety.symbols.values()
-            }
+        ret = {symbol.variable: symbol.read() for symbol in self._safety.symbols.values()}
         return jsonify(ret)
