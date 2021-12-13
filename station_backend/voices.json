@@ -18,7 +18,9 @@
     "instrument_examination_done": [],
     "instrument_done": [],
     "instrument_calibration_done": ["Calibration de l'instrument terminé"],
+    "instrument_notification": ["Veuillez rester immobile au cours de l'examen"],
     "all_instruments_done": ["Merci! Vous pouvez maintenant sortir de la station", "Vous pouvez retourner sur la station d'enregistrement. Le rapport de votre examen sera prêt dans quelques minutes."],
+    "halfway_done": ["Vous avez effectué la moitié de l'examen.", "Veuillez rester en place pour la suite."],
     "deposit_start": [],
     "deposit_end": [],
     "fetch_start": [],
@@ -28,10 +30,6 @@
     "back_camera_correction":["Veuillez placer votre menton sur la mentonnière"],
 
     "instrument_state_changed": [
-        {
-            "format": "Veuillez rester immobile au cours de l'examination",
-            "match": {"state": "InstrumentState.Preparing"}
-        },
         {
             "format": "Veuillez rester immobile et garder les yeux ouverts",
             "match": {"state": "InstrumentState.Pretargeting"}

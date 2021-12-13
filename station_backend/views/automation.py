@@ -8,6 +8,7 @@ from station_common.automation.platform import logger
 
 from station_backend import sse
 import time
+import requests
 
 class AutomationAdjust:
     def __init__(self, psa: PatientStationAutomation):
@@ -21,8 +22,8 @@ class AutomationAdjust:
             'back': ('InstrumentTable_X', -1.0*self.epsilon),
             'cr_up': ('ChinRest', 2.0*self.epsilon),
             'cr_down': ('ChinRest', -2.0*self.epsilon),
-            'station_up': ('StationHeight', 6.0*self.epsilon),
-            'station_down': ('StationHeight', -6.0*self.epsilon)
+            'station_up': ('StationHeight', 10.0*self.epsilon),
+            'station_down': ('StationHeight', -10.0*self.epsilon)
         }
 
     def adjust(self, action) -> bool:
@@ -61,7 +62,12 @@ class AutomationView(Restful):
             'show': self.show,
             'adjust': self.adjust,
             'adjustment_done': self.adjustment_done,
-            'disable_patient_validation': self.disable_patient_validation
+            'disable_patient_validation': self.disable_patient_validation,
+            'relaunch_vx120_automation': self.relaunch_vx120_automation,
+            'move_vx120_left': self.move_vx120_left,
+            'relaunch_revo_automation': self.relaunch_revo_automation,
+            'move_revo_right': self.move_revo_right,
+            'shutdown_instruments': self.shutdown_instruments
         }
 
         self.psa.bind('recursive_state_str', self.on_state_changed)
@@ -174,6 +180,51 @@ class AutomationView(Restful):
 
     def show(self, *args, **kwargs):
         return jsonify(self._variables_val())
+
+    def relaunch_vx120_automation(self, *args, **kwargs):
+        '''
+            Sends a GET request to the VX120 that triggers a shutdown.
+        '''
+        vx120_params = self.psa.patient_station.platform.instrument_storage.instruments_parameters['VX120-01']['ruia']
+        path = f"http://{vx120_params['rest_host']}:{(vx120_params['rest_port'])}/shutdown"
+        ret = requests.get(path)
+        return make_response("success" if ret else "Relaunching VX120 failed", 200 if ret else 500)
+
+    def move_vx120_left(self, *args, **kwargs):
+        '''
+            Propagates the command to move the VX120 to station_common.
+        '''
+        ret = self.psa.move_instrument_head('VX120')
+        logger.info('In automation.py calling move_instrument_head for VX120')
+        return make_response("success" if ret else "moving VX120 failed", 200 if ret else 500)
+
+    def relaunch_revo_automation(self, *args, **kwargs):
+        '''
+            Sends a GET request to the REVO that triggers a shutdown.
+            This makes the REVO automation restart because it has a parameter that makes
+            it automatically restart.
+        '''
+        revo_params = self.psa.patient_station.platform.instrument_storage.instruments_parameters['REVO-01']['ruia']
+        path = f"http://{revo_params['rest_host']}:{(revo_params['rest_port'])}/shutdown"
+        ret = requests.get(path)
+        return make_response("success" if ret else "Relaunching RVO failed", 200 if ret else 500)
+
+    def move_revo_right(self, *args, **kwargs):
+        '''
+            Propagates the command to move the REVO to station_common.
+        '''
+        ret = self.psa.move_instrument_head('REVO')
+        logger.info('In automation.py calling move_instrument_head for REVO')
+        return make_response("success" if ret else "moving REVO failed", 200 if ret else 500)        
+
+    def shutdown_instruments(self, *args, **kwargs):
+        '''
+            Propagates the command to shutdown the instruments.
+        '''        
+        logger.info('In automation.py caling shutdown_instruments')
+        ret = self.psa.instrument_shutdown()
+        return make_response("success" if ret else "shutdown instruments failed", 200 if ret else 500)        
+
 
     def adjust(self, *args, **kwargs):
         ret = False

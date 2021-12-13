@@ -70,6 +70,7 @@
             <chinrest_clearance_mm type="int">45</chinrest_clearance_mm>  
             <chinrest_cover_position_mm type="int">55</chinrest_cover_position_mm>          
             <chin_to_eyeline_min_mm type="int">70</chin_to_eyeline_min_mm>
+            <stationheight_sit_down_pos_mm type="int">1150</stationheight_sit_down_pos_mm>
         </automation>
         <PatientInteraction type="element">
             <remote_speech_address type="str">10.1.1.10:1234</remote_speech_address>

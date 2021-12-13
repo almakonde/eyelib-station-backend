@@ -42,6 +42,9 @@ class PatientAdjustView(Restful):
                 elif command == 'chinrest_z':
                     self._ps.axes['ChinRest'].move_to_mm(data)
                     return jsonify({})
+                elif command == 'sit_down':
+                    sitting_down_flag = self._psa.set_station_height(data)
+                    return jsonify({'sitting_down':sitting_down_flag})
                 else:
                     return make_response('unknown command', 500)
             else:
