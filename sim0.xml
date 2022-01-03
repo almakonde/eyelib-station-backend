@@ -53,6 +53,13 @@
         <InstrumentTable_Y type="element">
             <length_mm type="float">524.9925000000001</length_mm>
         </InstrumentTable_Y>
+        <StationHeight type="element">
+            <length_mm type="float">702.0</length_mm>
+            <offset_mm type="float">1100.0</offset_mm>
+            <tolerence_mm type="float">0.1</tolerence_mm>
+            <encoder_min type="int">465</encoder_min>
+            <encoder_max type="int">9455</encoder_max>
+        </StationHeight>
 
         <automation type="element">
 
