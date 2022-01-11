@@ -1,12 +1,13 @@
 # Upgrade procedure
 
-## **v1.1.1** migration from v1.1
+## **v1.1.1 migration from v1.1
 
 ### **Update TwinCAT/TwinSAFE solution**
 Connect you development laptop to Beckhoff via Visual Studio and do:
 > 1. Checkout the corresponding version of _gen2-station-twincat_ project on your laptop
-> 2. Activate both TwinCAT and TwinSAFE solutions
-> 3. After restart, check for ```PS1_DRV_TBL_X```, ```PS1_DRV_TBL_Y```, ```PS1_DRV_CR``` and ```PS_AI``` if the Startup parameters are set up on their _80xx_ addresses
+> 2. Set 1 Isolated core on ```SYSTEM -> Real-Time``` page
+> 3. Activate both TwinCAT and TwinSAFE solutions
+> 4. After restart, check for ```PS1_DRV_TBL_X```, ```PS1_DRV_TBL_Y```, ```PS1_DRV_CR``` and ```PS_AI``` if the Startup parameters are set up on their _80xx_ addresses
 
 
 ### **Update the code base**
