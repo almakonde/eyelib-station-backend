@@ -166,7 +166,23 @@ class AutomationView(Restful):
 
     def adjustment_done(self, *args, **kwargs):
         self.psa.adjustment_done()
+        self.log_total_adjustments()
         return jsonify({})
+
+    def log_total_adjustments(self):
+        '''
+            Logs the total adjustments done for the patient.
+        '''
+        id = self.psa.patient_station.examination['patient_id']
+        sitting_down = self.psa.patient_station.examination['morphology']['sit_down_flag']
+        if sitting_down:
+            previous_station_height = self.psa.patient_station.examination['morphology']['sit_down_height']
+        else:
+            previous_station_height = self.psa.patient_station.examination['morphology']['chin_z']
+        station_height_diff = round(self.psa.chin_z_from_station_height()) - previous_station_height
+        previous_chin_rest_height = round(self.psa.chin_to_eyeline_max() - self.psa.patient_station.examination['morphology']['chin_to_eyeline'])
+        chin_rest_dif = round(self.psa.chinrest_z()) - previous_chin_rest_height
+        logger.info(f"Total adjustment for patient ID : {id}, station height : {station_height_diff} (new height : {round(self.psa.chin_z_from_station_height())}, previous : {previous_station_height}) and chin rest : {chin_rest_dif} (new height : {round(self.psa.chinrest_z())}, previous : {previous_chin_rest_height}). Sitting down : {sitting_down}")
 
     def disable_patient_validation(self, *args, **kwargs):
         self.psa.disable_patient_validation()
