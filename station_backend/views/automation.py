@@ -68,7 +68,8 @@ class AutomationView(Restful):
             'relaunch_revo_automation': self.relaunch_revo_automation,
             'move_revo_right': self.move_revo_right,
             'shutdown_instruments': self.shutdown_instruments,
-            'reset_instruments': self.reset_instruments
+            'reset_instruments': self.reset_instruments,
+            'skip_eye_detection': self.skip_eye_detection
         }
 
         self.psa.bind('recursive_state_str', self.on_state_changed)
@@ -249,7 +250,15 @@ class AutomationView(Restful):
         '''        
         logger.info('In automation.py caling reset_instruments')
         ret = self.psa.instrument_reset()
-        return make_response("success" if ret else "reset instruments failed", 200 if ret else 500)     
+        return make_response("success" if ret else "reset instruments failed", 200 if ret else 500)
+
+    def skip_eye_detection(self, *args, **kwargs):
+        '''
+            Propagates the command to skip the eye detection.
+        '''        
+        logger.info('In automation.py caling skip_eye_detection')
+        ret = self.psa.skip_eye_detection()
+        return make_response("success" if ret else "skip_eye_detection failed", 200 if ret else 500)                  
 
     def adjust(self, *args, **kwargs):
         ret = False
