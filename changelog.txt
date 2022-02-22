@@ -1,6 +1,32 @@
 Changelog
 
-### Version 1.1 ###
+### Version 1.1.1 ###
+New Features
+* Button to skip eye detection when the eyes are not detected.
+* Logging saved for the last 7 days.
+* Indication when the instruments are ready (after 'wait_for_instruments').
+
+Improvements
+* Better Error message on the frontend.
+* Better robustness for exporting REVO images.
+* Instruments reset when the Reset button is pressed.
+* Station height change stops after emergency button is pressed.
+* Timing of audio for VX120 is more precise.
+* Disable sound for REVO when the button 'Move Revo Right' is pressed.
+* Increased robustness of Twincat deployment.
+* Start button pressed again for REVO when eye can not be found or focused.
+* Revo stays on Left eye even after manual intervention.
+* Clarification of the skip instrument button on frontend.
+
+Bug fixing
+* VX120 automation is not clicking on non matching buttons anymore.
+* VX120 automation clicks on GO again in case it does not work.
+* Cancel and Redo of current examination cancels the instruments properly.
+* Wait before restarting SOCT after examination when REVO is still exporting.
+* Skip instrument button now works.
+
+
+### Version 1.1.0 ###
 New Features
 * Buttons to relaunch and shutdown the instruments and station.
 * Buttons to unblock the back-camera view (in case an instrument is in the way).
