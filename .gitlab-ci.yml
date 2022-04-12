@@ -1,0 +1,47 @@
+#Commands in PowerShell
+stages:
+  # different stages in the pipeline and their order
+  # more can be added and their order can change
+  - Static Analysis
+  - Test
+  - Deploy
+
+but_first:
+  #The initial stage, always happens first
+  stage: .pre
+  script:
+    - poetry update
+
+before_script:
+  # this happens at the beginning of every job
+  - python --version
+  - $env:PYTHONPATH = Get-Location
+  - Get-ChildItem Env:\PYTHONPATH
+
+pylint:
+  # lint analysis of all files to be in line with latest PEP
+  stage: Static Analysis
+  script:
+    - echo "Analysing station_backend"
+    - pylint $(git ls-files '*.py')
+  allow_failure: true
+
+pytest_all:
+  # testing job, there can/should be many of these
+  # best to have logical separations of test types
+  stage: Test
+  script:
+    - echo "testing"
+    - poetry run pytest -v 
+
+deploy:
+  # Could be used to build the code into an installer
+  stage: Deploy
+  script:
+    - echo "deploying"
+
+and_lastly:
+  # this is the last step, not used for now
+  stage: .post
+  script:
+    - echo "We are done!"
