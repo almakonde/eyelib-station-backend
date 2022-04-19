@@ -7,11 +7,11 @@
                     <item type="dict">
                         <item type="tuple">
                             <item type="str">x</item>
-                            <item type="float">43.0029296875</item>
+                            <item type="float">59.4</item>
                         </item>
                         <item type="tuple">
                             <item type="str">y</item>
-                            <item type="float">50.999755859375</item>
+                            <item type="float">489.4</item>
                         </item>
                     </item>
                 </item>
@@ -20,11 +20,11 @@
                     <item type="dict">
                         <item type="tuple">
                             <item type="str">x</item>
-                            <item type="float">60.0</item>
+                            <item type="float">55.0</item>
                         </item>
                         <item type="tuple">
                             <item type="str">y</item>
-                            <item type="float">253.9990234375</item>
+                            <item type="float">91.4</item>
                         </item>
                     </item>
                 </item>
@@ -33,11 +33,11 @@
                     <item type="dict">
                         <item type="tuple">
                             <item type="str">x</item>
-                            <item type="float">3.0029296875</item>
+                            <item type="float">3.0</item>
                         </item>
                         <item type="tuple">
                             <item type="str">y</item>
-                            <item type="float">135.2392578125</item>
+                            <item type="float">266.54</item>
                         </item>
                     </item>
                 </item>
@@ -45,31 +45,38 @@
         </PS1_Table>
 
         <ChinRest type="element">
-            <length_mm type="float">41.60403002929688</length_mm>
+            <length_mm type="float">134.19</length_mm>
         </ChinRest>
         <InstrumentTable_X type="element">
-            <length_mm type="float">66.3134765625</length_mm>
+            <length_mm type="float">61.69</length_mm>
         </InstrumentTable_X>
         <InstrumentTable_Y type="element">
-            <length_mm type="float">270.478515625</length_mm>
+            <length_mm type="float">533.09</length_mm>
         </InstrumentTable_Y>
+		<StationHeight type="element">
+            <length_mm type="float">702.0</length_mm>
+            <offset_mm type="float">1100.0</offset_mm>            
+            <tolerence_mm type="float">1.5</tolerence_mm>
+            <encoder_min type="int">490</encoder_min>
+            <encoder_max type="int">9360</encoder_max>
+        </StationHeight>
 
         <automation type="element">
 
             <neutral_speed_mm_s type="dict">
                 <item type="tuple">
                     <item type="str">x</item>
-                    <item type="float">20.0</item>
+                    <item type="float">15.0</item>
                 </item>
                 <item type="tuple">
                     <item type="str">y</item>
-                    <item type="float">20.0</item>
+                    <item type="float">45.0</item>
                 </item>
             </neutral_speed_mm_s>
-            <stationheight_z_margin_mm type="int">0</stationheight_z_margin_mm>
-            <chinrest_clearance_mm type="int">45</chinrest_clearance_mm>  
-            <chinrest_cover_position_mm type="int">55</chinrest_cover_position_mm>          
-            <chin_to_eyeline_min_mm type="int">70</chin_to_eyeline_min_mm>
+            <stationheight_z_margin_mm type="int">45</stationheight_z_margin_mm>
+            <chinrest_clearance_mm type="int">-50</chinrest_clearance_mm>  
+            <chinrest_cover_position_mm type="int">48</chinrest_cover_position_mm>          
+            <chin_to_eyeline_min_mm type="int">80</chin_to_eyeline_min_mm>
             <stationheight_sit_down_pos_mm type="int">1150</stationheight_sit_down_pos_mm>
         </automation>
         <PatientInteraction type="element">
@@ -85,7 +92,7 @@
                     <item type="dict">
                         <item type="tuple">
                             <item type="str">chin_rest</item>
-                            <item type="float">2.91386279296875</item>
+                            <item type="int">48</item>
                         </item>
                     </item>
                 </item>
@@ -94,7 +101,7 @@
                     <item type="dict">
                         <item type="tuple">
                             <item type="str">chin_rest</item>
-                            <item type="float">37.999074462890626</item>
+                            <item type="float">120.0</item>
                         </item>
                     </item>
                 </item>
@@ -127,11 +134,11 @@
                 </item>
                 <item type="tuple">
                     <item type="str">gamma</item>
-                    <item type="float">1.0</item>
+                    <item type="float">1.2</item>
                 </item>
                 <item type="tuple">
                     <item type="str">initial_depth</item>
-                    <item type="float">700.0</item>
+                    <item type="float">630.0</item>
                 </item>
                 <item type="tuple">
                     <item type="str">axes_conversion</item>
@@ -153,12 +160,12 @@
                     <item type="str">10.1.1.100:5003</item>
                 </item>
             </tc_settings>
-            <eyeline_target type="float">0.5</eyeline_target>            
+            <eyeline_target type="float">0.49</eyeline_target>            
             <consecutive_detections_thr type="int">5</consecutive_detections_thr>
             <adjustment_tolerance type="float">3.5</adjustment_tolerance>
-            <tilt_accepted_measurement type="float">30.0</tilt_accepted_measurement>
+            <tilt_accepted_measurement type="float">20.0</tilt_accepted_measurement>
         </BackCamera>
-        <StationHeight type="element" />
+        <StationHeight type="element"/>
     </PS1>
     <IS type="element">
         <instruments type="dict">
@@ -187,7 +194,7 @@
                 <item type="dict">
                     <item type="tuple">
                         <item type="str">mac</item>
-                        <item type="str">00:04:5f:a8:3b:eb</item>
+                        <item type="str">30:9c:23:5c:16:a9</item>
                     </item>
                     <item type="tuple">
                         <item type="str">ruia</item>
@@ -213,7 +220,7 @@
                 <item type="dict">
                     <item type="tuple">
                         <item type="str">mac</item>
-                        <item type="str">1c:69:7a:a4:4a:25</item>
+                        <item type="str">1C-69-7A-02-40-85</item>
                     </item>
                     <item type="tuple">
                         <item type="str">ruia</item>
