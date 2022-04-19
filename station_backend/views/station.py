@@ -28,6 +28,7 @@ class StationView(Restful, Stream):
             'bc': self.bc,
             'bc_trigger': self.bc_trigger,
             'audio_speech': self.audio_speech,
+            'get_version': self.get_version
         }
 
         self.psa.patient_station.back_camera.bind('last_measurement', self.on_bc_last_measurement_changed)
@@ -119,3 +120,9 @@ class StationView(Restful, Stream):
     def on_bc_last_extents_mm_changed(self, back_camera, data):
         key, value, old_value = data
         sse.push('station', 'bc_extents_mm', value)
+
+    def get_version(self, *args, **kwargs):
+        '''
+        Returns the current version number
+        '''
+        return self._app.__version__
