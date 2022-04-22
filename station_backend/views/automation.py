@@ -142,8 +142,22 @@ class AutomationView(Restful):
         return jsonify({})
 
     def start(self, *args, **kwargs):
-        self.psa.namespace.do_init = True
-        self.psa.start()
+        '''
+            Gets triggered by the reset button.
+            If the current program is not the default one, do a restart with default.
+        '''
+        if self.psa.current_program == 'default_automation':
+            self.psa.namespace.do_init = True
+            self.psa.start()
+        else:
+            self.relaunch_active_instrument()
+            p = self.psa.programs[self.psa.default_program]
+            self.psa.transitions.clear()        
+            self.psa.assignments.clear()
+            self.psa.fast(p)
+            self.psa.current_program = next(iter([pn for pn, program in self.psa.programs.items() if program == p]), self.psa.default_program)
+            self.psa.namespace.do_init = True
+            self.psa.restart()
         return jsonify({})
 
     def stop(self, *args, **kwargs):
@@ -203,6 +217,17 @@ class AutomationView(Restful):
 
     def show(self, *args, **kwargs):
         return jsonify(self._variables_val())
+
+    def relaunch_active_instrument(self):
+        '''
+            Relaunches the active instrument if there is one.
+        '''
+        if hasattr(self.psa.patient_station,'instrument'):
+            instrument_name = self.psa.patient_station.instrument.instrument_name
+            if instrument_name=='REVO':
+                self.relaunch_revo_automation()
+            elif instrument_name=='VX120':
+                self.relaunch_vx120_automation()
 
     def relaunch_vx120_automation(self, *args, **kwargs):
         '''

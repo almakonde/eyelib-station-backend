@@ -8,6 +8,7 @@ from station_backend.views.axes import AxesView, SHAxesView
 from station_backend.views.automation import AutomationView
 from station_backend.views.examinations import ExaminationsView
 from station_backend.views.instruments import InstrumentsView
+from station_backend.views.manual_mode import ManualModeView
 from station_backend.views.pwr import PowerView
 from station_backend.views.waypoints import PatientStationWaypointsView
 from station_backend.views.teaching import PatientStationTeachingView
@@ -207,6 +208,7 @@ if con:
                         patient_adjust_view = PatientAdjustView(app, psa)
                         teaching_view = PatientStationTeachingView(app, psa)
                         instruments_view = InstrumentsView(app, platform, station, psa)
+                        manual_mode_view = ManualModeView(app, platform, station, psa)
                         side_cameras_view = SideCamerasView(app, platform, station, psa)
                         station_view = StationView(app, psa)
                         ''' Generate all programs state diagrams'''
