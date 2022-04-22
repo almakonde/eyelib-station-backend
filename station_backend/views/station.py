@@ -125,4 +125,5 @@ class StationView(Restful, Stream):
         '''
         Returns the current version number
         '''
-        return self._app.__version__
+        return {'version': self._app.__version__,
+                'subversions': self._app.subversions}

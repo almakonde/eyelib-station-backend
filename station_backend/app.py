@@ -39,7 +39,17 @@ from mjk_utils.workers import WorkerPool
 
 
 from station_backend import sse
-from station_backend import version
+from station_backend import version, version_backend
+from station_common import version as version_common
+from mjk_ads import version as version_mjk_ads
+from mjk_backend import version as version_mjk_backend
+from mjk_common import version as version_mjk_common
+from mjk_ruia import version as version_mjk_ruia
+from mjk_sim import version as version_mjk_sim
+from mjk_utils import version as version_mjk_utils
+from mjk_vision import version as version_mjk_vision
+from mjk_vnc import version as version_mjk_vnc
+from mjk_vnc_backend import version as version_mjk_vnc_backend
 
 import os, sys
 
@@ -70,6 +80,17 @@ app = Flask(__name__,   static_url_path='',
 
 app.secret_key = 'b3\\x81\\x1e9\\x9d\\xd0H]!})\\xf9F\\xefU\\xd8\\xf9\\x99\\x023[\\xd4%0'
 app.__version__ = version.VERSION_STRING
+app.subversions = {'Backend': version_backend.VERSION_STRING,
+                    'Common': version_common.VERSION_STRING,
+                    'mjk-ads': version_mjk_ads.VERSION_STRING,
+                    'mjk-backend': version_mjk_backend.VERSION_STRING,
+                    'mjk-common': version_mjk_common.VERSION_STRING,
+                    'mjk-ruia': version_mjk_ruia.VERSION_STRING,
+                    'mjk-sim': version_mjk_sim.VERSION_STRING,
+                    'mjk-utils': version_mjk_utils.VERSION_STRING,
+                    'mjk-vision': version_mjk_vision.VERSION_STRING,
+                    'mjk-vnc': version_mjk_vnc.VERSION_STRING,
+                    'mjk-vnc-backend': version_mjk_vnc_backend.VERSION_STRING}
 
 try:
     wp = WorkerPool('default', settings.workerPoolSize)
