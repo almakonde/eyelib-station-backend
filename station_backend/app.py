@@ -51,6 +51,7 @@ from mjk_utils import version as version_mjk_utils
 from mjk_vision import version as version_mjk_vision
 from mjk_vnc import version as version_mjk_vnc
 from mjk_vnc_backend import version as version_mjk_vnc_backend
+from eyelib_logger import version as version_eyelib_logger
 
 import os, sys
 
@@ -83,6 +84,7 @@ app.secret_key = 'b3\\x81\\x1e9\\x9d\\xd0H]!})\\xf9F\\xefU\\xd8\\xf9\\x99\\x023[
 app.__version__ = version.VERSION_STRING
 app.subversions = {'Backend': version_backend.VERSION_STRING,
                     'Common': version_common.VERSION_STRING,
+                    'Eyelib Logger': version_eyelib_logger.VERSION_STRING,
                     'mjk-ads': version_mjk_ads.VERSION_STRING,
                     'mjk-backend': version_mjk_backend.VERSION_STRING,
                     'mjk-common': version_mjk_common.VERSION_STRING,
