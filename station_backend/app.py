@@ -94,6 +94,7 @@ app.subversions = {'Backend': version_backend.VERSION_STRING,
                     'mjk-vision': version_mjk_vision.VERSION_STRING,
                     'mjk-vnc': version_mjk_vnc.VERSION_STRING,
                     'mjk-vnc-backend': version_mjk_vnc_backend.VERSION_STRING}
+app.language = settings.language
 
 try:
     wp = WorkerPool('default', settings.workerPoolSize)
@@ -179,7 +180,7 @@ if con:
                 register_events_logger(station.events)
                 voice = SpeechReactor(station.patient_interaction)
                 
-                voice.load(script_dir()+"/voices.json")
+                voice.load(script_dir()+"/voices_"+app.language+".json")
                 station.events.start()
 
                 power_view = PowerView(app, pwr=station.pwr)
