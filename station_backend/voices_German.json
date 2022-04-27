@@ -1,0 +1,44 @@
+{
+    "adding axis": [""],
+    "init_start": [],
+    "init_axis": [],
+    "init_end": ["Initialisierung abgeschlossen"],
+    "patient_greeting": ["Willkommen an der Eyelib Station {name}."],
+    "patient_adjustment_started": ["Bitte warten Sie, bis sich die Maschine vorbereitet hat."],
+    "patient_adjustment_done": ["Vorbereitung abgeschlossen"],
+    "patient_wait": ["Bitte legen Sie Ihren Kopf auf der Kinnhalter und legen Sie Ihre Stirn auf die Kopfstütze"],
+    "patient_present": [],
+    "patient_departure": [],
+    "patient_left": [],
+    "new_instrument_preparation": [{
+            "format": "Sie können natürlich blinken",
+            "match": {"installed": true}
+        }],
+    "instrument_preparation": [],
+    "instrument_examination_done": [],
+    "instrument_done": [],
+    "instrument_calibration_done": ["Kalibrierung des fertigen Instruments"],
+    "instrument_notification": ["Bitte stehen Sie während der Prüfung still."],
+    "all_instruments_done": ["Danke! Sie können jetzt die Station verlassen.", "Sie können zur Aufnahmestation zurückkehren. Der Bericht über Ihre Prüfung wird in wenigen Minuten fertig sein."],
+    "halfway_done": ["Sie haben die Hälfte der Prüfung abgelegt.", "Bitte bleiben Sie für den Rest an Ort und Stelle."],
+    "deposit_start": [],
+    "deposit_end": [],
+    "fetch_start": [],
+    "fetch_end": [],
+
+    "back_camera_measurement":["Schauen Sie geradeaus nach vorne", "Der Kinnhalter kann sich bewegen"],
+    "back_camera_correction":["Bitte legen Sie Ihr Kinn auf der Kinnhalter"],
+
+    "instrument_state_changed": [
+        {
+            "format": "Bitte stehen Sie still und halten Sie die Augen offen",
+            "match": {"state": "InstrumentState.Pretargeting"}
+        },
+        {
+            "format": "Halten Sie Ihre Augen bitte offen",
+            "match": {"state": "InstrumentState.Targeting"}
+        }
+        
+    ]
+    
+}

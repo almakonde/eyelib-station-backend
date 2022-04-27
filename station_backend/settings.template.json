@@ -8,5 +8,6 @@
     "port": "",
     "staticFolder": "",
     "logging_url": "",
+    "language": "",
     "secretKey" : ""
 }
