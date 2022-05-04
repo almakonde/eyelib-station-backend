@@ -17,7 +17,7 @@ mjk-utils = {git = "ssh://git@192.168.11.103:30001/software/mjk-utils.git", bran
 mjk-backend = {git = "ssh://git@192.168.11.103:30001/software/mjk-backend.git", branch = "master"}
 mjk-vnc-backend = {git = "ssh://git@192.168.11.103:30001/software/mjk-vnc-backend.git", branch = "master"}
 station-common = {git = "ssh://git@192.168.11.103:30001/software/gen2-station-common.git", branch = "master"}
-
+eyelib-logger = {git = "ssh://git@192.168.11.103:30001/software/eyelib-logger.git", branch = "master"}
 
 [tool.poetry.dev-dependencies]
 pylint = "^2.4"

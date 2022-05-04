@@ -204,6 +204,10 @@ class AutomationView(Restful):
         if not sitting_down:
             self.psa.patient_station._exs.update_morphology(int(self.psa.patient_station.examination['patient_id']), station_morphology)
         logger.info(f"Total adjustment for patient ID : {id}, station height : {station_height_diff} (new height : {round(self.psa.chin_z_from_station_height())}, previous : {previous_station_height}) and chin rest : {chin_rest_dif} (new height : {round(self.psa.chinrest_z())}, previous : {previous_chin_rest_height}). Sitting down : {sitting_down}")
+        if not station_height_diff == 0 and self.psa.ps_adjustment_performed:
+            self.psa.namespace.sh_adjustment_performed = True
+        if not chin_rest_dif == 0 and self.psa.ps_adjustment_performed:
+            self.psa.namespace.cr_adjustment_performed = True
 
     def disable_patient_validation(self, *args, **kwargs):
         self.psa.disable_patient_validation()
@@ -295,6 +299,8 @@ class AutomationView(Restful):
         if len(args) > 0:
             action = args[0]
             ret = self.automation_adjust.adjust(action)
+            if ret:
+                self.psa.ps_adjustment_performed = True
         return make_response("success" if ret else "action ["+action+"] failed", 200 if ret else 500)
 
     def on_state_changed(self, *argv):
