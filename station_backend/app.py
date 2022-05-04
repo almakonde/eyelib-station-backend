@@ -67,9 +67,12 @@ from station_common.connection import connection_factory
 
 import logging
 
+from eyelib_logger.logger import logger as mikajaki_logging
+
 logger = logging.getLogger('main_app')
 logger.setLevel(logging.INFO)
 
+account_logger = mikajaki_logging('accounting', log_file='logs/accounting.log')
 
 settings = load_settings()
 
