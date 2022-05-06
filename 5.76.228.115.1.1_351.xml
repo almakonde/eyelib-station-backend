@@ -1,246 +1,268 @@
 <root>
-    <PS1 type="element">
-        <PS1_Table type="element">
-            <taught_points type="dict">
-                <item type="tuple">
-                    <item type="str">instrument_1</item>
-                    <item type="dict">
-                        <item type="tuple">
-                            <item type="str">x</item>
-                            <item type="float">59.4</item>
-                        </item>
-                        <item type="tuple">
-                            <item type="str">y</item>
-                            <item type="float">489.4</item>
-                        </item>
-                    </item>
-                </item>
-                <item type="tuple">
-                    <item type="str">instrument_2</item>
-                    <item type="dict">
-                        <item type="tuple">
-                            <item type="str">x</item>
-                            <item type="float">53.0</item>
-                        </item>
-                        <item type="tuple">
-                            <item type="str">y</item>
-                            <item type="float">91.4</item>
-                        </item>
-                    </item>
-                </item>
-                <item type="tuple">
-                    <item type="str">camera</item>
-                    <item type="dict">
-                        <item type="tuple">
-                            <item type="str">x</item>
-                            <item type="float">3.0</item>
-                        </item>
-                        <item type="tuple">
-                            <item type="str">y</item>
-                            <item type="float">266.54</item>
-                        </item>
-                    </item>
-                </item>
-            </taught_points>
-        </PS1_Table>
-
-        <ChinRest type="element">
-            <length_mm type="float">134.19</length_mm>
-        </ChinRest>
-        <InstrumentTable_X type="element">
-            <length_mm type="float">61.41</length_mm>
-        </InstrumentTable_X>
-        <InstrumentTable_Y type="element">
-            <length_mm type="float">533.09</length_mm>
-        </InstrumentTable_Y>
+	<PS1 type="element">
+		<PS1_Table type="element">
+			<taught_points type="dict">
+				<item type="tuple">
+					<item type="str">instrument_1</item>
+					<item type="dict">
+						<item type="tuple">
+							<item type="str">x</item>
+							<item type="float">59.4</item>
+						</item>
+						<item type="tuple">
+							<item type="str">y</item>
+							<item type="float">489.4</item>
+						</item>
+					</item>
+				</item>
+				<item type="tuple">
+					<item type="str">instrument_2</item>
+					<item type="dict">
+						<item type="tuple">
+							<item type="str">x</item>
+							<item type="float">53.0</item>
+						</item>
+						<item type="tuple">
+							<item type="str">y</item>
+							<item type="float">91.4</item>
+						</item>
+					</item>
+				</item>
+				<item type="tuple">
+					<item type="str">camera</item>
+					<item type="dict">
+						<item type="tuple">
+							<item type="str">x</item>
+							<item type="float">3.0</item>
+						</item>
+						<item type="tuple">
+							<item type="str">y</item>
+							<item type="float">266.54</item>
+						</item>
+					</item>
+				</item>
+			</taught_points>
+		</PS1_Table>
+		<ChinRest type="element">
+			<length_mm type="float">134.19</length_mm>
+		</ChinRest>
+		<InstrumentTable_X type="element">
+			<length_mm type="float">61.41</length_mm>
+		</InstrumentTable_X>
+		<InstrumentTable_Y type="element">
+			<length_mm type="float">533.09</length_mm>
+		</InstrumentTable_Y>
 		<StationHeight type="element">
-            <length_mm type="float">702.0</length_mm>
-            <offset_mm type="float">1100.0</offset_mm>            
-            <tolerence_mm type="float">1.5</tolerence_mm>
-            <encoder_min type="int">490</encoder_min>
-            <encoder_max type="int">9360</encoder_max>
-        </StationHeight>
-
-        <automation type="element">
-
-            <neutral_speed_mm_s type="dict">
-                <item type="tuple">
-                    <item type="str">x</item>
-                    <item type="float">15.0</item>
-                </item>
-                <item type="tuple">
-                    <item type="str">y</item>
-                    <item type="float">45.0</item>
-                </item>
-            </neutral_speed_mm_s>
-            <stationheight_z_margin_mm type="int">65</stationheight_z_margin_mm>
-            <chinrest_clearance_mm type="int">-50</chinrest_clearance_mm>
-            <chinrest_cover_position_mm type="int">48</chinrest_cover_position_mm>
-            <chin_to_eyeline_min_mm type="int">80</chin_to_eyeline_min_mm>
-            <stationheight_sit_down_pos_mm type="int">1150</stationheight_sit_down_pos_mm>
-        </automation>
-        <PatientInteraction type="element">
-            <remote_speech_address type="str">10.1.1.10:1234</remote_speech_address>
-        </PatientInteraction>
-        <Patient type="element">
+			<length_mm type="float">702.0</length_mm>
+			<offset_mm type="float">1100.0</offset_mm>
+			<tolerence_mm type="float">1.5</tolerence_mm>
+			<encoder_min type="int">490</encoder_min>
+			<encoder_max type="int">9360</encoder_max>
+		</StationHeight>
+		<automation type="element">
+			<neutral_speed_mm_s type="dict">
+				<item type="tuple">
+					<item type="str">x</item>
+					<item type="float">15.0</item>
+				</item>
+				<item type="tuple">
+					<item type="str">y</item>
+					<item type="float">45.0</item>
+				</item>
+			</neutral_speed_mm_s>
+			<stationheight_z_margin_mm type="int">65</stationheight_z_margin_mm>
+			<chinrest_clearance_mm type="int">-50</chinrest_clearance_mm>
+			<chinrest_cover_position_mm type="int">48</chinrest_cover_position_mm>
+			<chin_to_eyeline_min_mm type="int">80</chin_to_eyeline_min_mm>
+			<stationheight_sit_down_pos_mm type="int">1150</stationheight_sit_down_pos_mm>
+		</automation>
+		<PatientInteraction type="element">
+			<remote_speech_address type="str">10.1.1.10:1234</remote_speech_address>
+		</PatientInteraction>
+		<Patient type="element">
         </Patient>
-
-        <PS1_ChinRest type="element">
-            <taught_points type="dict">
+		<PS1_ChinRest type="element">
+			<taught_points type="dict">
+				<item type="tuple">
+					<item type="str">opened</item>
+					<item type="dict">
+						<item type="tuple">
+							<item type="str">chin_rest</item>
+							<item type="float">3.0</item>
+						</item>
+					</item>
+				</item>
+				<item type="tuple">
+					<item type="str">closed</item>
+					<item type="dict">
+						<item type="tuple">
+							<item type="str">chin_rest</item>
+							<item type="float">120.0</item>
+						</item>
+					</item>
+				</item>
+			</taught_points>
+		</PS1_ChinRest>
+		<BackCamera type="element">
+			<cp_settings type="dict">
+				<item type="tuple">
+					<item type="str">ref_pixels</item>
+					<item type="float">30.0</item>
+				</item>
+				<item type="tuple">
+					<item type="str">ref_mm</item>
+					<item type="float">15.0</item>
+				</item>
+				<item type="tuple">
+					<item type="str">image_shape</item>
+					<item type="tuple">
+						<item type="int">768</item>
+						<item type="int">1024</item>
+					</item>
+				</item>
+				<item type="tuple">
+					<item type="str">beta_x</item>
+					<item type="float">1.0</item>
+				</item>
+				<item type="tuple">
+					<item type="str">beta_y</item>
+					<item type="float">1.0</item>
+				</item>
+				<item type="tuple">
+					<item type="str">gamma</item>
+					<item type="float">1.2</item>
+				</item>
+				<item type="tuple">
+					<item type="str">initial_depth</item>
+					<item type="float">630.0</item>
+				</item>
+				<item type="tuple">
+					<item type="str">axes_conversion</item>
+					<item type="dict">
+						<item type="tuple">
+							<item type="str">y</item>
+							<item type="str">-x</item>
+						</item>
+						<item type="tuple">
+							<item type="str">z</item>
+							<item type="str">-y</item>
+						</item>
+					</item>
+				</item>
+			</cp_settings>
+			<tc_settings type="dict">
+				<item type="tuple">
+					<item type="str">url</item>
+					<item type="str">10.1.1.100:5003</item>
+				</item>
+			</tc_settings>
+			<eyeline_target type="float">0.4925</eyeline_target>
+			<eye_detection_region type="dict">
+				<item type="tuple">
+					<item type="str">x1</item>
+					<item type="int">330</item>
+				</item>
+				<item type="tuple">
+					<item type="str">x2</item>
+					<item type="int">610</item>
+				</item>			
+				<item type="tuple">
+					<item type="str">y1</item>
+					<item type="int">250</item>
+				</item>		
+				<item type="tuple">
+					<item type="str">y2</item>
+					<item type="int">540</item>
+				</item>							
                 <item type="tuple">
-                    <item type="str">opened</item>
-                    <item type="dict">
-                        <item type="tuple">
-                            <item type="str">chin_rest</item>
-                            <item type="float">3.0</item>
-                        </item>
-                    </item>
+                    <item type="str">x_offset</item>
+                    <item type="int">20</item>
                 </item>
                 <item type="tuple">
-                    <item type="str">closed</item>
-                    <item type="dict">
-                        <item type="tuple">
-                            <item type="str">chin_rest</item>
-                            <item type="float">120.0</item>
-                        </item>
-                    </item>
+                    <item type="str">y_offset</item>
+                    <item type="int">20</item>
                 </item>
-            </taught_points>
-        </PS1_ChinRest>
-        <BackCamera type="element">
-            <cp_settings type="dict">
-                <item type="tuple">
-                    <item type="str">ref_pixels</item>
-                    <item type="float">30.0</item>
-                </item>
-                <item type="tuple">
-                    <item type="str">ref_mm</item>
-                    <item type="float">15.0</item>
-                </item>
-                <item type="tuple">
-                    <item type="str">image_shape</item>
-                    <item type="tuple">
-                        <item type="int">768</item>
-                        <item type="int">1024</item>
-                    </item>
-                </item>
-                <item type="tuple">
-                    <item type="str">beta_x</item>
-                    <item type="float">1.0</item>
-                </item>
-                <item type="tuple">
-                    <item type="str">beta_y</item>
-                    <item type="float">1.0</item>
-                </item>
-                <item type="tuple">
-                    <item type="str">gamma</item>
-                    <item type="float">1.2</item>
-                </item>
-                <item type="tuple">
-                    <item type="str">initial_depth</item>
-                    <item type="float">630.0</item>
-                </item>
-                <item type="tuple">
-                    <item type="str">axes_conversion</item>
-                    <item type="dict">
-                        <item type="tuple">
-                            <item type="str">y</item>
-                            <item type="str">-x</item>
-                        </item>
-                        <item type="tuple">
-                            <item type="str">z</item>
-                            <item type="str">-y</item>
-                        </item>
-                    </item>
-                </item>
-            </cp_settings>
-            <tc_settings type="dict">
-                <item type="tuple">
-                    <item type="str">url</item>
-                    <item type="str">10.1.1.100:5003</item>
-                </item>
-            </tc_settings>
-            <eyeline_target type="float">0.4925</eyeline_target>
-            <consecutive_detections_thr type="int">5</consecutive_detections_thr>
-            <adjustment_tolerance type="float">3.5</adjustment_tolerance>
-            <tilt_accepted_measurement type="float">20.0</tilt_accepted_measurement>
-        </BackCamera>
-        <StationHeight type="element" />
-    </PS1>
-    <IS type="element">
-        <instruments type="dict">
-            <item type="tuple">
-                <item type="str">VX120-01</item>
-                <item type="str">VX120</item>
-            </item>
-            <item type="tuple">
-                <item type="str">REVO-01</item>
-                <item type="str">REVO</item>
-            </item>
-        </instruments>
-        <slot_payload type="dict">
-            <item type="tuple">
-                <item type="str">01</item>
-                <item type="str">REVO-01</item>
-            </item>
-            <item type="tuple">
-                <item type="str">02</item>
-                <item type="str">VX120-01</item>
-            </item>
-        </slot_payload>
-        <instruments_parameters type="dict">
-            <item type="tuple">
-                <item type="str">VX120-01</item>
-                <item type="dict">
-                    <item type="tuple">
-                        <item type="str">mac</item>
-                        <item type="str">30:9C:23:5C:16:A9</item>
-                    </item>
-                    <item type="tuple">
-                        <item type="str">ruia</item>
-                        <item type="dict">
-                            <item type="tuple">
-                                <item type="str">rest_host</item>
-                                <item type="str">10.1.1.20</item>
-                            </item>
-                            <item type="tuple">
-                                <item type="str">rest_port</item>
-                                <item type="int">6002</item>
-                            </item>
-                        </item>
-                    </item>
-                    <item type="tuple">
-                        <item type="str">iid</item>
-                        <item type="str">VX120-01</item>
-                    </item>
-                </item>
-            </item>
-            <item type="tuple">
-                <item type="str">REVO-01</item>
-                <item type="dict">
-                    <item type="tuple">
-                        <item type="str">mac</item>
-                        <item type="str">1C-69-7A-02-40-85</item>
-                    </item>
-                    <item type="tuple">
-                        <item type="str">ruia</item>
-                        <item type="dict">
-                            <item type="tuple">
-                                <item type="str">rest_host</item>
-                                <item type="str">10.1.1.10</item>
-                            </item>
-                            <item type="tuple">
-                                <item type="str">rest_port</item>
-                                <item type="int">6002</item>
-                            </item>
-                        </item>
-                    </item>
-                    <item type="tuple">
-                        <item type="str">iid</item>
-                        <item type="str">REVO-01</item>
-                    </item>
-                </item>
-            </item>
-        </instruments_parameters>
-    </IS>
+			</eye_detection_region>
+			<consecutive_detections_thr type="int">5</consecutive_detections_thr>
+			<adjustment_tolerance type="float">3.5</adjustment_tolerance>
+			<tilt_accepted_measurement type="float">20.0</tilt_accepted_measurement>
+		</BackCamera>
+		<StationHeight type="element"/>
+	</PS1>
+	<IS type="element">
+		<instruments type="dict">
+			<item type="tuple">
+				<item type="str">VX120-01</item>
+				<item type="str">VX120</item>
+			</item>
+			<item type="tuple">
+				<item type="str">REVO-01</item>
+				<item type="str">REVO</item>
+			</item>
+		</instruments>
+		<slot_payload type="dict">
+			<item type="tuple">
+				<item type="str">01</item>
+				<item type="str">REVO-01</item>
+			</item>
+			<item type="tuple">
+				<item type="str">02</item>
+				<item type="str">VX120-01</item>
+			</item>
+		</slot_payload>
+		<instruments_parameters type="dict">
+			<item type="tuple">
+				<item type="str">VX120-01</item>
+				<item type="dict">
+					<item type="tuple">
+						<item type="str">mac</item>
+						<item type="str">30:9C:23:5C:16:A9</item>
+					</item>
+					<item type="tuple">
+						<item type="str">ruia</item>
+						<item type="dict">
+							<item type="tuple">
+								<item type="str">rest_host</item>
+								<item type="str">10.1.1.20</item>
+							</item>
+							<item type="tuple">
+								<item type="str">rest_port</item>
+								<item type="int">6002</item>
+							</item>
+						</item>
+					</item>
+					<item type="tuple">
+						<item type="str">iid</item>
+						<item type="str">VX120-01</item>
+					</item>
+				</item>
+			</item>
+			<item type="tuple">
+				<item type="str">REVO-01</item>
+				<item type="dict">
+					<item type="tuple">
+						<item type="str">mac</item>
+						<item type="str">1C-69-7A-02-40-85</item>
+					</item>
+					<item type="tuple">
+						<item type="str">ruia</item>
+						<item type="dict">
+							<item type="tuple">
+								<item type="str">rest_host</item>
+								<item type="str">10.1.1.10</item>
+							</item>
+							<item type="tuple">
+								<item type="str">rest_port</item>
+								<item type="int">6002</item>
+							</item>
+						</item>
+					</item>
+					<item type="tuple">
+						<item type="str">iid</item>
+						<item type="str">REVO-01</item>
+					</item>
+				</item>
+			</item>
+		</instruments_parameters>
+	</IS>
 </root>
