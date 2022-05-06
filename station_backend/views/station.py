@@ -75,6 +75,7 @@ class StationView(Restful, Stream):
         return {
                 'tc_url': self.psa.patient_station.back_camera.tc_settings['url'],
                 'eyeline_target':self.psa.patient_station.back_camera.eyeline_target,
+                'eye_detection_region':self.psa.patient_station.back_camera.eye_detection_region,
                 'extents_mm': self.psa.patient_station.back_camera.get_extents_mm()
                 }
 

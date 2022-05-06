@@ -160,7 +160,33 @@
                     <item type="str">10.1.1.100:5003</item>
                 </item>
             </tc_settings>
-            <eyeline_target type="float">0.49</eyeline_target>            
+            <eyeline_target type="float">0.49</eyeline_target>       
+			<eye_detection_region type="dict">
+				<item type="tuple">
+					<item type="str">x1</item>
+					<item type="int">330</item>
+				</item>
+				<item type="tuple">
+					<item type="str">x2</item>
+					<item type="int">610</item>
+				</item>			
+				<item type="tuple">
+					<item type="str">y1</item>
+					<item type="int">250</item>
+				</item>		
+				<item type="tuple">
+					<item type="str">y2</item>
+					<item type="int">540</item>
+				</item>							
+                <item type="tuple">
+                    <item type="str">x_offset</item>
+                    <item type="int">20</item>
+                </item>
+                <item type="tuple">
+                    <item type="str">y_offset</item>
+                    <item type="int">20</item>
+                </item>
+			</eye_detection_region>	                 
             <consecutive_detections_thr type="int">5</consecutive_detections_thr>
             <adjustment_tolerance type="float">3.5</adjustment_tolerance>
             <tilt_accepted_measurement type="float">20.0</tilt_accepted_measurement>
