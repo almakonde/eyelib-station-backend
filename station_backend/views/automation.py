@@ -23,7 +23,9 @@ class AutomationAdjust:
             'cr_up': ('ChinRest', 2.0*self.epsilon),
             'cr_down': ('ChinRest', -2.0*self.epsilon),
             'station_up': ('StationHeight', 10.0*self.epsilon),
-            'station_down': ('StationHeight', -10.0*self.epsilon)
+            'station_up_big': ('StationHeight', 100.0*self.epsilon),
+            'station_down': ('StationHeight', -10.0*self.epsilon),
+            'station_down_big': ('StationHeight', -100.0*self.epsilon)
         }
 
     def adjust(self, action) -> bool:
